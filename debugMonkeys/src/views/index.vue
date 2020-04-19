@@ -1,6 +1,5 @@
 <template>
   <div class="index">
-    <mv />
     <contents />
   </div>
 </template>
