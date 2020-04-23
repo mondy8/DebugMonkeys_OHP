@@ -2,36 +2,42 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__inner-logo">
-        <img
-          src="../assets/img/logo.svg"
-          alt="Debug Monkeys"
-          width="247"
-          height="50"
-        >
+        <img src="../assets/img/logo.svg" alt="Debug Monkeys">
       </div>
-      <div class="header__inner-navbutton"></div>
+      <div class="header__inner-navbutton" v-on:click="isActive = !isActive" v-bind:class="{active:isActive}">
+        <span class="header__inner-navbutton-inner"></span>
+      </div>
     </div>
-    <ul class="header__nav-menu">
+    <ul class="header__nav-menu" v-bind:class="{active:isActive}">
       <li class="header__nav-menu-inner" v-for="(item, index) in items" :key="index">
-        <router-link v-bind:to="item.path">
+        <a href="#" v-on:click="isActive = !isActive" v-scroll-to="'#gamelist-' + index" >
           {{ item.title }}
-        </router-link>
+        </a>
       </li>
     </ul>
   </header>
 </template>
 
 <script>
+import Vue from 'vue'
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo, {
+     offset: -100
+})
 export default {
   name: "header",
   data() {
     return {
       items: [
-        { title: "top", path: "/" },
-        { title: "profile", path: "/profile" },
-        { title: "skills", path: "/skills" },
-        { title: "outputs", path: "/outputs" }
-      ]
+        { title: "鍋代官", path: "/" },
+        { title: "STREET PICKPOCKETs 7", path: "/" },
+        { title: "ゾンビパニックとライフルおじさん", path: "/" },
+        { title: "Bana-na", path: "/" },
+        { title: "OSUMO", path: "/" },
+        { title: "Qubism", path: "/" },
+        { title: "Wacryll", path: "/" }
+      ],
+      isActive: false
     };
   }
 };
@@ -39,43 +45,109 @@ export default {
 
 <style scoped lang="scss">
 .header {
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
   &__inner {
     position: relative;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    &-logo {
+    padding: 10px 0;
+    box-sizing: border-box;
+    &-logo img {
+      width: 170px;
     }
     &-navbutton {
       display: block;
       width: 20px;
       height: 20px;
-      background-color: red;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.8;
+      }
+      &.active {
+        .header__inner-navbutton-inner {
+          background-color: #fff;
+        }
+        .header__inner-navbutton-inner:before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+        .header__inner-navbutton-inner:after {
+          transform: rotate(-45deg);
+          top: 0;
+        }
+      }
+    }
+    &-navbutton-inner {
+      display: block;
+      position: relative;
+      width: 20px;
+      height: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #98a6b5;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #98a6b5;
+        transition: all ease 0.2s;
+      }
+      &:before {
+        top: -7px;
+      }
+      &:after {
+        bottom: -7px;
+      }
     }
   }
   &__nav-menu {
-    display: none;
     position: absolute;
     width: 100%;
+    top: 71px;
     margin: 0;
     padding: 0;
     list-style-type: none;
     background-color: #fff;
     box-shadow: 0px 3px 6px #00000029;
+    &.active {
+      display: block;
+      .header__nav-menu-inner {
+        height: 48px;
+        border-bottom: 1px solid #ccc;
+      }
+    }
     &-inner {
       width: 80%;
       margin: 0 auto;
-      padding: 15px;
-      border-bottom: 1px solid #ccc;
+      overflow: hidden;
+      height: 0;
+      border-bottom: 0px solid #fff;
+      box-sizing: border-box;
+      transition: all ease 0.3s;
       &:last-child {
         border: none;
       }
-    }
-    &--active {
-      display: block;
+      a {
+        display: block;
+        padding: 15px;
+        background-color: #fff;
+        color: #3b4043;
+        text-decoration: none;
+        transition: all ease 0.3s;
+        &:hover {
+          background-color: #eee;
+        }
+      }
     }
   }
 }

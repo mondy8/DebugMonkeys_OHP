@@ -12,7 +12,6 @@ import contents from "@/components/index_contents.vue";
 export default {
   name: "index",
   components: {
-    mv,
     contents
   }
 };
