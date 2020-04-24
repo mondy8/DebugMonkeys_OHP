@@ -84,7 +84,7 @@ export default {
 
 <style scoped lang="scss">
 $btn-gray: #3c3c3c;
-$lead-gray: #707f89;
+$lead-gray: #41494e;
 $ttl-gray: #3b4043;
 @mixin tab {
   @media (min-width: 769px) { @content; }
@@ -176,8 +176,8 @@ a {
   &-lead {
     display: block;
     color: $lead-gray;
-    font-size: 12px;
-    line-height: 1.3;
+    font-size: 13px;
+    line-height: 1.4;
     margin-top: 15px;
   }
   &-btn {
@@ -186,18 +186,35 @@ a {
     font-size: 15px;
     line-height: 44px;
     justify-content: space-between;
-    margin-top: 13px;
+    margin-top: 15px;
     &--buy {
       width: 48%;
+      position: relative;
       background-color: $btn-gray;
       border-radius: 6px;
       text-align: center;
       font-weight: bold;
       cursor: pointer;
+      overflow: hidden;
       opacity: 1;
       transition: opacity 0.2s;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 44px;
+        background-color: #fff;
+        transform: translateX(-100%);
+        opacity: 0.2;
+        transition: transform 0.2s;
+      }
       &:hover {
-        opacity: 0.8;
+        &::before {
+          transform: translateX(0%);
+        }
       }
       a {
         display: block;
@@ -208,14 +225,31 @@ a {
     }
     &--info {
       width: 48%;
+      position: relative;
       font-weight: bold;
       text-align: center;
       border-radius: 6px;
       cursor: pointer;
+      overflow: hidden;
       opacity: 1;
-      transition: opacity 0.2s;
+      transition: all 0.2s;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 44px;
+        background-color: $btn-gray;
+        transform: translateX(-101%);
+        opacity: 0.3;
+        transition: transform 0.2s;
+      }
       &:hover {
-        opacity: 0.8;
+        &::before {
+          transform: translateX(0%);
+        }
       }
       a {
         display: block;
