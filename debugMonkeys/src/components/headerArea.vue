@@ -2,7 +2,7 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__inner-logo">
-        <img src="../assets/img/logo.svg" alt="Debug Monkeys">
+        <a href="/"><img src="../assets/img/logo.svg" alt="Debug Monkeys"></a>
       </div>
       <div class="header__inner-navbutton" v-on:click="isActive = !isActive" v-bind:class="{active:isActive}">
         <span class="header__inner-navbutton-inner"></span>
@@ -22,20 +22,20 @@
 import Vue from 'vue'
 import VueScrollTo from 'vue-scrollto'
 Vue.use(VueScrollTo, {
-     offset: -100
+  offset: -100
 })
 export default {
   name: "header",
   data() {
     return {
       items: [
-        { title: "鍋代官", path: "/" },
-        { title: "STREET PICKPOCKETs 7", path: "/" },
-        { title: "ゾンビパニックとライフルおじさん", path: "/" },
-        { title: "Bana-na", path: "/" },
-        { title: "OSUMO", path: "/" },
-        { title: "Qubism", path: "/" },
-        { title: "Wacryll", path: "/" }
+        { title: "鍋代官" },
+        { title: "STREET PICKPOCKETs 7" },
+        { title: "ゾンビパニックとライフルおじさん" },
+        { title: "Bana-na" },
+        { title: "OSUMO" },
+        { title: "Qubism" },
+        { title: "Wacryll" }
       ],
       isActive: false
     };
@@ -50,6 +50,7 @@ export default {
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
+  z-index: 100;
   &__inner {
     position: relative;
     width: 90%;
@@ -59,8 +60,13 @@ export default {
     align-items: center;
     padding: 10px 0;
     box-sizing: border-box;
-    &-logo img {
-      width: 170px;
+    &-logo {
+      a {
+        display: block;
+      }
+      img {
+        width: 170px;
+      } 
     }
     &-navbutton {
       display: block;

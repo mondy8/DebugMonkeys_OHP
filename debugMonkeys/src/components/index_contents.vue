@@ -2,13 +2,16 @@
   <section class="contents">
     <ul class="contents__detail">
       <li class="contents__detail-list" v-for="(game, index) in game" :key=index :id="'gamelist-' + index">
-        <div class="contents__detail-img"><img :src=game.imgpath :alt=game.title></div>
+        <span class="contents__detail-list--new" v-if=game.new>NEW!</span>
+        <div class="contents__detail-img">
+          <img :src=game.imgpath :alt=game.title>
+        </div>
         <div class="contents__detail-inner">
           <div class="contents__detail-ttl">{{ game.title }}</div>
           <div class="contents__detail-lead">{{ game.lead }}</div>
           <ul class="contents__detail-btn">
             <li class="contents__detail-btn--buy"><a :href=game.booth target="_blank">購入する</a></li>
-            <li class="contents__detail-btn--info"><a :href=game.booth target="_blank">詳細を見る</a></li>
+            <li class="contents__detail-btn--info"><a :href=game.detail target="_blank">詳細を見る</a></li>
           </ul>
         </div>
       </li>
@@ -27,44 +30,51 @@ export default {
         title: '鍋代官',
         imgpath: require('@/assets/img/img_index_nabedaikan.jpg'),
         lead: 'このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！',
-        booth: 'https://booth.pm/ja/items/1704097' 
+        booth: 'https://debug-monkeys.booth.pm/items/1949653',
+        detail: 'https://note.com/debug_monkeys/n/n83cdba1dd238',
+        new: true
         },
         { 
         title: 'STREET PICKPOCKETs 7',
-        imgpath: require('@/assets/img/img_index_street.jpg'),
-        lead: '相手のカードを奪い合い、自分の場に役を揃えて点を稼ごう。短時間で終わる奪い合いの不規則ポーカーゲーム。（明日また考えます）',
-        booth: 'https://booth.pm/ja/items/1704097' 
+        imgpath: require('@/assets/img/img_index_street.png'),
+        lead: '不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。',
+        booth: 'https://debug-monkeys.booth.pm/items/1704097',
+        detail: 'https://note.com/debug_monkeys/n/nbd0eed705dde'
         },
         { 
         title: 'ゾンビパニックとライフルおじさん',
-        imgpath: require('@/assets/img/img_index_zombie.jpg'),
+        imgpath: require('@/assets/img/img_index_zombie.png'),
         lead: '世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！',
-        booth: 'https://booth.pm/ja/items/1704053',
+        booth: 'https://debug-monkeys.booth.pm/items/1704053',
         detail: 'https://note.com/debug_monkeys/n/nbde025dfbc80'
         },
         { 
         title: 'Bana-na',
         imgpath: require('@/assets/img/img_index_banana.jpg'),
         lead: 'かわいいサルのバナナ争奪戦！かんたんでも奥深い、戦略+運のパーティゲームです。どの木にならぶか？いつ木をゆらすか？かんたんなルールで奥深い戦略性。',
-        booth: 'https://booth.pm/ja/items/1704086' 
+        booth: 'https://debug-monkeys.booth.pm/items/1704086',
+        detail: 'https://note.com/debug_monkeys/n/n041ffe013d18'
         },
         { 
         title: 'OSUMO',
         imgpath: require('@/assets/img/img_index_osumo.jpg'),
         lead: '相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵を番外に弾き出しましょう。',
-        booth: 'https://booth.pm/ja/items/1704415' 
+        booth: 'https://debug-monkeys.booth.pm/items/1704415',
+        detail: 'https://note.com/debug_monkeys/n/n7969a35d5d96'
         },
         { 
         title: 'Qubism',
         imgpath: require('@/assets/img/img_index_qubism.jpg'),
         lead: '矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。',
-        booth: 'https://booth.pm/ja/items/1119557' 
+        booth: 'https://debug-monkeys.booth.pm/items/1119557',
+        detail: 'https://note.com/debug_monkeys/n/n499641b3c869'
         },
         { 
         title: 'Wacryll',
         imgpath: require('@/assets/img/img_index_wacryll.jpg'),
         lead: '相手のコマやゲームボードを使って飛び越えて、相手より先に反対側を目指そう。全てアクリル素材で出来たアブストラクトゲーム。',
-        booth: 'https://booth.pm/ja/items/1119594' 
+        booth: 'https://debug-monkeys.booth.pm/items/1119594',
+        detail: 'https://note.com/debug_monkeys/n/n6010e8c4738e'
         }
       ]
     }
@@ -73,6 +83,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$btn-gray: #3c3c3c;
+$lead-gray: #707f89;
+$ttl-gray: #3b4043;
 @mixin tab {
   @media (min-width: 769px) { @content; }
 }
@@ -111,11 +124,20 @@ a {
   }
   &-list {
     width: 100%;
+    position: relative;
     @include tab() {
       width: 47%;
     }
     @include pc() {
       width: 30%;
+    }
+    &--new {
+      position: absolute;
+      top: -28px;
+      color: red;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 1;
     }
   }
   &-inner {
@@ -127,8 +149,9 @@ a {
   }
   &-img {
     width: 100%;
-    height: 56vw;
+    height: 60vw;
     overflow: hidden;
+    position: relative;
     @include tab() {
       height: 28vw;
     }
@@ -137,6 +160,9 @@ a {
     }
     img {
       width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
   &-ttl {
@@ -144,12 +170,12 @@ a {
     font-weight: bold;
     font-size: 24px;
     line-height: 1.3;
-    color: #3B4043;
+    color: $ttl-gray;
     margin-top: 15px;
   }
   &-lead {
     display: block;
-    color: #707F89;
+    color: $lead-gray;
     font-size: 12px;
     line-height: 1.3;
     margin-top: 15px;
@@ -163,7 +189,7 @@ a {
     margin-top: 13px;
     &--buy {
       width: 48%;
-      background-color: #3C3C3C;
+      background-color: $btn-gray;
       border-radius: 6px;
       text-align: center;
       font-weight: bold;
@@ -194,7 +220,7 @@ a {
       a {
         display: block;
         width: 100%;
-        color: #3C3C3C;
+        color: $btn-gray;
       }
     }
   }
