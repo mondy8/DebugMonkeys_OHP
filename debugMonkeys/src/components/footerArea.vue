@@ -13,7 +13,7 @@
         </li>
       </ul>
       <p class="footer__copyrights">&copy; 2020 DebugMonkeys</p>
-      <a href="#" class="footer__btn-top" v-scroll-to="'#gamelist-1'">
+      <a href="#" class="footer__btn-top" v-scroll-to="'#gamelist-0'">
         <img src="../assets/img/icon_footer_arrow.png" alt="↑">
       </a>
     </div>

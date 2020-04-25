@@ -32,8 +32,11 @@ export default {
         { name: 'title', content: 'デバッグモンキーズ公式サイト' },
         { name: 'description', content: 'デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについて様々に発信していきます。' },
         { name: "keywords", content: "デバッグモンキーズ,デバモン,ボードゲーム"},
-        { name: 'og:title', content: 'デバッグモンキーズ公式サイト | ボードゲーム販売中！'},
-        { name: 'og:description', content: 'デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについて様々に発信していきます。' }
+        { property: 'og:title', content: 'デバッグモンキーズ公式サイト | ボードゲーム販売中！'},
+        { property: 'og:type', content: 'website'},
+        { property: 'og:description', content: 'デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについて様々に発信していきます。' },
+        { property: 'og:site_name', content: 'デバッグモンキーズ公式サイト'},
+        { property: 'og:image', content: 'https://debugmonkeys.netlify.app/ogp.png'},
       ]
     },
   },
