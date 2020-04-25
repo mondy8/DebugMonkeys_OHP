@@ -86,6 +86,9 @@ export default {
 $btn-gray: #3c3c3c;
 $lead-gray: #41494e;
 $ttl-gray: #3b4043;
+@mixin sp {
+  @media (max-width: 768px) { @content; }
+}
 @mixin tab {
   @media (min-width: 769px) { @content; }
 }
@@ -215,6 +218,9 @@ a {
       &:hover {
         &::before {
           transform: translateX(0%);
+          @include sp() {
+            transform: translateX(-101%);
+          }
         }
       }
       a {
@@ -251,6 +257,9 @@ a {
       &:hover {
         &::before {
           transform: translateX(0%);
+          @include sp() {
+            transform: translateX(-101%);
+          }
         }
       }
       a {
