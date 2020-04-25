@@ -210,6 +210,7 @@ a {
         transform: translateX(-100%);
         opacity: 0.2;
         transition: transform 0.2s;
+        pointer-events: none;
       }
       &:hover {
         &::before {
@@ -245,6 +246,7 @@ a {
         transform: translateX(-101%);
         opacity: 0.3;
         transition: transform 0.2s;
+        pointer-events: none;
       }
       &:hover {
         &::before {
