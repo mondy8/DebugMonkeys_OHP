@@ -2,17 +2,15 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__inner-logo">
-        <a href="/"><img src="../assets/img/logo.svg" alt="Debug Monkeys"></a>
+        <router-link to="/"><img src="../assets/img/logo.svg" alt="Debug Monkeys"></router-link>
       </div>
       <div class="header__inner-navbutton" v-on:click="isActive = !isActive" v-bind:class="{active:isActive}">
         <span class="header__inner-navbutton-inner"></span>
       </div>
     </div>
     <ul class="header__nav-menu" v-bind:class="{active:isActive}">
-      <li class="header__nav-menu-inner" v-for="(item, index) in items" :key="index">
-        <a href="#" v-on:click="isActive = !isActive" v-scroll-to="'#gamelist-' + index" >
-          {{ item.title }}
-        </a>
+      <li class="header__nav-menu-inner" v-for="(item, index) in items" :key="index" v-on:click="isActive = !isActive" >
+        <router-link v-bind:to="{ name: 'detail', params:{ id: item.type }}">{{ item.title }}</router-link>
       </li>
     </ul>
   </header>
@@ -29,13 +27,34 @@ export default {
   data() {
     return {
       items: [
-        { title: "鍋代官" },
-        { title: "STREET PICKPOCKETs 7" },
-        { title: "ゾンビパニックとライフルおじさん" },
-        { title: "Bana-na" },
-        { title: "OSUMO" },
-        { title: "Qubism" },
-        { title: "Wacryll" }
+        {
+          type: "nabedaikan",
+          title: "鍋代官" 
+        },
+        {
+          type: "street",
+          title: "STREET PICKPOCKETs 7" 
+        },
+        {
+          type: "zombie",
+          title: "ゾンビパニックとライフルおじさん" 
+        },
+        {
+          type: "banana",
+          title: "Bana-na" 
+        },
+        {
+          type: "osumo",
+          title: "OSUMO" 
+        },
+        {
+          type: "qubism",
+          title: "Qubism" 
+        },
+        {
+          type: "wacryll",
+          title: "Wacryll" 
+        }
       ],
       isActive: false
     };
