@@ -2,26 +2,39 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__inner-logo">
-        <router-link to="/"><img src="../assets/img/logo.svg" alt="Debug Monkeys"></router-link>
+        <router-link to="/">
+          <img src="../assets/img/logo.svg" alt="Debug Monkeys" />
+        </router-link>
       </div>
-      <div class="header__inner-navbutton" v-on:click="isActive = !isActive" v-bind:class="{active:isActive}">
+      <div
+        class="header__inner-navbutton"
+        v-on:click="isActive = !isActive"
+        :class="{ active: isActive }"
+      >
         <span class="header__inner-navbutton-inner"></span>
       </div>
     </div>
-    <ul class="header__nav-menu" v-bind:class="{active:isActive}">
-      <li class="header__nav-menu-inner" v-for="(item, index) in items" :key="index" v-on:click="isActive = !isActive" >
-        <router-link v-bind:to="{ name: 'detail', params:{ id: item.type }}">{{ item.title }}</router-link>
+    <ul class="header__nav-menu" :class="{ active: isActive }">
+      <li
+        class="header__nav-menu-inner"
+        v-for="(item, index) in items"
+        :key="index"
+        v-on:click="isActive = !isActive"
+      >
+        <router-link :to="{ name: 'detail', params: { id: item.type } }">
+          {{ item.title }}
+        </router-link>
       </li>
     </ul>
   </header>
 </template>
 
 <script>
-import Vue from 'vue'
-import VueScrollTo from 'vue-scrollto'
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
 Vue.use(VueScrollTo, {
   offset: -100
-})
+});
 export default {
   name: "header",
   data() {
@@ -29,31 +42,31 @@ export default {
       items: [
         {
           type: "nabedaikan",
-          title: "鍋代官" 
+          title: "鍋代官"
         },
         {
           type: "street",
-          title: "STREET PICKPOCKETs 7" 
+          title: "STREET PICKPOCKETs 7"
         },
         {
           type: "zombie",
-          title: "ゾンビパニックとライフルおじさん" 
+          title: "ゾンビパニックとライフルおじさん"
         },
         {
           type: "banana",
-          title: "Bana-na" 
+          title: "Bana-na"
         },
         {
           type: "osumo",
-          title: "OSUMO" 
+          title: "OSUMO"
         },
         {
           type: "qubism",
-          title: "Qubism" 
+          title: "Qubism"
         },
         {
           type: "wacryll",
-          title: "Wacryll" 
+          title: "Wacryll"
         }
       ],
       isActive: false
@@ -85,7 +98,7 @@ export default {
       }
       img {
         width: 170px;
-      } 
+      }
     }
     &-navbutton {
       display: block;
@@ -119,7 +132,7 @@ export default {
       background-color: #98a6b5;
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         display: block;
         width: 100%;
