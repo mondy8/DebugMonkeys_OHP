@@ -1,0 +1,117 @@
+{
+  "nabedaikan" : {
+    "title": "鍋代官",
+    "thumbnail" : "img_index_nabedaikan.jpg",
+    "lead" : "このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！",
+    "booth" : "https://debug-monkeys.booth.pm/items/1949653",
+    "detail" : "https://note.com/debug_monkeys/n/n83cdba1dd238",
+    "new" : true
+  },
+  "zombie": {
+    "title": "ゾンビパニックとライフルおじさん",
+    "thumbnail" : "img_index_zombie.png",
+    "lead" : "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
+    "booth": "https://debug-monkeys.booth.pm/items/1704053",
+    "gamedesign": "MONDY.W",
+    "graphicdesign": "あんらく",
+    "player": "2~3",
+    "time": "10分",
+    "age": "10歳以上",
+    "size": "カードゲーム箱",
+    "article": []
+  },
+  "street": {
+    "title": "STREET PICKPOCKETs 7",
+    "thumbnail" : "img_index_street.png",
+    "lead" : "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。",
+    "booth": "https://debug-monkeys.booth.pm/items/1704053",
+    "gamedesign": "Sunny",
+    "graphicdesign": "nishimura natsumi",
+    "player": "2~3",
+    "time": "10分",
+    "age": "10歳以上",
+    "size": "カードゲーム箱",
+    "article": [
+      {
+        "text": [
+          "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ぐ不規則ポーカーゲーム"
+        ]
+      },
+      {
+        "videopath": "https://www.youtube.com/embed/OvEBhUVKTB8",
+        "title": "どんなゲーム？",
+        "text": [
+          "このゲームでは、プレイヤーはカードを出しお互いに奪い合いながらカードの役を揃える不規則ポーカーゲームです。",
+          "普通のポーカーでは、すべての数字が均一に存在していますが、このゲームでは不均一に存在しており、カードの数字の貴重さが変わっています。",
+          "そのカードを集め、役の合計点数が一番高いプレイヤーが勝利します。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_streets01.jpg",
+        "title": "ここがポイント！",
+        "text": [
+          "・短時間で繰り返し戦法を模索できるゲームシステム！奪い合いが許される世界の頂点を目指せ！",
+          "・nishimura natsumiによる緻密で豪快なアートワーク！そしてそのアートを引き立てる背景のハッチング。色覚サポートの要素も。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_streets02.jpg",
+        "title": "あらすじ",
+        "text": [
+          "あなたは、スリ師たちが行き交うこのまりの大通りで生きている。奪い、奪われながら、それでも自分の力で生き残り続けなければならない・・・！"
+        ]
+      },
+      {
+        "imgpath": "img_detail_streets03.jpg",
+        "title": "ゲームの進め方",
+        "text": [
+          "自分の手番で出来ることは、「補充」「スリ」のどちらかとなります。",
+          "「補充」では、山札からカードを取り、その後、自分の場に1枚カードを出します。"
+        ]
+      },
+      {
+        "imgpath": true,
+        "title": "ゲームの進め方",
+        "text": [
+          "「スリ」は、任意の相手1人を選び、その相手の場にあるカードを選び、スリを宣言します。",
+          "その後、自分と相手の2人は任意の枚数のカードを裏向きに出し合い、一斉に表西、数字の和を比べます。",
+          "自分が数字比べで勝利したら、相手のカードとスリトークンを獲得します。",
+          "スリトークンは獲得した枚数に応じて、最終得点計算時に加算されます。"
+        ]
+      }
+    ]
+  },
+  "banana" : {
+    "title" : "Bana-na",
+    "thumbnail" : "img_index_banana.jpg",
+    "lead" :
+      "かわいいサルのバナナ争奪戦！かんたんでも奥深い、戦略+運のパーティゲームです。どの木にならぶか？いつ木をゆらすか？かんたんなルールで奥深い戦略性。",
+    "booth" : "https://debug-monkeys.booth.pm/items/1704086",
+    "detail" : "https://note.com/debug_monkeys/n/n041ffe013d18"
+  },
+  "osumo" : {
+    "title" : "OSUMO",
+    "thumbnail" : "img_index_osumo.jpg",
+    "lead" :
+      "相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵を番外に弾き出しましょう。",
+    "booth" : "https://debug-monkeys.booth.pm/items/1704415",
+    "detail" : "https://note.com/debug_monkeys/n/n7969a35d5d96"
+  },
+  "qubism" : {
+    "title" : "Qubism",
+    "thumbnail" : "img_index_qubism.jpg",
+    "lead" :
+      "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
+    "booth" : "https://debug-monkeys.booth.pm/items/1119557",
+    "detail" : "https://note.com/debug_monkeys/n/n499641b3c869"
+  },
+  "wacryll" : {
+    "title" : "Wacryll",
+    "thumbnail" : "img_index_wacryll.jpg",
+    "lead" :
+      "相手のコマやゲームボードを使って飛び越えて、相手より先に反対側を目指そう。全てアクリル素材で出来たアブストラクトゲーム。",
+    "booth" : "https://debug-monkeys.booth.pm/items/1119594",
+    "detail" : "https://note.com/debug_monkeys/n/n6010e8c4738e",
+    "soldout" : true
+  }
+}

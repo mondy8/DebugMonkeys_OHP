@@ -3,13 +3,13 @@
     <ul class="contents__detail">
       <li
         class="contents__detail-list"
-        v-for="(game, index) in game"
+        v-for="(game, name, index) in game"
         :key="index"
         :id="'gamelist-' + index"
       >
         <span class="contents__detail-list--new" v-if="game.new">NEW!</span>
         <div class="contents__detail-img">
-          <img :src="game.imgpath" :alt="game.title" />
+          <img :src="thumbImg[index]" :alt="game.title" />
         </div>
         <div class="contents__detail-inner">
           <div class="contents__detail-ttl">{{ game.title }}</div>
@@ -29,7 +29,7 @@
                 :to="{
                   name: 'detail',
                   params: {
-                    id: game.type
+                    id: name
                   }
                 }"
               >
@@ -44,11 +44,14 @@
 </template>
 
 <script>
+import game from "@/data/game.json";
 export default {
   name: "contents",
   data() {
     return {
-      game: [
+      game: game,
+      thumbImg: [],
+      gameold: [
         {
           type: "nabedaikan",
           title: "鍋代官",
@@ -116,6 +119,16 @@ export default {
         }
       ]
     };
+  },
+  created() {
+    for (const key in game) {
+      this.thumbImg.push(this.InputImagePath(game[key].thumbnail));
+    }
+  },
+  methods: {
+    InputImagePath: function(path) {
+      return require("@/assets/img/" + path);
+    }
   }
 };
 </script>

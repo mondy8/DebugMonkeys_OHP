@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner">
-      <div class="header__inner-logo">
+      <div class="header__inner-logo" v-on:click="isActive = false">
         <router-link to="/">
           <img src="../assets/img/logo.svg" alt="Debug Monkeys" />
         </router-link>
@@ -17,12 +17,12 @@
     <ul class="header__nav-menu" :class="{ active: isActive }">
       <li
         class="header__nav-menu-inner"
-        v-for="(item, index) in items"
+        v-for="(game, name, index) in game"
         :key="index"
         v-on:click="isActive = !isActive"
       >
-        <router-link :to="{ name: 'detail', params: { id: item.type } }">
-          {{ item.title }}
+        <router-link :to="{ name: 'detail', params: { id: name } }">
+          {{ game.title }}
         </router-link>
       </li>
     </ul>
@@ -32,6 +32,7 @@
 <script>
 import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
+import game from "@/data/game.json";
 Vue.use(VueScrollTo, {
   offset: -100
 });
@@ -39,36 +40,7 @@ export default {
   name: "header",
   data() {
     return {
-      items: [
-        {
-          type: "nabedaikan",
-          title: "鍋代官"
-        },
-        {
-          type: "street",
-          title: "STREET PICKPOCKETs 7"
-        },
-        {
-          type: "zombie",
-          title: "ゾンビパニックとライフルおじさん"
-        },
-        {
-          type: "banana",
-          title: "Bana-na"
-        },
-        {
-          type: "osumo",
-          title: "OSUMO"
-        },
-        {
-          type: "qubism",
-          title: "Qubism"
-        },
-        {
-          type: "wacryll",
-          title: "Wacryll"
-        }
-      ],
+      game: game,
       isActive: false
     };
   }
