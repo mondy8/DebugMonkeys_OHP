@@ -1,23 +1,11 @@
 <template>
   <article>
-    <!-- <p>{{ article.title }}</p> -->
     <div class="contents">
       <div class="contents__wrap">
-        <dl class="contents__infoArea">
-          <dt>ゲームデザイン</dt>
-          <dd>{{ game.gamedesign }}</dd>
-          <dt>グラフィックデザイン</dt>
-          <dd>{{ game.graphicdesign }}</dd>
-          <dt>プレイ人数</dt>
-          <dd>{{ game.player }}</dd>
-          <dt>プレイ時間</dt>
-          <dd>{{ game.time }}</dd>
-          <dt>対象年齢</dt>
-          <dd>{{ game.age }}</dd>
-          <dt>サイズ</dt>
-          <dd>{{ game.size }}</dd>
-        </dl>
         <div class="contents__articleArea">
+          <h2 class="contents__articleArea-h2">
+            {{ game.title }}
+          </h2>
           <section
             class="contents__articleArea-section"
             v-for="(article, index) in game.article"
@@ -47,6 +35,22 @@
             </p>
           </section>
         </div>
+        <dl class="contents__infoArea">
+          <dt v-if="game.gamedesign">ゲームデザイン</dt>
+          <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
+          <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
+          <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
+          <dt v-if="game.player">プレイ人数</dt>
+          <dd v-if="game.player">{{ game.player }}</dd>
+          <dt v-if="game.time">プレイ時間</dt>
+          <dd v-if="game.time">{{ game.time }}</dd>
+          <dt v-if="game.age">対象年齢</dt>
+          <dd v-if="game.age">{{ game.age }}</dd>
+          <dt v-if="game.size">サイズ</dt>
+          <dd v-if="game.size">{{ game.size }}</dd>
+          <dt v-if="game.year">制作年</dt>
+          <dd v-if="game.year">{{ game.year }}</dd>
+        </dl>
       </div>
     </div>
   </article>
@@ -70,6 +74,7 @@ export default {
     updateItems: function() {
       this.id = this.$route.params.id;
       this.game = game[this.id];
+      this.img = [];
       for (const index of this.game.article) {
         if (index.imgpath) {
           this.img.push(this.InputImagePath(index.imgpath));
@@ -80,6 +85,9 @@ export default {
     },
     InputImagePath: function(path) {
       return require("@/assets/img/detail/" + path);
+    },
+    load: function() {
+      this.isLoading = false;
     }
   },
   watch: {
@@ -87,7 +95,7 @@ export default {
       this.updateItems();
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">
@@ -124,20 +132,22 @@ a {
 }
 p {
   margin: 0;
+  font-size: 13px;
 }
+
 .contents__wrap {
   margin-top: 70px;
-  display: block;
+  display: flex;
+  flex-direction: column;
   @include tab() {
-    display: flex;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    flex-direction: row;
   }
 }
 .contents__infoArea {
   width: 90%;
   color: $text-gray;
-  margin: 0 auto;
+  margin: 0 auto 60px;
   padding: 20px 0 0;
   @include tab() {
     width: 170px;
@@ -145,12 +155,14 @@ p {
   dt {
     font-weight: bold;
     margin-top: 20px;
+    font-size: 15px;
     @include tab() {
       margin-top: 30px;
     }
   }
   dd {
     margin: 7px 0 0;
+    font-size: 13px;
     @include tab() {
       margin: 10px 0 0;
     }
@@ -159,11 +171,14 @@ p {
 .contents__articleArea {
   width: 90%;
   color: $text-gray;
-  margin: 60px auto 60px;
+  margin: 30px auto;
   padding: 0;
   @include tab() {
     width: 70%;
     min-width: 664px;
+    margin-top: 60px;
+    padding: 0px 20px;
+    box-sizing: border-box;
   }
   &-section {
     margin-top: 20px;
@@ -172,6 +187,10 @@ p {
     }
     &:first-child {
       margin-top: 0;
+    }
+    p:first-child {
+      font-size: 15px;
+      font-weight: bold;
     }
   }
   &-title {
@@ -199,6 +218,8 @@ p {
     overflow: hidden;
     width: 100%;
     height: 59vw;
+    max-width: 760px;
+    margin: 0 auto;
     @include tab() {
       height: 40vw;
     }

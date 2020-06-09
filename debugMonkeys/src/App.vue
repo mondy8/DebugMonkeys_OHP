@@ -31,6 +31,7 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
 #app {
   font-family: "源ノ角ゴシック","Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
