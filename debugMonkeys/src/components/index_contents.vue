@@ -170,9 +170,12 @@ a {
   &-lead {
     display: block;
     color: $lead-gray;
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 1.3;
     margin-top: 15px;
+    @include tab() {
+    line-height: 1.4;
+    }
   }
   &-btn {
     display: flex;
@@ -214,7 +217,7 @@ a {
           }
         }
       }
-      a {
+      > a {
         display: block;
         width: 100%;
         height: 100%;

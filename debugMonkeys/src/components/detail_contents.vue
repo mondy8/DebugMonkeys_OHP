@@ -1,6 +1,6 @@
 <template>
   <article>
-    <div class="contents">
+    <div class="contents" id="contents">
       <div class="contents__wrap">
         <div class="contents__articleArea">
           <h2 class="contents__articleArea-h2">
@@ -35,22 +35,27 @@
             </p>
           </section>
         </div>
-        <dl class="contents__infoArea">
-          <dt v-if="game.gamedesign">ゲームデザイン</dt>
-          <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
-          <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
-          <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
-          <dt v-if="game.player">プレイ人数</dt>
-          <dd v-if="game.player">{{ game.player }}</dd>
-          <dt v-if="game.time">プレイ時間</dt>
-          <dd v-if="game.time">{{ game.time }}</dd>
-          <dt v-if="game.age">対象年齢</dt>
-          <dd v-if="game.age">{{ game.age }}</dd>
-          <dt v-if="game.size">サイズ</dt>
-          <dd v-if="game.size">{{ game.size }}</dd>
-          <dt v-if="game.year">制作年</dt>
-          <dd v-if="game.year">{{ game.year }}</dd>
-        </dl>
+        <div class="contents__infoArea" v-bind:style="{margin:stickyMargin}">
+          <div class="contents__infoArea-btn--buy">
+            <a :href="game.booth" target="_blank">購入する</a>
+          </div>
+          <dl class="contents__infoArea-dl">
+            <dt v-if="game.gamedesign">ゲームデザイン</dt>
+            <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
+            <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
+            <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
+            <dt v-if="game.player">プレイ人数</dt>
+            <dd v-if="game.player">{{ game.player }}</dd>
+            <dt v-if="game.time">プレイ時間</dt>
+            <dd v-if="game.time">{{ game.time }}</dd>
+            <dt v-if="game.age">対象年齢</dt>
+            <dd v-if="game.age">{{ game.age }}</dd>
+            <dt v-if="game.size">サイズ</dt>
+            <dd v-if="game.size">{{ game.size }}</dd>
+            <dt v-if="game.year">制作年</dt>
+            <dd v-if="game.year">{{ game.year }}</dd>
+          </dl>
+        </div>
       </div>
     </div>
   </article>
@@ -64,11 +69,10 @@ export default {
     return {
       game: game,
       img: [],
-      id: ""
+      id: "",
+      stickyMargin: "50px auto 60px",
+      clientcontentsHeight: undefined
     };
-  },
-  created() {
-    this.updateItems();
   },
   methods: {
     updateItems: function() {
@@ -88,12 +92,32 @@ export default {
     },
     load: function() {
       this.isLoading = false;
+    },
+    stickyNav: function() {
+      if(window.innerWidth > 760) {
+        const scrollTop = window.pageYOffset + 50;
+        this.stickyMargin = scrollTop + "px auto 60px";
+      } else {
+        this.stickyMargin = "30px auto 60px";
+      }
+      console.log(this.contentsHeight)
     }
   },
   watch: {
     $route() {
       this.updateItems();
     }
+  },
+  created() {
+    this.updateItems();
+  },
+  mounted: function () {
+    window.addEventListener('resize', this.stickyNav);
+    window.addEventListener('scroll', this.stickyNav);
+    this.contentsHeight = window.document.getElementById("contents").clientHeight;
+  },
+  beforeDestroy: function () {
+    window.removeEventListener('resize', this.stickyNav);
   }
 }
 </script>
@@ -132,9 +156,11 @@ a {
 }
 p {
   margin: 0;
-  font-size: 13px;
 }
-
+.contents {
+  max-width: 1500px;
+  margin: 0 auto;
+}
 .contents__wrap {
   margin-top: 70px;
   display: flex;
@@ -145,39 +171,88 @@ p {
   }
 }
 .contents__infoArea {
-  width: 90%;
+  width: 86%;
+  min-width: 170px;
   color: $text-gray;
-  margin: 0 auto 60px;
-  padding: 20px 0 0;
+  margin: 30px auto 60px;
   @include tab() {
     width: 170px;
+    margin-top: 50px;
+  }
+  &-btn--buy {
+    width: 170px;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    background-color: $btn-gray;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.2s;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 44px;
+      background-color: #fff;
+      transform: translateX(-100%);
+      opacity: 0.2;
+      transition: transform 0.2s;
+      pointer-events: none;
+    }
+    &:hover {
+      &::before {
+        transform: translateX(0%);
+        @include sp() {
+          transform: translateX(-101%);
+        }
+      }
+    }
+    > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+    }
+  }
+  &-dl {
+    margin-top: 45px;
   }
   dt {
     font-weight: bold;
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 18px;
     @include tab() {
       margin-top: 30px;
+    }
+    &:first-child {
+      margin-top: 0;
     }
   }
   dd {
     margin: 7px 0 0;
-    font-size: 13px;
+    font-size: 15px;
     @include tab() {
       margin: 10px 0 0;
     }
   }
 }
 .contents__articleArea {
-  width: 90%;
+  width: 86%;
   color: $text-gray;
   margin: 30px auto;
   padding: 0;
   @include tab() {
     width: 70%;
     min-width: 664px;
-    margin-top: 60px;
-    padding: 0px 20px;
+    margin: 50px auto;
+    padding: 0px 50px 0 20px;
     box-sizing: border-box;
   }
   &-section {
@@ -189,8 +264,16 @@ p {
       margin-top: 0;
     }
     p:first-child {
-      font-size: 15px;
+      font-size: 18px;
       font-weight: bold;
+      line-height: 1.5;
+    }
+  }
+  &-h2 {
+    margin: 0;
+    font-size: 34px;
+    @include tab() {
+    font-size: 44px;
     }
   }
   &-title {
@@ -229,10 +312,20 @@ p {
       top: 50%;
       transform: translateY(-50%);
     }
+    & + p.contents__articleArea-txt {
+      margin-top: 20px;
+      @include tab() {
+      margin-top: 40px;
+    }
+    }
   }
   &-txt {
-    line-height: 1.5;
+    line-height: 1.4;
     margin-top: 1em;
+    font-size: 15px;
+    @include tab() {
+      line-height: 1.5;
+    }
   }
 }
 </style>
