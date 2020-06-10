@@ -94,13 +94,16 @@ export default {
       this.isLoading = false;
     },
     stickyNav: function() {
+      this.contentsHeight = window.document.getElementById("contents").clientHeight;
       if(window.innerWidth > 760) {
+        const windowHeight = window.innerHeight;
         const scrollTop = window.pageYOffset + 50;
-        this.stickyMargin = scrollTop + "px auto 60px";
+        const maxHeight = this.contentsHeight - windowHeight;
+        const height = Math.min(scrollTop, maxHeight);
+        this.stickyMargin = height + "px auto 60px";
       } else {
         this.stickyMargin = "30px auto 60px";
       }
-      console.log(this.contentsHeight)
     }
   },
   watch: {
@@ -110,6 +113,7 @@ export default {
   },
   created() {
     this.updateItems();
+    this.stickyNav;
   },
   mounted: function () {
     window.addEventListener('resize', this.stickyNav);
@@ -118,6 +122,7 @@ export default {
   },
   beforeDestroy: function () {
     window.removeEventListener('resize', this.stickyNav);
+    window.removeEventListener('scroll', this.stickyNav);
   }
 }
 </script>
@@ -178,6 +183,7 @@ p {
   @include tab() {
     width: 170px;
     margin-top: 50px;
+    height: 521px;
   }
   &-btn--buy {
     width: 170px;
@@ -223,6 +229,7 @@ p {
   }
   &-dl {
     margin-top: 45px;
+    margin-bottom: 0;
   }
   dt {
     font-weight: bold;
