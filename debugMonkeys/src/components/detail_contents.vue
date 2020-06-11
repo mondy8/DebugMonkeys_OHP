@@ -1,6 +1,7 @@
 <template>
   <article>
-    <div class="contents" id="contents">
+    <transition mode="out-in">
+    <div class="contents" id="contents" :class="{show : contentsShow}">
       <div class="contents__wrap">
         <div class="contents__articleArea">
           <h2 class="contents__articleArea-h2">
@@ -58,6 +59,7 @@
         </div>
       </div>
     </div>
+    </transition>
   </article>
 </template>
 
@@ -71,7 +73,8 @@ export default {
       img: [],
       id: "",
       stickyMargin: "50px auto 60px",
-      clientcontentsHeight: undefined
+      clientcontentsHeight: undefined,
+      contentsShow: false
     };
   },
   methods: {
@@ -86,6 +89,9 @@ export default {
           this.img.push(undefined);
         }
       }
+      setTimeout(() => {
+        this.contentsShow = true;
+      }, 200);
     },
     InputImagePath: function(path) {
       return require("@/assets/img/detail/" + path);
@@ -108,7 +114,11 @@ export default {
   },
   watch: {
     $route() {
-      this.updateItems();
+      this.contentsShow = false;
+      
+      setTimeout(() => {
+        this.updateItems();
+      }, 500);
     }
   },
   created() {
@@ -165,88 +175,18 @@ p {
 .contents {
   max-width: 1500px;
   margin: 0 auto;
-}
-.contents__wrap {
-  margin-top: 70px;
-  display: flex;
-  flex-direction: column;
-  @include tab() {
-    justify-content: space-between;
-    flex-direction: row;
-  }
-}
-.contents__infoArea {
-  width: 86%;
-  min-width: 170px;
-  color: $text-gray;
-  margin: 30px auto 60px;
-  @include tab() {
-    width: 170px;
-    margin-top: 50px;
-    height: 521px;
-  }
-  &-btn--buy {
-    width: 170px;
-    height: 44px;
-    line-height: 44px;
-    position: relative;
-    background-color: $btn-gray;
-    border-radius: 6px;
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-    overflow: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+  &.show {
     opacity: 1;
-    transition: opacity 0.2s;
-    &:before {
-      content: "";
-      position: absolute;
-      display: block;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 44px;
-      background-color: #fff;
-      transform: translateX(-100%);
-      opacity: 0.2;
-      transition: transform 0.2s;
-      pointer-events: none;
-    }
-    &:hover {
-      &::before {
-        transform: translateX(0%);
-        @include sp() {
-          transform: translateX(-101%);
-        }
-      }
-    }
-    > a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      color: #fff;
-    }
   }
-  &-dl {
-    margin-top: 45px;
-    margin-bottom: 0;
-  }
-  dt {
-    font-weight: bold;
-    margin-top: 20px;
-    font-size: 18px;
+  &__wrap {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
     @include tab() {
-      margin-top: 30px;
-    }
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-  dd {
-    margin: 7px 0 0;
-    font-size: 15px;
-    @include tab() {
-      margin: 10px 0 0;
+      justify-content: space-between;
+      flex-direction: row;
     }
   }
 }
@@ -332,6 +272,82 @@ p {
     font-size: 15px;
     @include tab() {
       line-height: 1.5;
+    }
+  }
+}
+.contents__infoArea {
+  width: 86%;
+  min-width: 170px;
+  color: $text-gray;
+  margin: 30px auto 60px;;
+  @include tab() {
+    width: 170px;
+    margin-top: 50px;
+    height: 521px;
+    padding-right: 30px
+  }
+  &-btn--buy {
+    width: 170px;
+    height: 44px;
+    line-height: 44px;
+    position: relative;
+    background-color: $btn-gray;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.2s;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 44px;
+      background-color: #fff;
+      transform: translateX(-100%);
+      opacity: 0.2;
+      transition: transform 0.2s;
+      pointer-events: none;
+    }
+    &:hover {
+      &::before {
+        transform: translateX(0%);
+        @include sp() {
+          transform: translateX(-101%);
+        }
+      }
+    }
+    > a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+    }
+  }
+  &-dl {
+    margin-top: 45px;
+    margin-bottom: 0;
+  }
+  dt {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+    @include tab() {
+      margin-top: 30px;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  dd {
+    margin: 7px 0 0;
+    font-size: 15px;
+    @include tab() {
+      margin: 10px 0 0;
     }
   }
 }

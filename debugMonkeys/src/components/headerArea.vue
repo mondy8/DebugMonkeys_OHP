@@ -137,7 +137,7 @@ export default {
       }
     }
     &-inner {
-      width: 80%;
+      width: 83%;
       margin: 0 auto;
       overflow: hidden;
       height: 0;

@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <headerArea></headerArea>
-    <router-view/>
+      <transition mode="out-in">
+        <router-view/>
+      </transition>
     <footerArea></footerArea>
   </div>
 </template>
@@ -53,5 +55,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.4px;
   font-weight: 300;
+}
+.v-enter-active, .v-leave-active {
+  transition: opacity .5s;
+}
+.v-enter, .v-leave-to {
+  opacity: 0;
 }
 </style>
