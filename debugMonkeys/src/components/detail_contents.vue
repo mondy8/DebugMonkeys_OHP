@@ -21,12 +21,18 @@
                 allowfullscreen
               ></iframe>
             </div>
-            <div class="contents__articleArea-img" v-if="img[index]">
+            <div class="contents__articleArea-img" v-if="img[index]" :class="{ imgSmall: article.imgSmall }" >
               <img :src="img[index]" :alt="article.title" />
             </div>
             <h3 class="contents__articleArea-title" v-if="article.title">
               {{ article.title }}
             </h3>
+            <h4 class="contents__articleArea-subTitle" v-if="article.subTitle">
+              {{ article.subTitle }}
+            </h4>
+            <p class="contents__articleArea-lead" v-if="article.leadCopy">
+              {{ article.leadCopy }}
+            </p>
             <p
               class="contents__articleArea-txt"
               v-for="(text, index) in article.text"
@@ -37,7 +43,10 @@
           </section>
         </div>
         <div class="contents__infoArea" v-bind:style="{margin:stickyMargin}">
-          <div class="contents__infoArea-btn--buy">
+          <div v-if="game.soldout" class="contents__infoArea-btn--buy contents__infoArea-btn--soldout">
+            完売
+          </div>
+          <div v-else class="contents__infoArea-btn--buy">
             <a :href="game.booth" target="_blank">購入する</a>
           </div>
           <dl class="contents__infoArea-dl">
@@ -210,11 +219,6 @@ p {
     &:first-child {
       margin-top: 0;
     }
-    p:first-child {
-      font-size: 18px;
-      font-weight: bold;
-      line-height: 1.5;
-    }
   }
   &-h2 {
     margin: 0;
@@ -223,8 +227,21 @@ p {
     font-size: 44px;
     }
   }
+  &-lead {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+  }
   &-title {
     margin-top: 20px;
+    font-size: 20px;
+    @include tab() {
+      margin-top: 40px;
+    }
+  }
+  &-subTitle {
+    margin-top: 20px;
+    font-size: 17px;
     @include tab() {
       margin-top: 40px;
     }
@@ -252,6 +269,7 @@ p {
     margin: 0 auto;
     @include tab() {
       height: 40vw;
+      max-height: 507px;
     }
     img {
       width: 100%;
@@ -263,6 +281,12 @@ p {
       margin-top: 20px;
       @include tab() {
       margin-top: 40px;
+      }
+    }
+    &.imgSmall {
+    max-height: 270px;
+    @include tab() {
+      max-height: 270px;
     }
     }
   }
@@ -326,6 +350,14 @@ p {
       width: 100%;
       height: 100%;
       color: #fff;
+    }
+    &.contents__infoArea-btn--soldout {
+      background-color: $light-gray;
+      color: $ttl-gray;
+      cursor: default;
+      &:before {
+        content: none;
+      }
     }
   }
   &-dl {

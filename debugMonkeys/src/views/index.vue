@@ -8,7 +8,6 @@
 import Vue from "vue";
 import VueHead from "vue-head";
 
-// @ is an alias to /src
 import mv from "@/components/index_mv.vue";
 import contents from "@/components/index_contents.vue";
 
@@ -33,7 +32,7 @@ export default {
         {
           name: "description",
           content:
-            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについて様々に発信していきます。"
+            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。"
         },
         {
           name: "keywords",
@@ -47,7 +46,7 @@ export default {
         {
           property: "og:description",
           content:
-            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについて様々に発信していきます。"
+            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。"
         },
         {
           property: "og:site_name",
