@@ -2,6 +2,7 @@
   "nabedaikan" : {
     "title": "鍋代官",
     "thumbnail" : "img_index_nabedaikan.jpg",
+    "detailMv": "img_detail_nabedaikan_mv.jpg",
     "lead" : "このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！",
     "booth" : "https://debug-monkeys.booth.pm/items/1949653",
     "detail" : "https://note.com/debug_monkeys/n/n83cdba1dd238",
@@ -10,7 +11,7 @@
     "player" : "2～3",
     "time" : "10分",
     "age" : "10歳以上",
-    "size" : "鍋",
+    "size" : "330x250x80",
     "year" : "2020",
     "article" : [
       {
@@ -43,7 +44,6 @@
         ]
       },
       {
-        "imgpath": "img_detail_nabedaikan01.jpg",
         "text": [
           "「よそう」では、おたまを使ってサイコロを他プレイヤーのお皿によそいます。",
           "そして、「たべてもらう」で、よそわれたプレイヤーのお皿にあるサイコロの役を判定をします。",
@@ -55,6 +55,7 @@
   "zombie": {
     "title": "ゾンビパニックとライフルおじさん",
     "thumbnail" : "img_index_zombie.png",
+    "detailMv": "img_detail_zombie_mv.jpg",
     "lead" : "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
     "booth": "https://debug-monkeys.booth.pm/items/1704053",
     "gamedesign" : "MONDY.W",
@@ -62,14 +63,14 @@
     "player" : "3～6人",
     "time" : "10分",
     "age" : "10歳以上",
-    "size" : "ポーカーサイズ",
+    "size" : "70x100x20",
     "year" : "2018",
     "article": [
       {
         "leadCopy": "紛れ込んだゾンビは誰だ！？今宵、避難所でライフの音が響き渡る…！！正体隠匿系B級ゾンビパニックゲーム"
       },
       {
-        "videopath": "https://www.youtube.com/embed/RiA_zq7lXvU?modestbranding=1",
+        "imgpath": "img_detail_zombie01.jpg",
         "title": "どんなゲーム？",
         "text": [
           "このゲームでは、プレイヤーは人間サイドとゾンビサイドに分かれて戦います。どのプレイヤーがどちらのサイドなのかは分かりません。",
@@ -78,7 +79,6 @@
         ]
       },
       {
-        "imgpath": "img_detail_zombie01.jpg",
         "title": "ここがポイント！",
         "text": [
           "・誰がゾンビで誰が人間なのか？プレイヤーの発言・行動から推理をしましょう。",
@@ -109,7 +109,6 @@
           "現場はパニック状態に陥っているおり、場に出されたカードはシャッフルされた後、ランダムに各プレイヤーに配られます。",
           "プレイヤーはそこで受けとったカードの内容を実行しなければなりません。",
           "状況を分析し、誰がゾンビで誰が人間なのかを推理しながら行動を行いましょう。"
-          
         ]
       },
       {
@@ -153,12 +152,15 @@
           "・行動不能カード – パニック状態に陥り、何もすることができなくなってしまう。",
           "あなたがどのプレイヤーに行動を行うか、ひとつの選択が状況を大きく動かします。慎重に考えて行動を行いましょう。"
         ]
+      },{
+        "videopath": "https://www.youtube.com/embed/RiA_zq7lXvU?modestbranding=1"
       }
     ]
   },
   "street": {
     "title": "STREET PICKPOCKETs 7",
     "thumbnail" : "img_index_street.png",
+    "detailMv": "img_detail_streets_mv.jpg",
     "lead" : "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。",
     "booth": "https://debug-monkeys.booth.pm/items/1704097",
     "gamedesign": "Sunny",
@@ -166,14 +168,14 @@
     "player": "3～5人",
     "time": "5～10分",
     "age": "10歳以上",
-    "size": "ポーカーサイズ",
+    "size": "70x100x20",
     "year": "2019",
     "article": [
       {
         "leadCopy": "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ぐ不規則ポーカーゲーム"
       },
       {
-        "videopath": "https://www.youtube.com/embed/OvEBhUVKTB8?modestbranding=1",
+        "imgpath": "img_detail_streets01.jpg",
         "title": "どんなゲーム？",
         "text": [
           "このゲームは、プレイヤーがカードをお互いに奪い合い、カードの役を揃える不規則ポーカーゲームです。",
@@ -182,7 +184,6 @@
         ]
       },
       {
-        "imgpath": "img_detail_streets01.jpg",
         "title": "ここがポイント！",
         "text": [
           "・短時間で繰り返し戦法を模索できるゲームシステム！奪い合いが許される世界の頂点を目指せ！",
@@ -219,12 +220,15 @@
           "スリを宣言した側が数字比べで勝利したら、相手のカードとスリトークンを獲得します。数字比べで負けた場合、スリは失敗し、カードの移動は起こりません。",
           "スリトークンは獲得した枚数に応じて、最終得点計算時に加算されます。"
         ]
-      }
+      },
+      {
+        "videopath": "https://www.youtube.com/embed/OvEBhUVKTB8?modestbranding=1"}
     ]
   },
   "banana" : {
     "title" : "Bana-na",
     "thumbnail" : "img_index_banana.jpg",
+    "detailMv": "img_detail_banana_mv.jpg",
     "lead" :
       "かわいいサルのバナナ争奪戦！かんたんでも奥深い、戦略+運のパーティゲームです。どの木にならぶか？いつ木をゆらすか？かんたんなルールでも奥深い！",
     "booth" : "https://debug-monkeys.booth.pm/items/1704086",
@@ -233,14 +237,14 @@
     "player": "2～4人",
     "time": "～20分",
     "age": "8歳以上",
-    "size": "巾着袋",
+    "size": "180x240x30",
     "year": "2019",
     "article": [
       {
         "leadCopy": "かわいいサルのバナナ争奪戦！どの木にならぶか？いつ木をゆらすか？シンプルなルールで奥深い戦略+運のパーティゲーム"
       },
       {
-        "videopath": "https://www.youtube.com/embed/UoXPChybRbw?modestbranding=1",
+        "imgpath": "img_detail_banana01.jpg",
         "title": "どんなゲーム？",
         "text": [
           "このゲームは、プレイヤー1人につき3匹のサルを、バナナの木の前に並べたり、木をゆらしてバナナを落としたりして、他のプレイヤーよりも多くのバナナを手に入れたプレイヤーが勝利するゲームです。",
@@ -249,7 +253,6 @@
         ]
       },
       {
-        "imgpath": "img_detail_banana01.jpg",
         "title": "ここがポイント！",
         "text": [
           "・戦略性と運のバランスが必要な、シンプルだけどじっくり遊べるゲームです。",
@@ -257,6 +260,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_banana02.jpg",
         "title": "あらすじ",
         "text": [
           "あなたたちはサル村のリーダーサルです。バナナをめぐり、ケンカばかりしています。",
@@ -266,7 +270,7 @@
         ]
       },
       {
-        "imgpath": "img_detail_banana02.jpg",
+        "imgpath": "img_detail_banana03.jpg",
         "title": "アクションについて",
         "text": [
           "自分の手番にできることは、大まかに2つです。"
@@ -287,7 +291,7 @@
         ]
       },
       {
-        "imgpath": "img_detail_banana03.jpg",
+        "imgpath": "img_detail_banana04.jpg",
         "title": "戦略について",
         "text": [
           "バナナの生えてくる木は毎回ランダムですが、一度にバナナが1本ずつしか生えない木から4本ずつ生える木までがあり、しかもそれぞれの木にバナナが最大で生える数が決まっています。",
@@ -299,18 +303,21 @@
         ]
       },
       {
-        "imgpath": "img_detail_banana04.jpg",
         "title": "コンポーネントについて",
         "text": [
           "影絵調のイラストをあしらった巾着袋の中に、袋とカラフルでかわいい説明書と紙製ゲームボード、チップが入っています。",
           "外袋の巾着はゲームで使うチップを混ぜるのにも使えるため、どこでも持ち運んで場所を取らずに遊ぶことができます。"
         ]
+      },
+      {
+        "videopath": "https://www.youtube.com/embed/UoXPChybRbw?modestbranding=1"
       }
     ]
   },
   "osumo" : {
     "title" : "OSUMO",
     "thumbnail" : "img_index_osumo.jpg",
+    "detailMv": "img_detail_osumo_mv.jpg",
     "lead" :
       "相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵を番外に弾き出しましょう。",
     "booth" : "https://debug-monkeys.booth.pm/items/1704415",
@@ -319,14 +326,14 @@
     "player": "2",
     "time": "～5分",
     "age": "6歳以上",
-    "size": "A4",
+    "size": "210x300x30",
     "year": "2019",
     "article": [
       {
         "leadCopy": "置く、押す、弾くを駆使して相手を土俵から押し出せ！相撲をモチーフにしたアクション＆アブストラクトゲーム"
       },
       {
-        "videopath": "https://www.youtube.com/embed/Uw58J3hoAUc?modestbranding=1",
+        "imgpath": "img_detail_osumo01.jpg",
         "title": "どんなゲーム？",
         "text": [
           "「はっけよーい、のこった！」から始まる新感覚ゲーム！",
@@ -334,7 +341,6 @@
         ]
       },
       {
-        "imgpath": "img_detail_osumo01.jpg",
         "title": "ここがポイント！",
         "text": [
           "・戦略とアクションを両立させなければ勝てない！？頭と身体を同時に使わなければいけないゲームです。",
@@ -360,6 +366,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_osumo03.png",
         "subTitle": "「置く」",
         "text": [
           "コマを配置します。",
@@ -368,6 +375,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_osumo04.png",
         "subTitle": "「押す」",
         "text": [
           "自分のコマで相手のコマを押します。",
@@ -376,6 +384,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_osumo05.png",
         "subTitle": "「弾く」",
         "text": [
           "コマを指で弾いて相手にぶつけます。",
@@ -385,19 +394,23 @@
         ]
       },
       {
-        "imgpath": "img_detail_osumo03.jpg",
+        "imgpath": "img_detail_osumo06.jpg",
         "title": "コンポーネントについて",
         "text": [
           "アクリルのつるつるした素材のおかげで「弾く」アクションがしやすくなっています。",
           "さらに、A4サイズという特大サイズ！",
           "迫力のあるアクション＆アブストラクトゲームとなっています。"
         ]
+      },
+      {
+        "videopath": "https://www.youtube.com/embed/Uw58J3hoAUc?modestbranding=1"
       }
     ]
   },
   "qubism" : {
     "title" : "Qubism",
     "thumbnail" : "img_index_qubism.jpg",
+    "detailMv": "img_detail_qubism_mv.jpg",
     "lead" :
       "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
     "booth" : "https://debug-monkeys.booth.pm/items/1119557",
@@ -407,7 +420,7 @@
     "player": "2人",
     "time": "10分",
     "age": "10歳以上",
-    "size": "-",
+    "size": "160x230x30",
     "year": "2018",
     "article": [
       {
@@ -452,6 +465,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_qubism04.png",
         "subTitle": "「キューブを置く」",
         "text": [
           "キューブを好きなマスに置きます。",
@@ -459,12 +473,16 @@
         ]
       },
       {
+        "imgpath": "img_detail_qubism05.png",
         "subTitle": "「キューブを動かす」",
         "text": [
           "すでに置かれているキューブを動かします。",
           "キューブ上面の矢印の方向に任意のマス数動かした後、キューブを矢印の方向に90度回転させて配置します。",
           "相手が置いたものでも、自分が置いたものでも動かすことができます。"
         ]
+      },
+      {
+        "imgpath": "img_detail_qubism06.png"
       },
       {
         "videopath": "https://www.youtube.com/embed/_BDJBj5fQyE?modestbranding=1"
@@ -474,6 +492,7 @@
   "wacryll" : {
     "title" : "Wacryll",
     "thumbnail" : "img_index_wacryll.jpg",
+    "detailMv": "img_detail_wacryll_mv.jpg",
     "lead" :
       "相手のコマやゲームボードを使って飛び越えて、相手より先に反対側を目指そう。全てアクリル素材で出来たアブストラクトゲーム。",
     "booth" : "https://debug-monkeys.booth.pm/items/1119594",
@@ -483,7 +502,7 @@
     "player": "2人",
     "time": "10分",
     "age": "10歳以上",
-    "size": "-",
+    "size": "120x200x30",
     "year": "2018",
     "article": [
       {
@@ -519,15 +538,20 @@
         ]
       },
       {
-        "imgpath": "img_detail_wacryll03.jpg",
         "title": "ゲームの進め方",
         "text": [
-          "自分のコマは前と左右のどちらかにしか進めず、相手のコマを1個であれば飛び越えることができます。",
+          "自分のコマは前と左右のどちらかにしか進めず、相手のコマを1個であれば飛び越えることができます。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_wacryll03.png",
+        "text": [
           "飛び越えた相手のコマは、自分のものとしてキープすることができ、それをゲームボードに置くことができます。",
           "手に入れたコマを上手く配置し、自分が有利なようにゲームボードを支配しましょう！"
         ]
       },
       {
+        "imgpath": "img_detail_wacryll04.png",
         "title": "コンポーネントについて",
         "text": [
           "アクリルで出来た透明なゲームボード、蛍光色のゲームコマ。",

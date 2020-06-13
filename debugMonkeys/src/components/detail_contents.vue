@@ -1,73 +1,92 @@
 <template>
   <article>
     <transition mode="out-in">
-    <div class="contents" id="contents" :class="{show : contentsShow}">
-      <div class="contents__wrap">
-        <div class="contents__articleArea">
-          <h2 class="contents__articleArea-h2">
-            {{ game.title }}
-          </h2>
-          <section
-            class="contents__articleArea-section"
-            v-for="(article, index) in game.article"
-            :key="index"
-          >
-            <div class="contents__articleArea-video" v-if="article.videopath">
-              <iframe
-                class="contents__articleArea-video-inner"
-                :src="article.videopath"
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="contents__articleArea-img" v-if="img[index]" :class="{ imgSmall: article.imgSmall }" >
-              <img :src="img[index]" :alt="article.title" />
-            </div>
-            <h3 class="contents__articleArea-title" v-if="article.title">
-              {{ article.title }}
-            </h3>
-            <h4 class="contents__articleArea-subTitle" v-if="article.subTitle">
-              {{ article.subTitle }}
-            </h4>
-            <p class="contents__articleArea-lead" v-if="article.leadCopy">
-              {{ article.leadCopy }}
-            </p>
-            <p
-              class="contents__articleArea-txt"
-              v-for="(text, index) in article.text"
-              :key="index"
-            >
-              {{ text }}
-            </p>
-          </section>
+      <div class="wrap" :class="{ show: contentsShow }">
+        <div class="mv" v-if="mv">
+          <img :src="mv" :alt="id" />
         </div>
-        <div class="contents__infoArea" v-bind:style="{margin:stickyMargin}">
-          <div v-if="game.soldout" class="contents__infoArea-btn--buy contents__infoArea-btn--soldout">
-            完売
+        <div class="contents" id="contents">
+          <div class="contents__inner">
+            <div class="contents__articleArea">
+              <h2 class="contents__articleArea-h2">{{ game.title }}</h2>
+              <section
+                class="contents__articleArea-section"
+                v-for="(article, index) in game.article"
+                :key="index"
+              >
+                <div
+                  class="contents__articleArea-video"
+                  v-if="article.videopath"
+                >
+                  <iframe
+                    class="contents__articleArea-video-inner"
+                    :src="article.videopath"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div
+                  class="contents__articleArea-img"
+                  v-if="img[index]"
+                  :class="{ imgSmall: article.imgSmall }"
+                >
+                  <img :src="img[index]" :alt="article.title" />
+                </div>
+                <h3 class="contents__articleArea-title" v-if="article.title">
+                  {{ article.title }}
+                </h3>
+                <h4
+                  class="contents__articleArea-subTitle"
+                  v-if="article.subTitle"
+                >
+                  {{ article.subTitle }}
+                </h4>
+                <p class="contents__articleArea-lead" v-if="article.leadCopy">
+                  {{ article.leadCopy }}
+                </p>
+                <p
+                  class="contents__articleArea-txt"
+                  v-for="(text, index) in article.text"
+                  :key="index"
+                >
+                  {{ text }}
+                </p>
+              </section>
+            </div>
+            <div
+              class="contents__infoArea"
+              v-bind:style="{ margin: stickyMargin }"
+            >
+              <div
+                v-if="game.soldout"
+                class="contents__infoArea-btn--buy contents__infoArea-btn--soldout"
+              >
+                完売
+              </div>
+              <div v-else class="contents__infoArea-btn--buy">
+                <a :href="game.booth" target="_blank">購入する</a>
+              </div>
+              <dl class="contents__infoArea-dl">
+                <dt v-if="game.gamedesign">ゲームデザイン</dt>
+                <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
+                <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
+                <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
+                <dt v-if="game.player">プレイ人数</dt>
+                <dd v-if="game.player">{{ game.player }}</dd>
+                <dt v-if="game.time">プレイ時間</dt>
+                <dd v-if="game.time">{{ game.time }}</dd>
+                <dt v-if="game.age">対象年齢</dt>
+                <dd v-if="game.age">{{ game.age }}</dd>
+                <dt v-if="game.size">サイズ（mm）</dt>
+                <dd v-if="game.size">{{ game.size }}</dd>
+                <dt v-if="game.year">制作年</dt>
+                <dd v-if="game.year">{{ game.year }}</dd>
+              </dl>
+            </div>
           </div>
-          <div v-else class="contents__infoArea-btn--buy">
-            <a :href="game.booth" target="_blank">購入する</a>
-          </div>
-          <dl class="contents__infoArea-dl">
-            <dt v-if="game.gamedesign">ゲームデザイン</dt>
-            <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
-            <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
-            <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
-            <dt v-if="game.player">プレイ人数</dt>
-            <dd v-if="game.player">{{ game.player }}</dd>
-            <dt v-if="game.time">プレイ時間</dt>
-            <dd v-if="game.time">{{ game.time }}</dd>
-            <dt v-if="game.age">対象年齢</dt>
-            <dd v-if="game.age">{{ game.age }}</dd>
-            <dt v-if="game.size">サイズ</dt>
-            <dd v-if="game.size">{{ game.size }}</dd>
-            <dt v-if="game.year">制作年</dt>
-            <dd v-if="game.year">{{ game.year }}</dd>
-          </dl>
         </div>
       </div>
-    </div>
     </transition>
   </article>
 </template>
@@ -81,6 +100,7 @@ export default {
       game: game,
       img: [],
       id: "",
+      mv: "",
       stickyMargin: "50px auto 60px",
       clientcontentsHeight: undefined,
       contentsShow: false
@@ -91,6 +111,10 @@ export default {
       this.id = this.$route.params.id;
       this.game = game[this.id];
       this.img = [];
+      this.mv = "";
+      if (this.game.detailMv) {
+        this.mv = this.InputImagePath(this.game.detailMv);
+      }
       for (const index of this.game.article) {
         if (index.imgpath) {
           this.img.push(this.InputImagePath(index.imgpath));
@@ -100,7 +124,10 @@ export default {
       }
       setTimeout(() => {
         this.contentsShow = true;
-      }, 200);
+        this.clientcontentsHeight = window.document.getElementById(
+          "contents"
+        ).clientHeight;
+      }, 300);
     },
     InputImagePath: function(path) {
       return require("@/assets/img/detail/" + path);
@@ -109,13 +136,16 @@ export default {
       this.isLoading = false;
     },
     stickyNav: function() {
-      this.contentsHeight = window.document.getElementById("contents").clientHeight;
-      if(window.innerWidth > 760) {
-        const windowHeight = window.innerHeight;
-        const scrollTop = window.pageYOffset + 50;
-        const maxHeight = this.contentsHeight - windowHeight;
-        const height = Math.min(scrollTop, maxHeight);
-        this.stickyMargin = height + "px auto 60px";
+      if (window.innerWidth > 760) {
+        if (window.pageYOffset < 300) {
+          this.stickyMargin = "50px auto 60px";
+        } else {
+          const windowHeight = window.innerHeight;
+          const scrollTop = window.pageYOffset + 50 - 300;
+          const maxHeight = this.clientcontentsHeight - windowHeight;
+          const height = Math.min(scrollTop, maxHeight);
+          this.stickyMargin = height + "px auto 60px";
+        }
       } else {
         this.stickyMargin = "30px auto 60px";
       }
@@ -124,7 +154,7 @@ export default {
   watch: {
     $route() {
       this.contentsShow = false;
-      
+
       setTimeout(() => {
         this.updateItems();
       }, 500);
@@ -134,16 +164,18 @@ export default {
     this.updateItems();
     this.stickyNav;
   },
-  mounted: function () {
-    window.addEventListener('resize', this.stickyNav);
-    window.addEventListener('scroll', this.stickyNav);
-    this.contentsHeight = window.document.getElementById("contents").clientHeight;
+  mounted: function() {
+    window.addEventListener("resize", this.stickyNav);
+    window.addEventListener("scroll", this.stickyNav);
+    this.clientcontentsHeight = window.document.getElementById(
+      "contents"
+    ).clientHeight;
   },
-  beforeDestroy: function () {
-    window.removeEventListener('resize', this.stickyNav);
-    window.removeEventListener('scroll', this.stickyNav);
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.stickyNav);
+    window.removeEventListener("scroll", this.stickyNav);
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
@@ -152,6 +184,7 @@ $lead-gray: #41494e;
 $ttl-gray: #3b4043;
 $light-gray: #cccccc;
 $text-gray: #333333;
+$light-gray: #ddd;
 @mixin sp {
   @media (max-width: 768px) {
     @content;
@@ -181,16 +214,34 @@ a {
 p {
   margin: 0;
 }
-.contents {
-  max-width: 1500px;
-  margin: 0 auto;
+
+.wrap {
+  margin-top: 70px;
   opacity: 0;
-  transition: opacity .5s;
+  transition: opacity 0.5s;
   &.show {
     opacity: 1;
   }
-  &__wrap {
-    margin-top: 70px;
+}
+.mv {
+  position: relative;
+  width: 100%;
+  height: 144px;
+  overflow: hidden;
+  @include tab() {
+    height: 300px;
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+}
+.contents {
+  max-width: 1500px;
+  margin: 0 auto;
+  &__inner {
     display: flex;
     flex-direction: column;
     @include tab() {
@@ -202,12 +253,12 @@ p {
 .contents__articleArea {
   width: 86%;
   color: $text-gray;
-  margin: 30px auto;
+  margin: 50px auto;
   padding: 0;
   @include tab() {
     width: 70%;
     min-width: 664px;
-    margin: 50px auto;
+    margin: 50px auto 100px;
     padding: 0px 50px 0 20px;
     box-sizing: border-box;
   }
@@ -224,7 +275,7 @@ p {
     margin: 0;
     font-size: 34px;
     @include tab() {
-    font-size: 44px;
+      font-size: 44px;
     }
   }
   &-lead {
@@ -247,16 +298,20 @@ p {
     }
   }
   &-video {
+    margin-top: 40px;
     text-align: center;
+    @include tab() {
+      margin-top: 80px;
+    }
     &-inner {
       margin: 0 auto;
       width: 100%;
-      height: 50vw;
-      max-width: 560px;
-      max-height: 315px;
+      max-width: 760px;
+      height: 52vw;
       @include tab() {
         width: 100%;
-        height: 315px;
+        height: 45vw;
+        max-height: 507px;
       }
     }
   }
@@ -280,14 +335,14 @@ p {
     & + p.contents__articleArea-txt {
       margin-top: 20px;
       @include tab() {
-      margin-top: 40px;
+        margin-top: 40px;
       }
     }
     &.imgSmall {
-    max-height: 270px;
-    @include tab() {
       max-height: 270px;
-    }
+      @include tab() {
+        max-height: 270px;
+      }
     }
   }
   &-txt {
@@ -303,17 +358,17 @@ p {
   width: 86%;
   min-width: 170px;
   color: $text-gray;
-  margin: 30px auto 60px;;
+  margin: 30px auto 60px;
   @include tab() {
     width: 170px;
     margin-top: 50px;
     height: 521px;
-    padding-right: 30px
+    padding-right: 30px;
   }
   &-btn--buy {
-    width: 170px;
-    height: 44px;
-    line-height: 44px;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
     position: relative;
     background-color: $btn-gray;
     border-radius: 6px;
@@ -323,6 +378,11 @@ p {
     overflow: hidden;
     opacity: 1;
     transition: opacity 0.2s;
+    @include tab() {
+      width: 170px;
+      height: 44px;
+      line-height: 44px;
+    }
     &:before {
       content: "";
       position: absolute;
@@ -352,9 +412,10 @@ p {
       color: #fff;
     }
     &.contents__infoArea-btn--soldout {
-      background-color: $light-gray;
+      background-color: #fff;
       color: $ttl-gray;
       cursor: default;
+      border: 1px solid $ttl-gray;
       &:before {
         content: none;
       }
@@ -368,8 +429,12 @@ p {
     font-weight: bold;
     margin-top: 20px;
     font-size: 18px;
+    display: inline-block;
+    width: 50%;
     @include tab() {
       margin-top: 30px;
+      display: block;
+      width: 100%;
     }
     &:first-child {
       margin-top: 0;
@@ -378,8 +443,12 @@ p {
   dd {
     margin: 7px 0 0;
     font-size: 15px;
+    display: inline-block;
+    width: 50%;
     @include tab() {
       margin: 10px 0 0;
+      display: block;
+      width: 100%;
     }
   }
 }

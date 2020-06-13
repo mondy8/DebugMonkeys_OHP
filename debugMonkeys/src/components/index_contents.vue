@@ -9,7 +9,16 @@
       >
         <span class="contents__detail-list--new" v-if="game.new">NEW!</span>
         <div class="contents__detail-img">
-          <img :src="thumbImg[index]" :alt="game.title" />
+          <router-link
+            :to="{
+              name: 'detail',
+              params: {
+                id: name
+              }
+            }"
+          >
+            <img :src="thumbImg[index]" :alt="game.title" />
+          </router-link>
         </div>
         <div class="contents__detail-inner">
           <div class="contents__detail-ttl">{{ game.title }}</div>
@@ -70,7 +79,9 @@ export default {
 $btn-gray: #3c3c3c;
 $lead-gray: #41494e;
 $ttl-gray: #3b4043;
-$light-gray: #cccccc;
+$light-gray: #ddd;
+$superlight-gray: #eee;
+
 @mixin sp {
   @media (max-width: 768px) {
     @content;
@@ -146,6 +157,9 @@ a {
     height: 60vw;
     overflow: hidden;
     position: relative;
+    border-radius: 6px;
+    background-color: #fff;
+    transition: background-color 0.2s;
     @include tab() {
       height: 28vw;
     }
@@ -156,7 +170,19 @@ a {
       width: 100%;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s;
+    }
+    @include tab() {
+      &:hover {
+        background-color: $superlight-gray;
+        img {
+          width: 110%;
+          top: 55%;
+          transform: translate(-50%, -55%);
+        }
+      }
     }
   }
   &-ttl {
@@ -174,7 +200,7 @@ a {
     line-height: 1.3;
     margin-top: 15px;
     @include tab() {
-    line-height: 1.4;
+      line-height: 1.4;
     }
   }
   &-btn {
@@ -225,9 +251,10 @@ a {
       }
     }
     &--soldout {
-      background-color: $light-gray;
+      background-color: #fff;
       color: $ttl-gray;
       cursor: default;
+      border: 1px solid $ttl-gray;
       &:before {
         content: none;
       }
@@ -242,6 +269,9 @@ a {
       overflow: hidden;
       opacity: 1;
       transition: all 0.2s;
+      @include sp() {
+        background-color: $light-gray;
+      }
       &:before {
         content: "";
         position: absolute;
