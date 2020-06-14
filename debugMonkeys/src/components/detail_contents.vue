@@ -3,7 +3,7 @@
     <transition mode="out-in">
       <div class="wrap" :class="{ show: contentsShow }">
         <div class="mv" v-if="mv">
-          <img :src="mv" :alt="id" />
+          <img :src="mv" :alt="id" v-on:load="load"/>
         </div>
         <div class="contents" id="contents">
           <div class="contents__inner">
@@ -66,12 +66,12 @@
                 完売
               </div>
               <div v-else class="contents__infoArea-btn--buy">
-                <a :href="game.booth" target="_blank">購入する</a>
+                <a :href="game.booth" target="_blank" v-on:click="$ga.event('詳細ページ：購入ボタン', 'click', game.title)">購入する</a>
               </div>
               <dl class="contents__infoArea-dl">
                 <dt v-if="game.gamedesign">ゲームデザイン</dt>
                 <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
-                <dt v-if="game.graphicdesign">グラフィックデザイン</dt>
+                <dt v-if="game.graphicdesign">アートワーク</dt>
                 <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
                 <dt v-if="game.player">プレイ人数</dt>
                 <dd v-if="game.player">{{ game.player }}</dd>
@@ -102,7 +102,7 @@ export default {
       img: [],
       id: "",
       mv: "",
-      stickyMargin: "50px auto 60px",
+      stickyMargin: "60px auto",
       clientcontentsHeight: undefined,
       contentsShow: false,
       imgLoaded: false
@@ -143,7 +143,7 @@ export default {
     stickyNav: function() {
       if (window.innerWidth > 760) {
         if (window.pageYOffset < 300) {
-          this.stickyMargin = "50px auto 60px";
+          this.stickyMargin = "60px auto";
         } else {
           const windowHeight = window.innerHeight;
           const scrollTop = window.pageYOffset + 50 - 300;
@@ -259,20 +259,16 @@ p {
 .contents__articleArea {
   width: 86%;
   color: $text-gray;
-  margin: 50px auto;
+  margin: 50px auto 60px;
   padding: 0;
   @include tab() {
     width: 70%;
     min-width: 664px;
-    margin: 50px auto 100px;
+    margin: 60px auto 100px;
     padding: 0px 50px 0 20px;
     box-sizing: border-box;
   }
   &-section {
-    margin-top: 20px;
-    @include tab() {
-      margin-top: 40px;
-    }
     &:first-child {
       margin-top: 0;
     }
@@ -285,15 +281,16 @@ p {
     }
   }
   &-lead {
+    margin-top: 30px;
     font-size: 18px;
     font-weight: bold;
     line-height: 1.5;
   }
   &-title {
-    margin-top: 20px;
+    margin-top: 40px;
     font-size: 20px;
     @include tab() {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
   &-subTitle {
@@ -312,12 +309,11 @@ p {
     &-inner {
       margin: 0 auto;
       width: 100%;
-      max-width: 760px;
       height: 52vw;
       @include tab() {
         width: 100%;
-        height: 45vw;
-        max-height: 507px;
+        height: 37vw;
+        max-height: 550px;
       }
     }
   }
@@ -326,11 +322,12 @@ p {
     overflow: hidden;
     width: 100%;
     height: 59vw;
-    max-width: 760px;
-    margin: 0 auto;
+    // max-width: 880px;
+    margin: 40px auto 0;
     @include tab() {
+      margin-top: 60px;
       height: 40vw;
-      max-height: 507px;
+      max-height: 550px;
     }
     img {
       width: 100%;
@@ -345,9 +342,10 @@ p {
       }
     }
     &.imgSmall {
+      max-width: 760px;
       max-height: 270px;
       @include tab() {
-        max-height: 270px;
+        max-height: 330px;
       }
     }
   }
@@ -367,7 +365,7 @@ p {
   margin: 30px auto 60px;
   @include tab() {
     width: 170px;
-    margin-top: 50px;
+    margin-top: 60px;
     height: 521px;
     padding-right: 30px;
   }

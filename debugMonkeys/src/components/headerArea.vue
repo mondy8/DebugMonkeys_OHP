@@ -14,6 +14,12 @@
         <span class="header__inner-navbutton-inner"></span>
       </div>
     </div>
+    <div
+      class="header__nav-bg"
+      :class="{ active: isActive }"
+      v-on:click="isActive = !isActive"
+      >
+    </div>
     <ul class="header__nav-menu" :class="{ active: isActive }">
       <li
         class="header__nav-menu-inner"
@@ -63,7 +69,9 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
+    background-color: #fff;
     box-sizing: border-box;
+    z-index: 100;
     &-logo {
       a {
         display: block;
@@ -120,6 +128,18 @@ export default {
       }
     }
   }
+  &__nav-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    &.active {
+      display: block;
+    }
+  }
   &__nav-menu {
     position: absolute;
     width: 100%;
@@ -144,6 +164,7 @@ export default {
       border-bottom: 0px solid #fff;
       box-sizing: border-box;
       transition: all ease 0.3s;
+      z-index: 100;
       &:last-child {
         border: none;
       }

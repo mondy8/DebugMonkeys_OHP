@@ -7,9 +7,9 @@
     "booth" : "https://debug-monkeys.booth.pm/items/1949653",
     "detail" : "https://note.com/debug_monkeys/n/n83cdba1dd238",
     "new" : true,
-    "gamedesign" : "サニィ",
-    "player" : "2～3",
-    "time" : "10分",
+    "gamedesign" : "Sunny",
+    "player" : "2～4人",
+    "time" : "20分",
     "age" : "10歳以上",
     "size" : "330x250x80",
     "year" : "2020",
@@ -173,10 +173,10 @@
     "gamedesign": "Sunny",
     "graphicdesign": "nishimura natsumi",
     "player": "3～5人",
-    "time": "5～10分",
+    "time": "5～15分",
     "age": "10歳以上",
     "size": "70x100x20",
-    "year": "2019",
+    "year": "2018",
     "article": [
       {
         "leadCopy": "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ぐ不規則ポーカーゲーム"
