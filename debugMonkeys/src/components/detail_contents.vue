@@ -48,6 +48,7 @@
                 </p>
                 <p
                   class="contents__articleArea-txt"
+                  :class="{ textOnly: article.textOnly }"
                   v-for="(text, index) in article.text"
                   :key="index"
                 >
@@ -191,6 +192,9 @@ $ttl-gray: #3b4043;
 $light-gray: #cccccc;
 $text-gray: #333333;
 $light-gray: #ddd;
+$pc-elementMarginTop: min(8vw, 80px);
+$sp-elementMarginTop: min(13vw, 60px);
+
 @mixin sp {
   @media (max-width: 768px) {
     @content;
@@ -281,30 +285,30 @@ p {
     }
   }
   &-lead {
-    margin-top: 30px;
+    margin-top: min(7vw, 50px);
     font-size: 18px;
     font-weight: bold;
     line-height: 1.5;
   }
   &-title {
-    margin-top: 40px;
+    margin-top: $sp-elementMarginTop;
     font-size: 20px;
     @include tab() {
-      margin-top: 60px;
+      margin-top: $pc-elementMarginTop;
     }
   }
   &-subTitle {
-    margin-top: 20px;
+    margin-top: $sp-elementMarginTop;
     font-size: 17px;
     @include tab() {
-      margin-top: 40px;
+      margin-top: $pc-elementMarginTop;
     }
   }
   &-video {
-    margin-top: 40px;
+    margin-top: $sp-elementMarginTop;
     text-align: center;
     @include tab() {
-      margin-top: 80px;
+      margin-top: $pc-elementMarginTop;
     }
     &-inner {
       margin: 0 auto;
@@ -323,10 +327,9 @@ p {
     width: 100%;
     height: 59vw;
     border-radius: 6px;
-    // max-width: 880px;
-    margin: 40px auto 0;
+    margin: $sp-elementMarginTop auto 0;
     @include tab() {
-      margin-top: 60px;
+      margin-top: $pc-elementMarginTop;
       height: 40vw;
       max-height: 550px;
     }
@@ -352,10 +355,16 @@ p {
   }
   &-txt {
     line-height: 1.4;
-    margin-top: 1em;
+    margin-top: min(3vw, 20px);
     font-size: 15px;
     @include tab() {
       line-height: 1.5;
+    }
+    &.textOnly:first-of-type {
+      margin-top: min(10vw, 40px);
+      @include tab() {
+        margin-top: min(6vw, 50px);
+      }
     }
   }
 }
