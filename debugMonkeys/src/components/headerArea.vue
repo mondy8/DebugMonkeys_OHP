@@ -58,12 +58,17 @@ export default {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 70px;
+  box-sizing: border-box;
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   z-index: 100;
   &__inner {
     position: relative;
     width: 90%;
+    height: 70px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -143,7 +148,7 @@ export default {
   &__nav-menu {
     position: absolute;
     width: 100%;
-    top: 71px;
+    top: 70px;
     margin: 0;
     padding: 0;
     list-style-type: none;
@@ -154,6 +159,9 @@ export default {
       .header__nav-menu-inner {
         height: 48px;
         border-bottom: 1px solid #ccc;
+        &:last-child {
+          border-bottom: none;
+        }
       }
     }
     &-inner {
@@ -165,9 +173,6 @@ export default {
       box-sizing: border-box;
       transition: all ease 0.3s;
       z-index: 100;
-      &:last-child {
-        border: none;
-      }
       a {
         display: block;
         padding: 15px;

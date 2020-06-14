@@ -322,6 +322,7 @@ p {
     overflow: hidden;
     width: 100%;
     height: 59vw;
+    border-radius: 6px;
     // max-width: 880px;
     margin: 40px auto 0;
     @include tab() {
