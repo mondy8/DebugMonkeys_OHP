@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84dfc20f9562d75a6ef7",
-    "url": "/css/app.e187ca4b.css"
+    "revision": "73a8c57446d123c73a71",
+    "url": "/css/app.9343f7c6.css"
   },
   {
     "revision": "4183746cd32a42d6b2df",
@@ -212,12 +212,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/logo.d4644180.svg"
   },
   {
-    "revision": "5df75bd4e8e1ec009fe78a9e7331fce7",
+    "revision": "172eae2d5843650e6d5342d66139be82",
     "url": "/index.html"
   },
   {
-    "revision": "84dfc20f9562d75a6ef7",
-    "url": "/js/app.ac8fe24a.js"
+    "revision": "73a8c57446d123c73a71",
+    "url": "/js/app.d5de4ef7.js"
   },
   {
     "revision": "4183746cd32a42d6b2df",
@@ -249,7 +249,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "dd538a3d8123075299a04089a6c49f38",
-    "url": "/ogp_street.png"
+    "url": "/ogp_street.jpg"
   },
   {
     "revision": "50dd4429af298e7e535d6321746d5917",
@@ -257,7 +257,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "e37ffea5c7a8de72423b34186be65c35",
-    "url": "/ogp_zombie.png"
+    "url": "/ogp_zombie.jpg"
   },
   {
     "revision": "735ab4f94fbcd57074377afca324c813",

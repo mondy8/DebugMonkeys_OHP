@@ -58,7 +58,7 @@ export default {
         },
         {
           property: "og:image",
-          content: `https://debugmonkeys.netlify.app/ogp_${this.gameId}.png`
+          content: `https://debugmonkeys.netlify.app/ogp_${this.gameId}.jpg`
         },
         { name: "twitter:site", content: "@debug_monkeys" },
         { name: "twitter:card", content: "summary_large_image" }

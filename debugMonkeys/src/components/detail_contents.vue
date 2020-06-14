@@ -126,9 +126,11 @@ export default {
       }
       const imgLoadCallback = setInterval(() => {
         if(this.imgLoaded){
-          this.contentsShow = true;
           this.clientcontentsHeight = window.document.getElementById("contents").clientHeight;
           clearInterval(imgLoadCallback);
+          setTimeout(() => {
+            this.contentsShow = true;
+          }, 200);
         }
       }, 50);
     },
