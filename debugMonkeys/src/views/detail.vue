@@ -7,6 +7,7 @@
 <script>
 import Vue from "vue";
 import VueHead from "vue-head";
+import game from "@/data/game.json";
 
 import contents from "@/components/detail_contents.vue";
 
@@ -17,35 +18,39 @@ export default {
   components: {
     contents
   },
+  created() {
+    this.gameId = this.$route.params.id;
+    this.game = game[this.gameId];
+  },
   head: {
     title() {
       return {
-        inner: "デバッグモンキーズ公式サイト",
+        inner: `${this.game.title}`,
         separator: "|",
-        complement: "ボードゲーム販売中！"
+        complement: "デバッグモンキーズ公式サイト"
       };
     },
     meta() {
       return [
-        { name: "title", content: "デバッグモンキーズ公式サイト" },
+        { name: "title", content: `${this.game.title}｜デバッグモンキーズ公式サイト` },
         {
           name: "description",
           content:
-            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。"
+            `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
         },
         {
           name: "keywords",
-          content: "デバッグモンキーズ,デバモン,ボードゲーム"
+          content: `${this.game.title},デバッグモンキーズ,デバモン,ボードゲーム`
         },
         {
           property: "og:title",
-          content: "デバッグモンキーズ公式サイト | ボードゲーム販売中！"
+          content: `${this.game.title}｜デバッグモンキーズ公式サイト`
         },
         { property: "og:type", content: "website" },
         {
           property: "og:description",
           content:
-            "デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。"
+            `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
         },
         {
           property: "og:site_name",
@@ -53,7 +58,7 @@ export default {
         },
         {
           property: "og:image",
-          content: "https://debugmonkeys.netlify.app/ogp.png"
+          content: `https://debugmonkeys.netlify.app/ogp_${this.gameId}.png`
         },
         { name: "twitter:site", content: "@debug_monkeys" },
         { name: "twitter:card", content: "summary_large_image" }

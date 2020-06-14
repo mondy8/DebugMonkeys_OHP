@@ -16,13 +16,13 @@ module.exports = {
             postProcess (renderedRoute) {
                 const titles = {
                     '/': 'デバッグモンキーズ公式サイト｜ボードゲーム販売中！',
-                    '/detail/nabedaikan': '鍋代官｜デバッグモンキーズ',
-                    '/detail/streets': 'STREET PICKPOCKETs 7｜デバッグモンキーズ',
-                    '/detail/zombie': 'ゾンビパニックとライフルおじさん｜デバッグモンキーズ',
-                    '/detail/banana': 'Bana-na｜デバッグモンキーズ',
-                    '/detail/osumo': 'OSUMO｜デバッグモンキーズ',
-                    '/detail/qubism': 'Qubism｜デバッグモンキーズ', 
-                    '/detail/wacryll': 'Wacryll｜デバッグモンキーズ'
+                    '/detail/nabedaikan': '鍋代官｜デバッグモンキーズ公式サイト',
+                    '/detail/streets': 'STREET PICKPOCKETs 7｜デバッグモンキーズ公式サイト',
+                    '/detail/zombie': 'ゾンビパニックとライフルおじさん｜デバッグモンキーズ公式サイト',
+                    '/detail/banana': 'Bana-na｜デバッグモンキーズ公式サイト',
+                    '/detail/osumo': 'OSUMO｜デバッグモンキーズ公式サイト',
+                    '/detail/qubism': 'Qubism｜デバッグモンキーズ公式サイト', 
+                    '/detail/wacryll': 'Wacryll｜デバッグモンキーズ公式サイト'
                 }
                 renderedRoute.html = renderedRoute.html.replace(
                   /<title>[^<]*<\/title>/i,

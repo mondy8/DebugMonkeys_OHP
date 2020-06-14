@@ -31,7 +31,8 @@
                   v-if="img[index]"
                   :class="{ imgSmall: article.imgSmall }"
                 >
-                  <img :src="img[index]" :alt="article.title" />
+                  <img :src="img[index]" :alt="article.title" 
+                  v-on:load="load"/>
                 </div>
                 <h3 class="contents__articleArea-title" v-if="article.title">
                   {{ article.title }}
@@ -103,7 +104,8 @@ export default {
       mv: "",
       stickyMargin: "50px auto 60px",
       clientcontentsHeight: undefined,
-      contentsShow: false
+      contentsShow: false,
+      imgLoaded: false
     };
   },
   methods: {
@@ -122,18 +124,19 @@ export default {
           this.img.push(undefined);
         }
       }
-      setTimeout(() => {
-        this.contentsShow = true;
-        this.clientcontentsHeight = window.document.getElementById(
-          "contents"
-        ).clientHeight;
-      }, 300);
+      const imgLoadCallback = setInterval(() => {
+        if(this.imgLoaded){
+          this.contentsShow = true;
+          this.clientcontentsHeight = window.document.getElementById("contents").clientHeight;
+          clearInterval(imgLoadCallback);
+        }
+      }, 50);
     },
     InputImagePath: function(path) {
       return require("@/assets/img/detail/" + path);
     },
     load: function() {
-      this.isLoading = false;
+      this.imgLoaded = true;
     },
     stickyNav: function() {
       if (window.innerWidth > 760) {
@@ -154,6 +157,7 @@ export default {
   watch: {
     $route() {
       this.contentsShow = false;
+      this.imgLoaded = false;
 
       setTimeout(() => {
         this.updateItems();
