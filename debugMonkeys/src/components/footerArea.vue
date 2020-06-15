@@ -3,33 +3,53 @@
     <div class="footer__inner">
       <ul class="footer__sns">
         <li class="footer__sns-list">
-          <a href="https://twitter.com/debug_monkeys" class="footer__sns-list-twitter" target="_blank" v-on:click="$ga.event('フッター', 'click', 'Twitter')"><img src="../assets/img/icon_logo_twitter.png" alt="twitter"></a>
+          <a
+            href="https://twitter.com/debug_monkeys"
+            class="footer__sns-list-twitter"
+            target="_blank"
+            v-on:click="$ga.event('フッター', 'click', 'Twitter')"
+          >
+            <img src="../assets/img/icon_logo_twitter.png" alt="twitter" />
+          </a>
         </li>
         <li class="footer__sns-list">
-          <a href="https://note.com/debug_monkeys" class="footer__sns-list-note" target="_blank" v-on:click="$ga.event('フッター', 'click', 'note')"><img src="../assets/img/icon_logo_note.png" alt="note"></a>
+          <a
+            href="https://note.com/debug_monkeys"
+            class="footer__sns-list-note"
+            target="_blank"
+            v-on:click="$ga.event('フッター', 'click', 'note')"
+          >
+            <img src="../assets/img/icon_logo_note.png" alt="note" />
+          </a>
         </li>
         <li class="footer__sns-list">
-          <a href="https://www.youtube.com/channel/UCqqyVlN8VP0gZ6KBqdhYH1A" class="footer__sns-list-youtube" target="_blank" v-on:click="$ga.event('フッター', 'click', 'youtube')"><img src="../assets/img/icon_logo_youtube.png" alt="youtube"></a>
+          <a
+            href="https://www.youtube.com/channel/UCqqyVlN8VP0gZ6KBqdhYH1A"
+            class="footer__sns-list-youtube"
+            target="_blank"
+            v-on:click="$ga.event('フッター', 'click', 'youtube')"
+          >
+            <img src="../assets/img/icon_logo_youtube.png" alt="youtube" />
+          </a>
         </li>
       </ul>
       <p class="footer__copyrights">&copy; 2020 DebugMonkeys</p>
       <a href="#" class="footer__btn-top" v-scroll-to="'#top'">
-        <img src="../assets/img/icon_footer_arrow.png" alt="↑">
+        <img src="../assets/img/icon_footer_arrow.png" alt="↑" />
       </a>
     </div>
   </footer>
 </template>
 
 <script>
-import Vue from 'vue'
-import VueScrollTo from 'vue-scrollto'
-Vue.use(VueScrollTo)
+import Vue from "vue";
+import VueScrollTo from "vue-scrollto";
+Vue.use(VueScrollTo);
 
 export default {
   name: "footer",
   data() {
-    return {
-    };
+    return {};
   }
 };
 </script>

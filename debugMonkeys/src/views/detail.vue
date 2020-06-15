@@ -26,17 +26,19 @@ export default {
     title() {
       return {
         inner: `${this.game.title}`,
-        separator: "|",
+        separator: "｜",
         complement: "デバッグモンキーズ公式サイト"
       };
     },
     meta() {
       return [
-        { name: "title", content: `${this.game.title}｜デバッグモンキーズ公式サイト` },
+        {
+          name: "title",
+          content: `${this.game.title}｜デバッグモンキーズ公式サイト`
+        },
         {
           name: "description",
-          content:
-            `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
+          content: `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
         },
         {
           name: "keywords",
@@ -49,8 +51,7 @@ export default {
         { property: "og:type", content: "website" },
         {
           property: "og:description",
-          content:
-            `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
+          content: `ボードゲーム「${this.game.title}」の紹介ページです。デバッグモンキーズは東京・静岡・福岡で活動しているボードゲーム制作団体です。ボードゲームを作っては、猿のようにデバッグをし続ける団体です。ここでは作ったゲームやデバッグ方法など、ゲームについてさまざまな発信を行います。`
         },
         {
           property: "og:site_name",

@@ -11,8 +11,7 @@
 export default {
   name: "mv",
   data() {
-    return {
-    };
+    return {};
   }
 };
 </script>

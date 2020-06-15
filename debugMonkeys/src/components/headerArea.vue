@@ -18,8 +18,7 @@
       class="header__nav-bg"
       :class="{ active: isActive }"
       v-on:click="isActive = !isActive"
-      >
-    </div>
+    ></div>
     <ul class="header__nav-menu" :class="{ active: isActive }">
       <li
         class="header__nav-menu-inner"

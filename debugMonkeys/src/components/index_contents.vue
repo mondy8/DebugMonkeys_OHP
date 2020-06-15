@@ -31,7 +31,15 @@
               完売
             </li>
             <li v-else class="contents__detail-btn--buy">
-              <a :href="game.booth" target="_blank" v-on:click="$ga.event('TOPページ：購入ボタン', 'click', game.title)">購入する</a>
+              <a
+                :href="game.booth"
+                target="_blank"
+                v-on:click="
+                  $ga.event('TOPページ：購入ボタン', 'click', game.title)
+                "
+              >
+                購入する
+              </a>
             </li>
             <li class="contents__detail-btn--info">
               <router-link

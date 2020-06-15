@@ -3,7 +3,7 @@
     <transition mode="out-in">
       <div class="wrap" :class="{ show: contentsShow }">
         <div class="mv" v-if="mv">
-          <img :src="mv" :alt="id" v-on:load="load"/>
+          <img :src="mv" :alt="id" v-on:load="load" />
         </div>
         <div class="contents" id="contents">
           <div class="contents__inner">
@@ -31,8 +31,11 @@
                   v-if="img[index]"
                   :class="{ imgSmall: article.imgSmall }"
                 >
-                  <img :src="img[index]" :alt="article.title" 
-                  v-on:load="load"/>
+                  <img
+                    :src="img[index]"
+                    :alt="article.title"
+                    v-on:load="load"
+                  />
                 </div>
                 <h3 class="contents__articleArea-title" v-if="article.title">
                   {{ article.title }}
@@ -56,10 +59,7 @@
                 </p>
               </section>
             </div>
-            <div
-              class="contents__infoArea"
-              v-bind:style="{ margin: stickyMargin }"
-            >
+            <div class="contents__infoArea" :style="{ margin: stickyMargin }">
               <div
                 v-if="game.soldout"
                 class="contents__infoArea-btn--buy contents__infoArea-btn--soldout"
@@ -67,7 +67,15 @@
                 完売
               </div>
               <div v-else class="contents__infoArea-btn--buy">
-                <a :href="game.booth" target="_blank" v-on:click="$ga.event('詳細ページ：購入ボタン', 'click', game.title)">購入する</a>
+                <a
+                  :href="game.booth"
+                  target="_blank"
+                  v-on:click="
+                    $ga.event('詳細ページ：購入ボタン', 'click', game.title)
+                  "
+                >
+                  購入する
+                </a>
               </div>
               <dl class="contents__infoArea-dl">
                 <dt v-if="game.gamedesign">ゲームデザイン</dt>
@@ -126,8 +134,10 @@ export default {
         }
       }
       const imgLoadCallback = setInterval(() => {
-        if(this.imgLoaded){
-          this.clientcontentsHeight = window.document.getElementById("contents").clientHeight;
+        if (this.imgLoaded) {
+          this.clientcontentsHeight = window.document.getElementById(
+            "contents"
+          ).clientHeight;
           clearInterval(imgLoadCallback);
           setTimeout(() => {
             this.contentsShow = true;
