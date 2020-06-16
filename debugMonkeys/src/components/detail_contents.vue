@@ -50,6 +50,12 @@
                   {{ article.leadCopy }}
                 </p>
                 <p
+                  v-if="article.textBold"
+                  class="contents__articleArea-txtBold"
+                >
+                  {{ article.textBold }}
+                </p>
+                <p
                   class="contents__articleArea-txt"
                   :class="{ textOnly: article.textOnly }"
                   v-for="(text, index) in article.text"
@@ -375,6 +381,15 @@ p {
       @include tab() {
         margin-top: min(6vw, 50px);
       }
+    }
+  }
+  &-txtBold {
+    line-height: 1.4;
+    margin-top: min(5vw, 30px);
+    font-size: 15px;
+    font-weight: bold;
+    + .contents__articleArea-txt {
+      margin-top: min(1vw, 10px);
     }
   }
 }
