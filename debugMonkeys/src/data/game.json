@@ -18,7 +18,7 @@
         "leadCopy" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？正体隠匿系アブストラクトゲーム"
       },
       {
-        "imgpath": "img_detail_intocube01.jpg",
+        "videopath": "https://www.youtube.com/embed/G9cTXC9kPas?modestbranding=1",
         "title": "どんなゲーム？",
         "text": [
           "このゲームは、2人用のアブストラクトゲームです。自分の手番では、キューブトークンを集め、それをメモしながら、共通の場に配置していきます。",
@@ -28,7 +28,7 @@
         ]
       },
       {
-        "imgpath": "img_detail_intocube02.jpg",
+        "imgpath": "img_detail_intocube01.jpg",
         "title": "ここがポイント！",
         "text": [
           "・短時間で、正体隠匿系の推理要素を楽しめるところ！相手の狙いはなんだ！？",
@@ -36,7 +36,7 @@
         ]
       },
       {
-        "imgpath": "img_detail_intocube03.jpg",
+        "imgpath": "img_detail_intocube02.jpg",
         "title": "ゲームの進め方",
         "text": [
           "ゲームの準備として、ゲーム中に「自分が集めたい色」と「自分が集めたくない色」を決定します。",
@@ -44,6 +44,7 @@
         ]
       },
       {
+        "imgpath": "img_detail_intocube03.jpg",
         "title": "アクションについて",
         "text": [
           "「集める」アクションでは、箱の中からキューブトークンを集めます。",
