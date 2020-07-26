@@ -12,10 +12,11 @@ module.exports = {
             // 出力先 dist や www など
             staticDir: path.join(__dirname, 'dist'),
             // 生成したいページ
-            routes: [ '/', '/detail/nabedaikan', '/detail/streets','/detail/zombie', '/detail/banana', '/detail/osumo', '/detail/qubism', '/detail/wacryll' ],
+            routes: [ '/', '/detail/intocube', '/detail/nabedaikan', '/detail/streets','/detail/zombie', '/detail/banana', '/detail/osumo', '/detail/qubism', '/detail/wacryll' ],
             postProcess (renderedRoute) {
                 const titles = {
                     '/': 'デバッグモンキーズ公式サイト｜ボードゲーム販売中！',
+                    '/detail/intocube': 'いんときゅーぶ｜デバッグモンキーズ公式サイト',
                     '/detail/nabedaikan': '鍋代官｜デバッグモンキーズ公式サイト',
                     '/detail/streets': 'STREET PICKPOCKETs 7｜デバッグモンキーズ公式サイト',
                     '/detail/zombie': 'ゾンビパニックとライフルおじさん｜デバッグモンキーズ公式サイト',
