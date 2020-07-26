@@ -67,10 +67,10 @@
             </div>
             <div class="contents__infoArea" :style="{ margin: stickyMargin }">
               <div
-                v-if="game.soldout"
-                class="contents__infoArea-btn--buy contents__infoArea-btn--soldout"
+                v-if="game.nosale"
+                class="contents__infoArea-btn--buy contents__infoArea-btn--nosale"
               >
-                完売
+                {{ game.nosale }}
               </div>
               <div v-else class="contents__infoArea-btn--buy">
                 <a
@@ -80,7 +80,7 @@
                     $ga.event('詳細ページ：購入ボタン', 'click', game.title)
                   "
                 >
-                  購入する
+                  販売ページへ
                 </a>
               </div>
               <dl class="contents__infoArea-dl">
@@ -450,7 +450,7 @@ p {
       height: 100%;
       color: #fff;
     }
-    &.contents__infoArea-btn--soldout {
+    &.contents__infoArea-btn--nosale {
       background-color: #fff;
       color: $ttl-gray;
       cursor: default;
