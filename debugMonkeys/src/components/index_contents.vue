@@ -30,6 +30,15 @@
             >
               {{ game.nosale }}
             </li>
+            <li v-else-if="game.nosaleLink" class="contents__detail-btn--buy">
+              <a
+                :href="game.nosaleLink"
+                target="_blank"
+                v-on:click="$ga.event('静岡アナゲ祭り', 'click', game.title)"
+              >
+               静岡アナゲ祭り 
+              </a>
+            </li>
             <li v-else class="contents__detail-btn--buy">
               <a
                 :href="game.booth"

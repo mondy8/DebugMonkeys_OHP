@@ -6,7 +6,7 @@
     "lead" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？",
     "booth" : "https://debug-monkeys.booth.pm/items/1949653",
     "new" : true,
-    "nosale": "ゲムマにて販売予定",
+    "nosaleLink": "https://sagm.jp/",
     "gamedesign" : "Sunny",
     "player" : "2人",
     "time" : "15～30分",
