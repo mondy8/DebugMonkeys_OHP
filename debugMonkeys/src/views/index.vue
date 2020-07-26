@@ -1,5 +1,6 @@
 <template>
   <div class="index" id="top">
+    <mv />
     <contents />
   </div>
 </template>
@@ -16,7 +17,8 @@ Vue.use(VueHead);
 export default {
   name: "index",
   components: {
-    contents
+    contents,
+    mv
   },
   head: {
     title() {
