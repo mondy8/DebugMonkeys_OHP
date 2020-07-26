@@ -260,6 +260,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ogp_banana.jpg"
   },
   {
+    "revision": "506f4224917aaab4bfd7ae1ff82dcf9f",
+    "url": "/ogp_intocube.jpg"
+  },
+  {
     "revision": "a82d2438eba4746ebd9ea46c51c42f44",
     "url": "/ogp_nabedaikan.jpg"
   },
