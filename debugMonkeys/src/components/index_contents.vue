@@ -25,10 +25,19 @@
           <div class="contents__detail-lead">{{ game.lead }}</div>
           <ul class="contents__detail-btn">
             <li
-              v-if="game.soldout"
-              class="contents__detail-btn--buy contents__detail-btn--soldout"
+              v-if="game.nosale"
+              class="contents__detail-btn--buy contents__detail-btn--nosale"
             >
-              完売
+              {{ game.nosale }}
+            </li>
+            <li v-else-if="game.nosaleLink" class="contents__detail-btn--buy">
+              <a
+                :href="game.nosaleLink"
+                target="_blank"
+                v-on:click="$ga.event('静岡アナゲ祭り', 'click', game.title)"
+              >
+               静岡アナゲ祭り 
+              </a>
             </li>
             <li v-else class="contents__detail-btn--buy">
               <a
@@ -38,7 +47,7 @@
                   $ga.event('TOPページ：購入ボタン', 'click', game.title)
                 "
               >
-                購入する
+                販売ページへ
               </a>
             </li>
             <li class="contents__detail-btn--info">
@@ -133,7 +142,8 @@ a {
   @include pc() {
     margin-top: 70px;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
+    justify-content: flex-start;
   }
   &-list {
     width: 100%;
@@ -143,6 +153,10 @@ a {
     }
     @include pc() {
       width: 30%;
+      margin-right: 5%;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
     }
     &--new {
       position: absolute;
@@ -258,7 +272,7 @@ a {
         color: #fff;
       }
     }
-    &--soldout {
+    &--nosale {
       background-color: #fff;
       color: $ttl-gray;
       cursor: default;
