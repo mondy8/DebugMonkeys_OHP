@@ -1,11 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "30873edba37477d00a30",
-    "url": "/css/app.add59fd9.css"
+    "revision": "8cf007f36dcca277bc0e",
+    "url": "/css/app.657c2a72.css"
   },
   {
-    "revision": "4183746cd32a42d6b2df",
+    "revision": "d0fde7c423cc25429865",
     "url": "/css/chunk-vendors.391ed6f9.css"
+  },
+  {
+    "revision": "3e90b66350d58dbb2a7e4f6e0df9a52c",
+    "url": "/img/bnr_booth.3e90b663.png"
+  },
+  {
+    "revision": "b7e7399a079943f7bb6403cde061298c",
+    "url": "/img/bnr_gm2020.b7e7399a.png"
+  },
+  {
+    "revision": "c790edfe00bc39511d12e92f6ca3a609",
+    "url": "/img/bnr_youtube.c790edfe.png"
   },
   {
     "revision": "2b82a7744605e6a48981a399cafb31dd",
@@ -236,16 +248,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/logo.d4644180.svg"
   },
   {
-    "revision": "84ac4e1fdb8975d718d402822712e82e",
+    "revision": "39c770a4f77ca9ac380c70093a68b89b",
     "url": "/index.html"
   },
   {
-    "revision": "30873edba37477d00a30",
-    "url": "/js/app.1ed3bbdc.js"
+    "revision": "8cf007f36dcca277bc0e",
+    "url": "/js/app.6881c923.js"
   },
   {
-    "revision": "4183746cd32a42d6b2df",
-    "url": "/js/chunk-vendors.f66517bf.js"
+    "revision": "d0fde7c423cc25429865",
+    "url": "/js/chunk-vendors.316843d7.js"
   },
   {
     "revision": "325d25096971750ed81b49100dc8f9e2",
