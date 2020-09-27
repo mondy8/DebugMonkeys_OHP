@@ -126,7 +126,7 @@ a {
   text-decoration: none;
 }
 .contents {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 .contents__detail {
   display: flex;
