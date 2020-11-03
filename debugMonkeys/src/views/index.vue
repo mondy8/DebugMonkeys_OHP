@@ -1,6 +1,6 @@
 <template>
   <div class="index" id="top">
-    <mv />
+    <!-- <mv /> -->
     <contents />
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   name: "index",
   components: {
     contents,
-    mv
+    // mv
   },
   head: {
     title() {

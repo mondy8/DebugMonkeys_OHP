@@ -34,9 +34,9 @@
               <a
                 :href="game.nosaleLink"
                 target="_blank"
-                v-on:click="$ga.event('静岡アナゲ祭り', 'click', game.title)"
+                v-on:click="$ga.event('ゾンパニ2020', 'click', game.title)"
               >
-               静岡アナゲ祭り 
+               予約フォームへ 
               </a>
             </li>
             <li v-else class="contents__detail-btn--buy">

@@ -77,10 +77,10 @@
                   :href="game.nosaleLink"
                   target="_blank"
                   v-on:click="
-                    $ga.event('詳細ページ：静岡アナゲ祭り', 'click', game.title)
+                    $ga.event('詳細ページ：ゾンパニ2020', 'click', game.title)
                   "
                 >
-                  静岡アナゲ祭り
+                  予約フォームへ
                 </a>
               </div>
               <div v-else class="contents__infoArea-btn--buy">
