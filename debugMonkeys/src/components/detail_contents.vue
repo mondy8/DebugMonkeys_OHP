@@ -276,7 +276,7 @@ p {
   }
 }
 .contents {
-  max-width: 1500px;
+  max-width: 1200px;
   margin: 0 auto;
   &__inner {
     display: flex;
@@ -352,19 +352,16 @@ p {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 59vw;
+    height: auto;
     border-radius: 6px;
     margin: $sp-elementMarginTop auto 0;
     @include tab() {
       margin-top: $pc-elementMarginTop;
-      height: 40vw;
       max-height: 550px;
     }
     img {
       width: 100%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      vertical-align: top;
     }
     & + p.contents__articleArea-txt {
       margin-top: 20px;
@@ -374,9 +371,7 @@ p {
     }
     &.imgSmall {
       max-width: 760px;
-      max-height: 270px;
       @include tab() {
-        max-height: 330px;
       }
     }
   }
