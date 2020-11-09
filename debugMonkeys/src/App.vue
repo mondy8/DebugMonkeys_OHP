@@ -48,9 +48,8 @@ export default {
     @content;
   }
 }
-@import url("https://fonts.googleapis.com/css?family=Noto+Sans+JP");
 #app {
-  font-family: "Noto Sans Japanese", sans-serif, "Avenir", Helvetica, Arial;
+  font-family: sans-serif, "Avenir", Helvetica, Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.4px;

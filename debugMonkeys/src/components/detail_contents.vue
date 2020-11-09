@@ -199,8 +199,8 @@ export default {
     this.stickyNav;
   },
   mounted: function() {
-    window.addEventListener("resize", this.stickyNav);
-    window.addEventListener("scroll", this.stickyNav);
+    window.addEventListener("resize", this.stickyNav, {passive: true});
+    window.addEventListener("scroll", this.stickyNav, {passive: true});
     this.clientcontentsHeight = window.document.getElementById(
       "contents"
     ).clientHeight;
