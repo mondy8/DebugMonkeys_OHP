@@ -133,7 +133,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
-  padding-top: 50px;
+  padding-top: 150px;
   margin: 0 auto;
   @include tab() {
     flex-direction: row;
