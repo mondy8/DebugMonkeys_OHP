@@ -4,7 +4,7 @@
     "thumbnail" : "img_index_zombie.png",
     "detailMv": "img_detail_zombie_mv.jpg",
     "lead" : "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
-    "booth": "https://debug-monkeys.booth.pm/items/2529815",
+    "booth": "https://bodoge.hoobby.net/games/zombie-panic-rifle-ojisan",
     "new" : true,
     "gamedesign" : "MONDY.W",
     "graphicdesign" : "あんらく",
@@ -23,7 +23,7 @@
         "text": [
           "このゲームでは、プレイヤーは人間サイドとゾンビサイドに分かれて戦います。どのプレイヤーがどちらのサイドなのかは分かりません。",
           "人間サイドの目的は役職が「ゾンビ」のプレイヤーを倒すことです。",
-          "ゾンビサイドの目的は、ゲームの最後まで生き残ることです。"
+          "ゾンビサaイドの目的は、ゲームの最後まで生き残ることです。"
         ]
       },
       {
