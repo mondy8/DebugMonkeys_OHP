@@ -65,51 +65,53 @@
                 </p>
               </section>
             </div>
-            <div class="contents__infoArea" :style="{ margin: stickyMargin }">
-              <div
-                v-if="game.nosale"
-                class="contents__infoArea-btn--buy contents__infoArea-btn--nosale"
-              >
-                {{ game.nosale }}
-              </div>
-              <div v-else-if="game.nosaleLink" class="contents__infoArea-btn--buy">
-                <a
-                  :href="game.nosaleLink"
-                  target="_blank"
-                  v-on:click="
-                    $ga.event('詳細ページ：ゾンパニ2020', 'click', game.title)
-                  "
+            <div class="contents__infoArea">
+              <div class="contents__infoArea-wrap">
+                <div
+                  v-if="game.nosale"
+                  class="contents__infoArea-btn--buy contents__infoArea-btn--nosale"
                 >
-                  予約フォームへ
-                </a>
-              </div>
-              <div v-else class="contents__infoArea-btn--buy">
-                <a
-                  :href="game.booth"
-                  target="_blank"
-                  v-on:click="
-                    $ga.event('詳細ページ：購入ボタン', 'click', game.title)
-                  "
-                >
-                  販売ページへ
-                </a>
-              </div>
-              <dl class="contents__infoArea-dl">
-                <dt v-if="game.gamedesign">ゲームデザイン</dt>
-                <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
-                <dt v-if="game.graphicdesign">アートワーク</dt>
-                <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
-                <dt v-if="game.player">プレイ人数</dt>
-                <dd v-if="game.player">{{ game.player }}</dd>
-                <dt v-if="game.time">プレイ時間</dt>
-                <dd v-if="game.time">{{ game.time }}</dd>
-                <dt v-if="game.age">対象年齢</dt>
-                <dd v-if="game.age">{{ game.age }}</dd>
-                <dt v-if="game.size">サイズ（mm）</dt>
-                <dd v-if="game.size">{{ game.size }}</dd>
-                <dt v-if="game.year">制作年</dt>
-                <dd v-if="game.year">{{ game.year }}</dd>
-              </dl>
+                  {{ game.nosale }}
+                </div>
+                <div v-else-if="game.nosaleLink" class="contents__infoArea-btn--buy">
+                  <a
+                    :href="game.nosaleLink"
+                    target="_blank"
+                    v-on:click="
+                      $ga.event('詳細ページ：ゾンパニ2020', 'click', game.title)
+                    "
+                  >
+                    予約フォームへ
+                  </a>
+                </div>
+                <div v-else class="contents__infoArea-btn--buy">
+                  <a
+                    :href="game.booth"
+                    target="_blank"
+                    v-on:click="
+                      $ga.event('詳細ページ：購入ボタン', 'click', game.title)
+                    "
+                  >
+                    販売ページへ
+                  </a>
+                </div>
+                <dl class="contents__infoArea-dl">
+                  <dt v-if="game.gamedesign">ゲームデザイン</dt>
+                  <dd v-if="game.gamedesign">{{ game.gamedesign }}</dd>
+                  <dt v-if="game.graphicdesign">アートワーク</dt>
+                  <dd v-if="game.graphicdesign">{{ game.graphicdesign }}</dd>
+                  <dt v-if="game.player">プレイ人数</dt>
+                  <dd v-if="game.player">{{ game.player }}</dd>
+                  <dt v-if="game.time">プレイ時間</dt>
+                  <dd v-if="game.time">{{ game.time }}</dd>
+                  <dt v-if="game.age">対象年齢</dt>
+                  <dd v-if="game.age">{{ game.age }}</dd>
+                  <dt v-if="game.size">サイズ（mm）</dt>
+                  <dd v-if="game.size">{{ game.size }}</dd>
+                  <dt v-if="game.year">制作年</dt>
+                  <dd v-if="game.year">{{ game.year }}</dd>
+                </dl>
+            </div>
             </div>
           </div>
         </div>
@@ -128,7 +130,6 @@ export default {
       img: [],
       id: "",
       mv: "",
-      stickyMargin: "60px auto",
       clientcontentsHeight: undefined,
       contentsShow: false,
       imgLoaded: false
@@ -167,21 +168,6 @@ export default {
     },
     load: function() {
       this.imgLoaded = true;
-    },
-    stickyNav: function() {
-      if (window.innerWidth > 760) {
-        if (window.pageYOffset < 300) {
-          this.stickyMargin = "60px auto";
-        } else {
-          const windowHeight = window.innerHeight;
-          const scrollTop = window.pageYOffset + 50 - 300;
-          const maxHeight = this.clientcontentsHeight - windowHeight;
-          const height = Math.min(scrollTop, maxHeight);
-          this.stickyMargin = height + "px auto 60px";
-        }
-      } else {
-        this.stickyMargin = "30px auto 60px";
-      }
     }
   },
   watch: {
@@ -196,18 +182,6 @@ export default {
   },
   created() {
     this.updateItems();
-    this.stickyNav;
-  },
-  mounted: function() {
-    window.addEventListener("resize", this.stickyNav, {passive: true});
-    window.addEventListener("scroll", this.stickyNav, {passive: true});
-    this.clientcontentsHeight = window.document.getElementById(
-      "contents"
-    ).clientHeight;
-  },
-  beforeDestroy: function() {
-    window.removeEventListener("resize", this.stickyNav);
-    window.removeEventListener("scroll", this.stickyNav);
   }
 };
 </script>
@@ -406,9 +380,11 @@ p {
   margin: 30px auto 60px;
   @include tab() {
     width: 170px;
-    margin-top: 60px;
-    height: 521px;
     padding-right: 30px;
+  }
+  &-wrap {
+    position: sticky;
+    top: 90px;
   }
   &-btn--buy {
     width: 100%;

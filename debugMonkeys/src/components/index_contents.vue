@@ -200,9 +200,7 @@ a {
       &:hover {
         background-color: $superlight-gray;
         img {
-          width: 110%;
-          top: 55%;
-          transform: translate(-50%, -55%);
+          transform: translate(-50%, -50%) scale(1.1);
         }
       }
     }
