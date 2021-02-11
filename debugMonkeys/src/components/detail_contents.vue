@@ -73,7 +73,10 @@
                 >
                   {{ game.nosale }}
                 </div>
-                <div v-else-if="game.nosaleLink" class="contents__infoArea-btn--buy">
+                <div
+                  v-else-if="game.nosaleLink"
+                  class="contents__infoArea-btn--buy"
+                >
                   <a
                     :href="game.nosaleLink"
                     target="_blank"
@@ -110,8 +113,11 @@
                   <dd v-if="game.size">{{ game.size }}</dd>
                   <dt v-if="game.year">制作年</dt>
                   <dd v-if="game.year">{{ game.year }}</dd>
+                  <dt v-if="game.istruction">
+                    <a :href="game.istruction" target="_blank" class="contents__link">説明書</a>
+                  </dt>
                 </dl>
-            </div>
+              </div>
             </div>
           </div>
         </div>
@@ -258,6 +264,23 @@ p {
     @include tab() {
       justify-content: space-between;
       flex-direction: row;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+    color: #333;
+    transition: 0.2s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+    &[target]:after {
+      content: "";
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      background-image: url(/img/common/icon_external.png);
+      background-size: cover;
+      transform: translate(4px, 5px);
     }
   }
 }

@@ -36,7 +36,7 @@
                 target="_blank"
                 v-on:click="$ga.event('ゾンパニ2020', 'click', game.title)"
               >
-               予約フォームへ 
+                予約フォームへ
               </a>
             </li>
             <li v-else class="contents__detail-btn--buy">
@@ -127,6 +127,8 @@ a {
 }
 .contents {
   margin-top: 10px;
+  background: #fff;
+  position: relative;
 }
 .contents__detail {
   display: flex;
@@ -142,7 +144,7 @@ a {
   @include pc() {
     margin-top: 70px;
     flex-direction: row;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;
     justify-content: flex-start;
   }
   &-list {
