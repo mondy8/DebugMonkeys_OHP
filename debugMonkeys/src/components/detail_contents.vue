@@ -113,10 +113,22 @@
                   <dd v-if="game.size">{{ game.size }}</dd>
                   <dt v-if="game.year">制作年</dt>
                   <dd v-if="game.year">{{ game.year }}</dd>
-                  <dt v-if="game.istruction">
-                    <a :href="game.istruction" target="_blank" class="contents__link">説明書</a>
-                  </dt>
                 </dl>
+                <div
+                  v-if="game.istruction"
+                  class="contents__infoArea-instruction"
+                >
+                  <a
+                    :href="game.istruction"
+                    target="_blank"
+                    class="contents__link"
+                    v-on:click="
+                      $ga.event('説明書ダウンロード', 'click', game.title)
+                    "
+                  >
+                    説明書を<br class="only-pc" />ダウンロード
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -230,6 +242,12 @@ a {
 }
 p {
   margin: 0;
+}
+.only-pc {
+  display: none;
+  @include tab() {
+    display: block;
+  }
 }
 
 .wrap {
@@ -466,17 +484,24 @@ p {
     }
   }
   &-dl {
-    margin-top: 45px;
+    margin-top: 35px;
     margin-bottom: 0;
+  }
+  &-instruction {
+    font-weight: bold;
+    margin-top: 20px;
+    @include tab() {
+      margin-top: 27px;
+    }
   }
   dt {
     font-weight: bold;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 15px;
     display: inline-block;
     width: 50%;
     @include tab() {
-      margin-top: 30px;
+      margin-top: 27px;
       display: block;
       width: 100%;
     }
@@ -485,12 +510,12 @@ p {
     }
   }
   dd {
-    margin: 7px 0 0;
+    margin: 5px 0 0;
     font-size: 15px;
     display: inline-block;
     width: 50%;
     @include tab() {
-      margin: 10px 0 0;
+      margin: 5px 0 0;
       display: block;
       width: 100%;
     }

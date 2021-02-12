@@ -13,6 +13,7 @@
     "age" : "10歳以上",
     "size" : "W70xH100xD20",
     "year" : "2020",
+    "istruction": "/pdf/instruction_zombie.pdf",
     "article": [
       {
         "leadCopy": "紛れ込んだゾンビは誰だ！？今宵、避難所でライフの音が響き渡る…！！正体隠匿系B級ゾンビパニックカードゲーム"
@@ -177,6 +178,7 @@
     "age" : "10歳以上",
     "size" : "W200xH65xD150",
     "year" : "2020",
+    "istruction": "/pdf/instruction_intocube.pdf",
     "article" : [
       {
         "leadCopy" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？正体隠匿系アブストラクトゲーム"
@@ -233,6 +235,7 @@
     "age" : "10歳以上",
     "size" : "W330xH250xD80",
     "year" : "2020",
+    "istruction": "/pdf/instruction_nabedaikan.pdf",
     "article" : [
       {
         "leadCopy" : "誰よりも上手に、誰よりも美味しく、お互いに鍋の具材をよそい合おう！リアル鍋を使った忖度パーティーゲーム！"
@@ -648,6 +651,7 @@
     "age": "10歳以上",
     "size": "W120xH200xD30",
     "year": "2018",
+    "istruction": "/pdf/instruction_wacryll.pdf",
     "article": [
       {
         "leadCopy": "相手のコマを使って飛び越えろ！アクリルで出来た飛び越えアブストラクトゲーム"
