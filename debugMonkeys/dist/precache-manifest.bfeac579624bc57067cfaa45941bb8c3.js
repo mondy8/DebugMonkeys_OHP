@@ -328,7 +328,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pdf/instruction_wacryll.pdf"
   },
   {
-    "revision": "bec1cd774e7f7bd2cfc25c38cbcc6fa2",
+    "revision": "bdc9327a87f326ecc0fc17cf293f75b6",
     "url": "/pdf/instruction_zombie.pdf"
   },
   {
