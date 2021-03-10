@@ -1,11 +1,95 @@
 {
+  "qubism" : {
+    "title" : "Qubism",
+    "thumbnail" : "img_index_qubism.jpg",
+    "detailMv": "img_detail_qubism_mv.jpg",
+    "lead" :
+      "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
+    "booth" : "https://debug-monkeys.booth.pm/items/1119557",
+    "detail" : "https://note.com/debug_monkeys/n/n499641b3c869",
+    "nosale": "春ゲムマ再販予定",
+    "gamedesign": "EAD",
+    "player": "2人",
+    "time": "～30分",
+    "age": "10歳以上",
+    "size": "W160xH230xD30",
+    "year": "2018",
+    "istruction": "/pdf/instruction_qubism.pdf",
+    "article": [
+      {
+        "leadCopy": "キューブをコントロールして相手を出し抜け！頭脳派アブストラクトゲーム"
+      },
+      {
+        "imgpath": "img_detail_qubism01.jpg",
+        "title": "どんなゲーム？",
+        "text": [
+          "このゲームは5x5マスの中で、「コマを動かす」「キューブを置く」「キューブを動かす」の3つのアクションで繰り広げる1対1のバトルゲームです。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_qubism02.jpg",
+        "title": "ここがポイント！",
+        "text": [
+          "・5x5というコンパクトさの中で深い読み合いがぶつかり合う！",
+          "・初めの方に置いたキューブが最後の最後に効いてきた！などドラマティックな展開も？",
+          "・木製の温かみのあるダイスとボード。コンポーネント好きな方へもおススメ！"
+        ]
+      },
+      {
+        "imgpath": "img_detail_qubism03.jpg",
+        "title": "アクションについて",
+        "text": [
+          "プレイヤーが自分のターンで行えるアクションは以下の3つです。",
+          "「コマを動かす」",
+          "「キューブを置く」",
+          "「キューブを動かす」"
+        ]
+      },
+      {
+        "textOnly": true, 
+        "text": [
+          "この3つのアクションを駆使しながら、対岸へコマを進めたプレイヤーが勝利します。"
+        ]
+      },
+      {
+        "subTitle": "「コマを動かす」",
+        "text": [
+          "自分のコマを動かします。",
+          "キューブを飛び越えることはできませんが、相手のコマを飛び越えることはできます。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_qubism04.png",
+        "subTitle": "「キューブを置く」",
+        "text": [
+          "キューブを好きなマスに置きます。",
+          "ただし、キューブの上面の矢印の向きの1マスにプレイヤーコマかキューブが置かれている場合、そのマスに置くことはできません。",
+          "キューブは置き方ひとつでゲームに大きく影響するので、慎重に置きましょう。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_qubism05.png",
+        "subTitle": "「キューブを動かす」",
+        "text": [
+          "すでに置かれているキューブを動かします。",
+          "キューブ上面の矢印の方向に任意のマス数動かした後、キューブを矢印の方向に90度回転させて配置します。",
+          "相手が置いたものでも、自分が置いたものでも動かすことができます。"
+        ]
+      },
+      {
+        "imgpath": "img_detail_qubism06.png"
+      },
+      {
+        "videopath": "https://www.youtube.com/embed/_BDJBj5fQyE?modestbranding=1"
+      }
+    ]
+  },
   "zombie": {
     "title": "ゾンビパニックとライフルおじさん",
     "thumbnail" : "img_index_zombie.png",
     "detailMv": "img_detail_zombie_mv.jpg",
     "lead" : "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
     "booth": "https://bodoge.hoobby.net/games/zombie-panic-rifle-ojisan",
-    "new" : true,
     "gamedesign" : "MONDY.W",
     "graphicdesign" : "あんらく",
     "player" : "4～6人",
@@ -548,91 +632,6 @@
       },
       {
         "videopath": "https://www.youtube.com/embed/Uw58J3hoAUc?modestbranding=1"
-      }
-    ]
-  },
-  "qubism" : {
-    "title" : "Qubism",
-    "thumbnail" : "img_index_qubism.jpg",
-    "detailMv": "img_detail_qubism_mv.jpg",
-    "lead" :
-      "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
-    "booth" : "https://debug-monkeys.booth.pm/items/1119557",
-    "detail" : "https://note.com/debug_monkeys/n/n499641b3c869",
-    "nosale": "完売",
-    "gamedesign": "EAD",
-    "player": "2人",
-    "time": "～30分",
-    "age": "10歳以上",
-    "size": "W160xH230xD30",
-    "year": "2018",
-    "istruction": "/pdf/instruction_qubism.pdf",
-    "article": [
-      {
-        "leadCopy": "キューブをコントロールして相手を出し抜け！頭脳派アブストラクトゲーム"
-      },
-      {
-        "imgpath": "img_detail_qubism01.jpg",
-        "title": "どんなゲーム？",
-        "text": [
-          "このゲームは5x5マスの中で、「コマを動かす」「キューブを置く」「キューブを動かす」の3つのアクションで繰り広げる1対1のバトルゲームです。"
-        ]
-      },
-      {
-        "imgpath": "img_detail_qubism02.jpg",
-        "title": "ここがポイント！",
-        "text": [
-          "・5x5というコンパクトさの中で深い読み合いがぶつかり合う！",
-          "・初めの方に置いたキューブが最後の最後に効いてきた！などドラマティックな展開も？",
-          "・木製の温かみのあるダイスとボード。コンポーネント好きな方へもおススメ！"
-        ]
-      },
-      {
-        "imgpath": "img_detail_qubism03.jpg",
-        "title": "アクションについて",
-        "text": [
-          "プレイヤーが自分のターンで行えるアクションは以下の3つです。",
-          "「コマを動かす」",
-          "「キューブを置く」",
-          "「キューブを動かす」"
-        ]
-      },
-      {
-        "textOnly": true, 
-        "text": [
-          "この3つのアクションを駆使しながら、対岸へコマを進めたプレイヤーが勝利します。"
-        ]
-      },
-      {
-        "subTitle": "「コマを動かす」",
-        "text": [
-          "自分のコマを動かします。",
-          "キューブを飛び越えることはできませんが、相手のコマを飛び越えることはできます。"
-        ]
-      },
-      {
-        "imgpath": "img_detail_qubism04.png",
-        "subTitle": "「キューブを置く」",
-        "text": [
-          "キューブを好きなマスに置きます。",
-          "ただし、キューブの上面の矢印の向きの1マスにプレイヤーコマかキューブが置かれている場合、そのマスに置くことはできません。",
-          "キューブは置き方ひとつでゲームに大きく影響するので、慎重に置きましょう。"
-        ]
-      },
-      {
-        "imgpath": "img_detail_qubism05.png",
-        "subTitle": "「キューブを動かす」",
-        "text": [
-          "すでに置かれているキューブを動かします。",
-          "キューブ上面の矢印の方向に任意のマス数動かした後、キューブを矢印の方向に90度回転させて配置します。",
-          "相手が置いたものでも、自分が置いたものでも動かすことができます。"
-        ]
-      },
-      {
-        "imgpath": "img_detail_qubism06.png"
-      },
-      {
-        "videopath": "https://www.youtube.com/embed/_BDJBj5fQyE?modestbranding=1"
       }
     ]
   },

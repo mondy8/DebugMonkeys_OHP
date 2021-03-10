@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.16662b8a490b1873a0788c6198aa1b7e.js"
+  "/precache-manifest.6700228f5331a8dd40601666ba13151e.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "debugMonkeys"});
