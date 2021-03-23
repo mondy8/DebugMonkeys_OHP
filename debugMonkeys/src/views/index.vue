@@ -2,6 +2,7 @@
   <div class="index" id="top">
     <div class="loader">Loading...</div>
     <contents />
+    <mv />
   </div>
 </template>
 
@@ -9,7 +10,7 @@
 import Vue from "vue";
 import VueHead from "vue-head";
 
-// import mv from "@/components/index_mv.vue";
+import mv from "@/components/index_mv.vue";
 import contents from "@/components/index_contents.vue";
 
 Vue.use(VueHead);
@@ -17,8 +18,8 @@ Vue.use(VueHead);
 export default {
   name: "index",
   components: {
-    contents
-    // mv
+    contents,
+    mv
   },
   head: {
     title() {

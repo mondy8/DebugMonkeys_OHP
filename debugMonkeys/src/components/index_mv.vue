@@ -1,46 +1,26 @@
 <template>
   <section class="mv">
+    <h3 class="mv__ttl">DEBUG MONKEYS TOPIC</h3>
     <div class="mv__inner">
-      <!-- <h2 class="mv__inner-ttl">Debug Monkeys</h2>
-      <p class="mav__inner-lead">新作ゲーム販売中！</p>-->
       <carousel
         :autoplay="true"
         :loop="true"
         :perPage="1"
-        :autoplayTimeout="3000"
+        :autoplayTimeout="2500"
         :paginationPosition="bottom"
         :paginationPadding="5"
         :centerMode="true"
-        :paginationEnabled="true"
+        :paginationEnabled="false"
         :spacePadding="0"
-        :indicators="true"
-        :indicator-type="line"
       >
-        <slide>
-          <a 
+        <slide v-for="item in mv" :key="item">
+          <a
             href="https://twitter.com/debug_monkeys"
             target="_blank"
             class="mv__inner-bnr"
+            :style="{ backgroundImage: 'url(' + item.img + ')' }"
+            v-on:click="$ga.event('デバモントピック', 'click', game.title)"
           >
-            <img src="../assets/img/bnr_gm2020.png" alt="ゲームマーケット2020秋 2020年11月14日（土）出展決定" />
-          </a>
-        </slide>
-        <slide>
-          <a 
-            href="https://debug-monkeys.booth.pm/"
-            target="_blank"
-            class="mv__inner-bnr"
-          >
-            <img src="../assets/img/bnr_booth.png" alt="BOOTHにてデバッグモンキーズの作品販売中！！" />
-          </a>
-        </slide>
-        <slide>
-          <a 
-            href="https://www.youtube.com/channel/UCqqyVlN8VP0gZ6KBqdhYH1A"
-            target="_blank"
-            class="mv__inner-bnr"
-          >
-            <img src="../assets/img/bnr_youtube.png" alt="毎週月曜日・木曜日22時頃よりYouTubeにてラジオ配信中！！" />
           </a>
         </slide>
       </carousel>
@@ -53,14 +33,23 @@ import { Carousel, Slide } from "vue-carousel";
 export default {
   name: "mv",
   components: {
-    Carousel, 
+    Carousel,
     Slide
+  },
+  data() {
+    return {
+      mv: [
+        { img: "/img/top/mv01.jpg" },
+        { img: "/img/top/mv02.jpg" },
+        { img: "/img/top/mv03.jpg" },
+        { img: "/img/top/mv04.jpg" }
+      ]
+    };
   }
 };
 </script>
 
 <style scoped lang="scss">
-
 @mixin sp {
   @media (max-width: 768px) {
     @content;
@@ -78,44 +67,43 @@ export default {
 }
 
 .mv {
-  margin-top: 70px;
-  @include tab {
-    margin-top: 100px;
-  };
+  padding: 60px;
+  background: #eeeeee;
+  &__ttl {
+    display: block;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #3b4043;
+    @include tab {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+  }
   &__inner {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
     @include tab {
       width: 70%;
-    };
-    &-bnr {
-
-     img {
-      width: 100%;
     }
+    &-bnr {
+      margin-top: 20px;
+      display: inline-block;
+      overflow: hidden;
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 50vw;
+      @include tab {
+        margin-top: 0;
+        height: 300px;
+      }
     }
   }
 }
-// .mv {
-//   width: 100%;
-//   height: 250px;
-//   display: flex;
-//   justify-content: flex-end;
-//   margin: 13px 0;
-//   &__inner {
-//     width: 50%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     &-ttl {
-//       font-size: 38px;
-//       display: block;
-//     }
-//     &-lead {
-//       font-size: 28px;
-//       display: block;
-//     }
-//   }
-// }
 </style>

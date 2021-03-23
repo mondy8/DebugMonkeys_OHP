@@ -130,6 +130,9 @@ a {
   background: #fff;
   position: relative;
 }
+.mv + .contents .contents__detail {
+  padding-top: 20px;
+}
 .contents__detail {
   display: flex;
   flex-direction: column;
