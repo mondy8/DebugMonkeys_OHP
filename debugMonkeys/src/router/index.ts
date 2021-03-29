@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import VueAnalytics from "vue-analytics";
 import Index from "../views/index.vue";
 import Detail from "../views/detail.vue";
+import About from "../views/about.vue";
 
 Vue.use(VueRouter);
 
@@ -16,7 +17,12 @@ const routes = [
     path: "/detail/:id",
     name: "detail",
     component: Detail
-  }
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: About
+  },
 ];
 
 const router = new VueRouter({

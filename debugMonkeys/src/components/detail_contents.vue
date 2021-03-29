@@ -2,8 +2,8 @@
   <article>
     <transition mode="out-in">
       <div class="wrap" :class="{ show: contentsShow }">
-        <div class="mv" v-if="mv">
-          <img :src="mv" :alt="id" v-on:load="load" />
+        <div class="mv" v-if="game.detailMv">
+          <img :src="'/img/detail/' + game.detailMv" :alt="id" v-on:load="load" />
         </div>
         <div class="contents" id="contents">
           <div class="contents__inner">
@@ -147,7 +147,6 @@ export default {
       game: game,
       img: [],
       id: "",
-      mv: "",
       clientcontentsHeight: undefined,
       contentsShow: false,
       imgLoaded: false
@@ -158,10 +157,6 @@ export default {
       this.id = this.$route.params.id;
       this.game = game[this.id];
       this.img = [];
-      this.mv = "";
-      if (this.game.detailMv) {
-        this.mv = this.InputImagePath(this.game.detailMv);
-      }
       for (const index of this.game.article) {
         if (index.imgpath) {
           this.img.push(this.InputImagePath(index.imgpath));
@@ -182,7 +177,7 @@ export default {
       }, 50);
     },
     InputImagePath: function(path) {
-      return require("@/assets/img/detail/" + path);
+      return "/img/detail/" + path;
     },
     load: function() {
       this.imgLoaded = true;

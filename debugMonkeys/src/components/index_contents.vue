@@ -17,7 +17,7 @@
               }
             }"
           >
-            <img :src="thumbImg[index]" :alt="game.title" />
+            <img :src="'/img/top/' + game.thumbnail" :alt="game.title" />
           </router-link>
         </div>
         <div class="contents__detail-inner">
@@ -76,18 +76,7 @@ export default {
   data() {
     return {
       game: game,
-      thumbImg: []
     };
-  },
-  created() {
-    for (const key in game) {
-      this.thumbImg.push(this.InputImagePath(game[key].thumbnail));
-    }
-  },
-  methods: {
-    InputImagePath: function(path) {
-      return require("@/assets/img/" + path);
-    }
   }
 };
 </script>
