@@ -41,8 +41,7 @@ export default {
       mv: [
         { img: "/img/top/mv01.jpg" },
         { img: "/img/top/mv02.jpg" },
-        { img: "/img/top/mv03.jpg" },
-        { img: "/img/top/mv04.jpg" }
+        { img: "/img/top/mv03.jpg" }
       ]
     };
   }

@@ -34,7 +34,7 @@
               <a
                 :href="game.nosaleLink"
                 target="_blank"
-                v-on:click="$ga.event('ゾンパニ2020', 'click', game.title)"
+                v-on:click="$ga.event('鍋代官', 'click', game.title)"
               >
                 予約フォームへ
               </a>
@@ -75,7 +75,7 @@ export default {
   name: "contents",
   data() {
     return {
-      game: game,
+      game: game
     };
   }
 };

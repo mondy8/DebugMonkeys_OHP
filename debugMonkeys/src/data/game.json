@@ -7,7 +7,7 @@
       "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
     "booth" : "https://debug-monkeys.booth.pm/items/1119557",
     "detail" : "https://note.com/debug_monkeys/n/n499641b3c869",
-    "nosale": "春ゲムマ再販予定",
+    "nosaleLink": "https://docs.google.com/forms/d/e/1FAIpQLSeMTbWRuEZTrEe60AbWzDt1GM9kzx-5zqk2RJDDRtQyjccYcg/viewform",
     "gamedesign": "EAD",
     "player": "2人",
     "time": "～30分",
@@ -33,7 +33,7 @@
         "text": [
           "・5x5というコンパクトさの中で深い読み合いがぶつかり合う！",
           "・初めの方に置いたキューブが最後の最後に効いてきた！などドラマティックな展開も？",
-          "・木製の温かみのあるダイスとボード。コンポーネント好きな方へもおススメ！"
+          "・木製の温かみのあるキューブとボード。コンポーネント好きな方へもおススメ！"
         ]
       },
       {
@@ -101,7 +101,7 @@
     "istruction": "/pdf/instruction_zombie.pdf",
     "article": [
       {
-        "leadCopy": "紛れ込んだゾンビは誰だ！？今宵、避難所でライフの音が響き渡る…！！正体隠匿系B級ゾンビパニックカードゲーム"
+        "leadCopy": "紛れ込んだゾンビは誰だ！？今宵、避難所でライフの音が響き渡る…！！正体隠匿系B級パニックカードゲーム"
       },
       {
         "imgpath": "img_detail_zombie01.jpg",
@@ -109,7 +109,7 @@
         "text": [
           "このゲームでは、プレイヤーは人間サイドとゾンビサイドに分かれて戦います。どのプレイヤーがどちらのサイドなのかは分かりません。",
           "人間サイドの目的は役職が「ゾンビ」のプレイヤーを倒すことです。",
-          "ゾンビサaイドの目的は、ゲームの最後まで生き残ることです。"
+          "ゾンビサイドの目的は、ゲームの最後まで生き残ることです。"
         ]
       },
       {
@@ -256,7 +256,7 @@
     "thumbnail" : "img_index_intocube.jpg",
     "detailMv": "img_detail_intocube_mv.jpg",
     "lead" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？",
-    "booth" : "https://debug-monkeys.booth.pm/items/2282850",
+    "nosale" : "完売",
     "gamedesign" : "Sunny",
     "player" : "2人",
     "time" : "15～30分",

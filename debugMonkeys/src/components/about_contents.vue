@@ -2,7 +2,9 @@
   <section class="contents">
     <h2>デバッグモンキーズとは？</h2>
     <div class="contents__introduce">
-      <p>デバッグモンキーズは、ボードゲームを作っては猿のようにデバッグをし続けるボードゲーム制作団体です。メンバーは6人おり、東京・静岡・福岡で活動しているいます。</p>
+      <p>
+        デバッグモンキーズは、ボードゲームを作っては猿のようにデバッグをし続けるボードゲーム制作団体です。メンバーは6人おり、東京・静岡・福岡で活動しているいます。
+      </p>
     </div>
     <div
       class="contents__member"
@@ -22,6 +24,8 @@
         <a :href="'https://twitter.com/' + about.twitter">
           @{{ about.twitter }}
         </a>
+      </p>
+
       <p v-if="about.introduce" class="contents__member-introduce">
         {{ about.introduce }}
       </p>
@@ -35,7 +39,7 @@ export default {
   name: "contents",
   data() {
     return {
-      about: about,
+      about: about
       // thumbImg: []
     };
   },
@@ -48,7 +52,7 @@ export default {
     // InputImagePath: function(path) {
     //   return require("@/assets/img/" + path);
     // }
-  },
+  }
 };
 </script>
 

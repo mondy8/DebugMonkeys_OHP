@@ -3,7 +3,11 @@
     <transition mode="out-in">
       <div class="wrap" :class="{ show: contentsShow }">
         <div class="mv" v-if="game.detailMv">
-          <img :src="'/img/detail/' + game.detailMv" :alt="id" v-on:load="load" />
+          <img
+            :src="'/img/detail/' + game.detailMv"
+            :alt="id"
+            v-on:load="load"
+          />
         </div>
         <div class="contents" id="contents">
           <div class="contents__inner">

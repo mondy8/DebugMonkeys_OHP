@@ -16,7 +16,7 @@ Vue.use(VueHead);
 export default {
   name: "index",
   components: {
-    contents,
+    contents
   },
   head: {
     title() {
