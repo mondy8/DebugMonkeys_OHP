@@ -7,7 +7,7 @@
       "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
     "booth" : "https://debug-monkeys.booth.pm/items/1119557",
     "detail" : "https://note.com/debug_monkeys/n/n499641b3c869",
-    "nosaleLink": "https://docs.google.com/forms/d/e/1FAIpQLSeMTbWRuEZTrEe60AbWzDt1GM9kzx-5zqk2RJDDRtQyjccYcg/viewform",
+    "nosale": "完売",
     "gamedesign": "EAD",
     "player": "2人",
     "time": "～30分",
@@ -15,7 +15,6 @@
     "size": "W160xH230xD30",
     "year": "2018",
     "istruction": "/pdf/instruction_qubism.pdf",
-    "new": true,
     "article": [
       {
         "leadCopy": "キューブをコントロールして相手を出し抜け！頭脳派アブストラクトゲーム"
