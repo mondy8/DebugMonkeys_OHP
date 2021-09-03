@@ -39,9 +39,7 @@ export default {
   data() {
     return {
       mv: [
-        { img: "/img/top/mv01.jpg" },
-        { img: "/img/top/mv02.jpg" },
-        { img: "/img/top/mv03.jpg" }
+        { img: "/img/top/mv01_202109.png" }
       ]
     };
   }
