@@ -34,7 +34,7 @@
               <a
                 :href="game.nosaleLink"
                 target="_blank"
-                v-on:click="$ga.event('鍋代官', 'click', game.title)"
+                v-on:click="$ga.event('Bana-na', 'click', game.title)"
               >
                 予約フォームへ
               </a>

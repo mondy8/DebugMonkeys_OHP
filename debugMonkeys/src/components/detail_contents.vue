@@ -33,7 +33,7 @@
                 <div
                   class="contents__articleArea-img"
                   v-if="img[index]"
-                  :class="{ imgSmall: article.imgSmall }"
+                  :class="{ imgSmall: article.imgSmall, imgFullSize: article.imgFullSize }"
                 >
                   <img
                     :src="img[index]"
@@ -387,6 +387,9 @@ p {
       max-width: 760px;
       @include tab() {
       }
+    }
+    &.imgFullSize {
+      max-height: none;
     }
   }
   &-txt {
