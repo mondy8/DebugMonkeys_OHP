@@ -7,6 +7,7 @@
       "みんなでバナナの争奪戦！どの木に並ぶと効率よくバナナを取ることができるか？シンプルなルールで奥深い戦略と運が必要なパーティゲーム",
     "booth" : "https://debug-monkeys.booth.pm/items/1704086",
     "detail" : "https://note.com/debug_monkeys/n/n041ffe013d18",
+    "nosale" : "完売",
     "gamedesign": "haori",
     "player": "2～4人",
     "time": "10分～20分",
@@ -76,8 +77,9 @@
         ]
       },
       {
-        "imgpath": "img_detail_banana03.png",
-        "imgFullSize": true,
+        "videopath": "https://www.youtube.com/embed/nvh4HB4yS9s?modestbranding=1"
+      },
+      {
         "title": "戦略について",
         "text": [
           "バナナの生えてくる木は毎回ランダムで、次はこの木にバナナが生えるに違いない、と予想してサルを動かしたり、あるいはあえて特定のバナナの木に並び続けたりなど、どのような行動を取るかの選択が迫られます。",
@@ -88,6 +90,8 @@
         ]
       },
       {
+        "imgpath": "img_detail_banana03.png",
+        "imgFullSize": true,
         "title": "コンポーネントについて",
         "text": [
           "影絵調のイラストをあしらった巾着袋の中に、袋とカラフルでかわいい説明書と紙製ゲームボード、チップが入っています。",
@@ -412,6 +416,7 @@
     "detailMv": "img_detail_nabedaikan_mv.jpg",
     "lead" : "このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！",
     "booth" : "https://debug-monkeys.booth.pm/items/1949653",
+    "nosale" : "完売",
     "detail" : "https://note.com/debug_monkeys/n/n83cdba1dd238",
     "gamedesign" : "Sunny",
     "player" : "2～4人",
@@ -474,6 +479,7 @@
     "detailMv": "img_detail_streets_mv.jpg",
     "lead" : "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。",
     "booth": "https://debug-monkeys.booth.pm/items/1704097",
+    "nosale" : "完売",
     "gamedesign": "Sunny",
     "graphicdesign": "nishimura natsumi",
     "player": "3～5人",
@@ -552,6 +558,7 @@
     "lead" :
       "相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵の番外に弾き出しましょう。",
     "booth" : "https://debug-monkeys.booth.pm/items/1704415",
+    "nosale" : "完売",
     "detail" : "https://note.com/debug_monkeys/n/n7969a35d5d96",
     "gamedesign": "EAD",
     "player": "2人",
