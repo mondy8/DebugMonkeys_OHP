@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd6e7db03f948fbf8d46",
+    "revision": "48bf5a3c4e9befcb0261",
     "url": "/css/app.9846ab2d.css"
   },
   {
@@ -196,6 +196,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/detail/img_detail_zombie_mv.jpg"
   },
   {
+    "revision": "da326ac51e0b5789299af9803b414781",
+    "url": "/img/detail/img_zombie_poster01.png"
+  },
+  {
+    "revision": "3b875abada38cdba9f34bf5a41251333",
+    "url": "/img/detail/img_zombie_poster02.png"
+  },
+  {
     "revision": "2b82a7744605e6a48981a399cafb31dd",
     "url": "/img/icon_logo_note.2b82a774.png"
   },
@@ -260,12 +268,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/mv03.jpg"
   },
   {
-    "revision": "a209195a9d62d15f17941c1b56fc56f7",
+    "revision": "cd40d77b8fd0f3ead836a51b184f65b0",
     "url": "/index.html"
   },
   {
-    "revision": "fd6e7db03f948fbf8d46",
-    "url": "/js/app.dfd3ced1.js"
+    "revision": "48bf5a3c4e9befcb0261",
+    "url": "/js/app.f497709e.js"
   },
   {
     "revision": "4141acd407ec7ec83875",
