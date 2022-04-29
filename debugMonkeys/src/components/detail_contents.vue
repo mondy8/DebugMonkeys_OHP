@@ -347,19 +347,18 @@ p {
   }
   &-video {
     margin-top: $sp-elementMarginTop;
-    text-align: center;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
     @include tab() {
       margin-top: $pc-elementMarginTop;
     }
     &-inner {
-      margin: 0 auto;
+      position: absolute;
+      top: 0;
+      right: 0;
       width: 100%;
-      height: 52vw;
-      @include tab() {
-        width: 100%;
-        height: 37vw;
-        max-height: 550px;
-      }
+      height: 100%;
     }
   }
   &-img {
