@@ -33,7 +33,7 @@
           </a>
         </li>
       </ul>
-      <p class="footer__copyrights">&copy; 2021 DebugMonkeys</p>
+      <p class="footer__copyrights">&copy; 2022 DebugMonkeys</p>
       <a href="#" class="footer__btn-top" v-scroll-to="'#top'">
         <img src="../assets/img/icon_footer_arrow.png" alt="↑" />
       </a>

@@ -39,7 +39,7 @@ export default {
   data() {
     return {
       mv: [
-        { img: "/img/top/mv01_202109.png" }
+        { img: "/img/top/mv01_202210.jpg" }
       ]
     };
   }
