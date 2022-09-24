@@ -345,7 +345,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "12d2811fab79e1eae52466902a842fb2",
-    "url": "/ogp_elaa.png"
+    "url": "/ogp_elaa.jpg"
   },
   {
     "revision": "506f4224917aaab4bfd7ae1ff82dcf9f",
