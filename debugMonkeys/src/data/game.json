@@ -1,18 +1,18 @@
 {
   "elaa": {
     "title": "ELÄÄ ROTU エラロト",
-    "thumbnail" : "img_index_elaa.png",
+    "thumbnail": "img_index_elaa.png",
     "detailMv": "img_detail_elaa_mv.png",
-    "lead" : "2つの種族の闘いの物語ー。自身の種族の生き残りをかけた、非対称×エリアコントロール×拡大再生産の2人専用ボードゲーム！",
-    "gamedesign" : "Guamu",
-    "graphicdesign" : "みやのせなつみ",
-    "player" : "2人",
-    "time" : "30～45分",
-    "age" : "14歳以上",
-    "size" : "W148xH210xD30",
-    "year" : "2022",
-    "nosaleLink" : "https://docs.google.com/forms/d/e/1FAIpQLScjMaaQ9RbzMF97Mvi-5RyX4fOraU-3fYnS1UIYcdYJRvkWEg/viewform",
-    "new" : true,
+    "lead": "2つの種族の闘いの物語ー。自身の種族の生き残りをかけた、非対称×エリアコントロール×拡大再生産の2人専用ボードゲーム！",
+    "gamedesign": "GUaMU",
+    "graphicdesign": "みやのせなつみ",
+    "player": "2人",
+    "time": "30～45分",
+    "age": "14歳以上",
+    "size": "W148xH210xD30",
+    "year": "2022",
+    "nosaleLink": "https://docs.google.com/forms/d/e/1FAIpQLScjMaaQ9RbzMF97Mvi-5RyX4fOraU-3fYnS1UIYcdYJRvkWEg/viewform",
+    "new": true,
     "article": [
       {
         "leadCopy": "2つの種族の闘いの物語ー。自身の種族の生き残りをかけた、非対称×エリアコントロール×拡大再生産の2人専用ボードゲーム！"
@@ -64,13 +64,13 @@
         ]
       },
       {
-        "subTitle" : "種族間によるプレイの違い",
+        "subTitle": "種族間によるプレイの違い",
         "text": [
           "両プレイヤーが操るオッタ族、エルマ族はそれぞれ移動方法、資源収集、実施するアクションなど様々な部分で違いがあります。"
         ]
       },
       {
-        "subTitle" : "オッタ族",
+        "subTitle": "オッタ族",
         "text": [
           "オッタ族はエルマ族を全滅させることが目標になります。",
           "オッタ族の種族の特徴は大振りで攻撃的かつどんどんと能力が強化される点です。",
@@ -83,7 +83,7 @@
       },
       {
         "imgpath": "img_detail_elaa05.png",
-        "subTitle" : "エルマ族",
+        "subTitle": "エルマ族",
         "text": [
           "エルマ族は最終ラウンドまで1コマでも生き残ることが目標になります。",
           "エルマ族の特徴は柔軟性と施設建設にあります。",
@@ -138,22 +138,137 @@
       },
       {
         "imgpath": "img_detail_elaa04.png"
+      },
+      {
+        "title": "よくある質問",
+        "text": [
+          "よくある質問一覧にお答えします。"
+        ],
+        "faq": true
+      },
+      {
+        "textOnly": true,
+        "textBold": "時間経過フェイズ",
+        "text": [
+          "・エルマ族プレイヤーの木の実ボーナスはいつ獲得しますか？",
+          "→即座に獲得します。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "textBold": "イニシアチブフェイズ",
+        "text": [
+          "・オッタ族プレイヤーがエルマ族コマを複数個箱に戻すことによって、両プレイヤーが出した数字が一緒になった場合、どちらのプレイヤーが先に手番を行いますか？",
+          "→エルマ族プレイヤーです。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "textBold": "アクションフェイズ",
+        "text": [
+          "【エルマ族・オッタ族共有】",
+          "・複数のコマを同じマスに移動させることはできますか？",
+          "→できます"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・相手プレイヤーのホームマスに侵入することはできますか？",
+          "→できます"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・資源管理ボードで持っている資源が「９」を超えた場合どのようになりますか？",
+          "→資源は９を超えて持つことはできません。\n ９に達した場合、それ以上の資源は失われます。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "【エルマ族】",
+          "・エルマ族は伐採チップがあるマスに移動することはできますか？",
+          "→できます。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・ツリーチップがあるマスに罠チップは置けますか？（もしくはその逆）",
+          "→置けます"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "【オッタ族】",
+          "・エルマ族が設置したツリーチップがあるマスに移動することはできますか？",
+          "→できます"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・伐採チップは、資源アイコンがないところに置けますか？",
+          "→置けません"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・伐採チップは、ツリーチップや罠チップがあるマスに置けますか？",
+          "→置けます"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "・ツリーチップや罠チップが同じマスにある時、破壊アクション１回で２つとも破壊をすることはできますか？",
+          "→できません。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "textBold": "その他",
+        "text": [
+          "・ゲームが途中で勝てないと分かってしまいました。投了してもいいですか？",
+          "→投了してもいいですが、絶対負ける盤面は意外と無かったりします。よく考えてみましょう！"
+        ]
+      },
+      {
+        "title": "カード効果補足"
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "凍結：失う資源がない場合は、効果は適用されません。",
+          "スプリント：オッタ族の移動できる最大歩数は増えません。",
+          "物々交換：失う資源がない場合は、獲得した資源１個を失います。"
+        ]
+      },
+      {
+        "textOnly": true,
+        "text": [
+          "他、ご不明な点がございましたら、TwitterのDMにてお気軽にお問い合わせください。"
+        ]
       }
     ]
   },
   "zombie": {
     "title": "ゾンビパニックとライフルおじさん",
-    "thumbnail" : "img_index_zombie.png",
+    "thumbnail": "img_index_zombie.png",
     "detailMv": "img_detail_zombie_mv.jpg",
-    "lead" : "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
+    "lead": "世界はゾンビウイルスに汚染された。プレイヤーたちの中にはゾンビが一人混ざっている。人間サイドはゾンビを倒せ！ゾンビは、ゲーム終了時まで生き延びろ！",
     "booth": "https://bodoge.hoobby.net/market/items/3599",
-    "gamedesign" : "MONDY.W",
-    "graphicdesign" : "あんらく",
-    "player" : "4～6人",
-    "time" : "5～15分",
-    "age" : "10歳以上",
-    "size" : "W70xH100xD20",
-    "year" : "2020",
+    "gamedesign": "MONDY.W",
+    "graphicdesign": "あんらく",
+    "player": "4～6人",
+    "time": "5～15分",
+    "age": "10歳以上",
+    "size": "W70xH100xD20",
+    "year": "2020",
     "istruction": "/pdf/instruction_zombie.pdf",
     "article": [
       {
@@ -206,14 +321,14 @@
       },
       {
         "imgpath": "img_detail_zombie04.png",
-        "subTitle" : "人間サイド",
+        "subTitle": "人間サイド",
         "text": [
           "人間サイドの役職は「一般人」「ライフルおじさん」「オタク」「セクシーお姉さん」「カルトおばさん」の5役職です。"
         ]
       },
       {
         "imgpath": "img_detail_zombie05.png",
-        "subTitle" : "ゾンビサイド",
+        "subTitle": "ゾンビサイド",
         "text": [
           "ゾンビサイドは役職「ゾンビ」「マッドサイエンティスト」プレイヤーと、致命傷を負い、「感染体ゾンビ」になった人間サイドのプレイヤーです。",
           "このゲームで致命傷を負った状態とは、ダメージトークンを2個持っている状態のことを指します。",
@@ -224,9 +339,9 @@
         ]
       },
       {
-        "imgpath" : "img_detail_zombie06.png",
-        "title" : "行動カードについて",
-        "text" : [
+        "imgpath": "img_detail_zombie06.png",
+        "title": "行動カードについて",
+        "text": [
           "それぞれの役職によって、持っているカードの種類・枚数が異なります。"
         ]
       },
@@ -249,7 +364,7 @@
         ]
       },
       {
-        "imgpath" : "img_detail_zombie07.png",
+        "imgpath": "img_detail_zombie07.png",
         "text": [
           "一般人以外の役職は、一枚ずつ「固有カード」を持っています。"
         ]
@@ -267,7 +382,7 @@
         ]
       },
       {
-        "imgpath" : "img_detail_zombie08.png"
+        "imgpath": "img_detail_zombie08.png"
       },
       {
         "textBold": "固有カード「ハッキング」",
@@ -295,7 +410,7 @@
       },
       {
         "textOnly": true,
-        "text" : [
+        "text": [
           "あなたがどのプレイヤーに行動を行うか、ひとつの選択が状況を大きく動かします。慎重に考えて行動を行いましょう。",
           "「あの人、なんで今あのプレイヤーを狙ったんだ？」",
           "「なんでこの状況でだれも回復させないんだ？」",
@@ -303,33 +418,32 @@
         ]
       },
       {
-        "title" : "遊び方 紹介動画"
+        "title": "遊び方 紹介動画"
       },
       {
         "videopath": "https://www.youtube.com/embed/XQOW14VTdLc?modestbranding=1"
       },
       {
-        "title" : "～ アーカイブ　2020年ゲムマ秋出展時チラシ ～"
+        "title": "～ アーカイブ　2020年ゲムマ秋出展時チラシ ～"
       },
       {
-        "imgpath" : "img_zombie_poster01.png",
+        "imgpath": "img_zombie_poster01.png",
         "imgFullSize": true
       },
       {
-        "imgpath" : "img_zombie_poster02.png",
+        "imgpath": "img_zombie_poster02.png",
         "imgFullSize": true
       }
     ]
   },
-  "banana" : {
-    "title" : "Bana-na",
-    "thumbnail" : "img_index_banana.jpg",
+  "banana": {
+    "title": "Bana-na",
+    "thumbnail": "img_index_banana.jpg",
     "detailMv": "img_detail_banana_mv.jpg",
-    "lead" :
-      "みんなでバナナの争奪戦！どの木に並ぶと効率よくバナナを取ることができるか？シンプルなルールで奥深い戦略と運が必要なパーティゲーム",
-    "booth" : "https://debug-monkeys.booth.pm/items/1704086",
-    "detail" : "https://note.com/debug_monkeys/n/n041ffe013d18",
-    "nosale" : "完売",
+    "lead": "みんなでバナナの争奪戦！どの木に並ぶと効率よくバナナを取ることができるか？シンプルなルールで奥深い戦略と運が必要なパーティゲーム",
+    "booth": "https://debug-monkeys.booth.pm/items/1704086",
+    "detail": "https://note.com/debug_monkeys/n/n041ffe013d18",
+    "nosale": "完売",
     "gamedesign": "haori",
     "player": "2～4人",
     "time": "10分～20分",
@@ -367,21 +481,21 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "①サルを動かす",
           "まだ置いていないサルを好きな木の最後方に並べる、またはすでに並んでいるサルを隣の木の最後方に移動させることができます。動かなくてもＯＫです。"
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "②バナナの木が成長する",
           "袋からチップを引き、そこに書いてある青バナナの本数に応じて、１～４のバナナの木が成長します。各番号の枚数分、新たに黄バナナが配置されます。（１の木にはバナナ１房、2の木にはバナナ2房・・・）"
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "また、特殊なルールとして、以下のものがあります。",
           "・1人につき1匹いる「リーダーサル」は列に割りこむことができます。",
@@ -390,7 +504,7 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "青バナナの数が一定数以上になると、ゲームの終了トリガーがひかれ、アクションを一巡してバナナの決算を行います。",
           "バナナの決算では木の下にいるサルたちに、その木に実っている黄バナナを分配します。",
@@ -424,14 +538,13 @@
       }
     ]
   },
-  "qubism" : {
-    "title" : "Qubism",
-    "thumbnail" : "img_index_qubism.jpg",
+  "qubism": {
+    "title": "Qubism",
+    "thumbnail": "img_index_qubism.jpg",
     "detailMv": "img_detail_qubism_mv.jpg",
-    "lead" :
-      "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
-    "booth" : "https://debug-monkeys.booth.pm/items/1119557",
-    "detail" : "https://note.com/debug_monkeys/n/n499641b3c869",
+    "lead": "矢印の向きに動かせる壁、キューブを配置し、相手より先に反対側にたどり着いたプレイヤーが勝利するアブストラクトゲーム。シンプルながら頭を使います。",
+    "booth": "https://debug-monkeys.booth.pm/items/1119557",
+    "detail": "https://note.com/debug_monkeys/n/n499641b3c869",
     "nosale": "完売",
     "gamedesign": "EAD",
     "player": "2人",
@@ -471,7 +584,7 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "この3つのアクションを駆使しながら、対岸へコマを進めたプレイヤーが勝利します。"
         ]
@@ -509,22 +622,22 @@
       }
     ]
   },
-  "intocube" : {
+  "intocube": {
     "title": "いんときゅーぶ",
-    "thumbnail" : "img_index_intocube.jpg",
+    "thumbnail": "img_index_intocube.jpg",
     "detailMv": "img_detail_intocube_mv.jpg",
-    "lead" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？",
-    "nosale" : "完売",
-    "gamedesign" : "Sunny",
-    "player" : "2人",
-    "time" : "15～30分",
-    "age" : "10歳以上",
-    "size" : "W200xH65xD150",
-    "year" : "2020",
+    "lead": "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？",
+    "nosale": "完売",
+    "gamedesign": "Sunny",
+    "player": "2人",
+    "time": "15～30分",
+    "age": "10歳以上",
+    "size": "W200xH65xD150",
+    "year": "2020",
     "istruction": "/pdf/instruction_intocube.pdf",
-    "article" : [
+    "article": [
       {
-        "leadCopy" : "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？正体隠匿系アブストラクトゲーム"
+        "leadCopy": "様々な色のキューブトークンを集め、共通の場に配置していこう！ただし、自分が集めたい色と集めたくない色がバレると得点にならない！？正体隠匿系アブストラクトゲーム"
       },
       {
         "videopath": "https://www.youtube.com/embed/G9cTXC9kPas?modestbranding=1",
@@ -565,24 +678,24 @@
       }
     ]
   },
-  "nabedaikan" : {
+  "nabedaikan": {
     "title": "鍋代官",
-    "thumbnail" : "img_index_nabedaikan.jpg",
+    "thumbnail": "img_index_nabedaikan.jpg",
     "detailMv": "img_detail_nabedaikan_mv.jpg",
-    "lead" : "このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！",
-    "booth" : "https://debug-monkeys.booth.pm/items/1949653",
-    "nosale" : "完売",
-    "detail" : "https://note.com/debug_monkeys/n/n83cdba1dd238",
-    "gamedesign" : "Sunny",
-    "player" : "2～4人",
-    "time" : "～20分",
-    "age" : "10歳以上",
-    "size" : "W330xH250xD80",
-    "year" : "2020",
+    "lead": "このゲームは、リアル鍋を使って鍋の具材をよそい合う忖度ゲームです。誰よりも上手に、誰よりも美味しく、鍋の具材をよそい合いましょう！",
+    "booth": "https://debug-monkeys.booth.pm/items/1949653",
+    "nosale": "完売",
+    "detail": "https://note.com/debug_monkeys/n/n83cdba1dd238",
+    "gamedesign": "Sunny",
+    "player": "2～4人",
+    "time": "～20分",
+    "age": "10歳以上",
+    "size": "W330xH250xD80",
+    "year": "2020",
     "istruction": "/pdf/instruction_nabedaikan.pdf",
-    "article" : [
+    "article": [
       {
-        "leadCopy" : "誰よりも上手に、誰よりも美味しく、お互いに鍋の具材をよそい合おう！リアル鍋を使った忖度パーティーゲーム！"
+        "leadCopy": "誰よりも上手に、誰よりも美味しく、お互いに鍋の具材をよそい合おう！リアル鍋を使った忖度パーティーゲーム！"
       },
       {
         "imgpath": "img_detail_nabedaikan01.jpg",
@@ -611,7 +724,7 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "「よそう」では、おたまを使ってサイコロを他プレイヤーのお皿によそいます。",
           "そして、「たべてもらう」で、よそわれたプレイヤーのお皿にあるサイコロの役を判定をします。",
@@ -630,11 +743,11 @@
   },
   "street": {
     "title": "STREET PICKPOCKETs 7",
-    "thumbnail" : "img_index_street.png",
+    "thumbnail": "img_index_street.png",
     "detailMv": "img_detail_streets_mv.jpg",
-    "lead" : "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。",
+    "lead": "不均一に存在する数字のカードを奪い合い、自分の場に役を揃えて点を稼ごう！短時間で終わる奪い合いの不規則ポーカーゲーム。",
     "booth": "https://debug-monkeys.booth.pm/items/1704097",
-    "nosale" : "完売",
+    "nosale": "完売",
     "gamedesign": "Sunny",
     "graphicdesign": "nishimura natsumi",
     "player": "3～5人",
@@ -703,18 +816,18 @@
         ]
       },
       {
-        "videopath": "https://www.youtube.com/embed/OvEBhUVKTB8?modestbranding=1"}
+        "videopath": "https://www.youtube.com/embed/OvEBhUVKTB8?modestbranding=1"
+      }
     ]
   },
-  "osumo" : {
-    "title" : "OSUMO",
-    "thumbnail" : "img_index_osumo.jpg",
+  "osumo": {
+    "title": "OSUMO",
+    "thumbnail": "img_index_osumo.jpg",
     "detailMv": "img_detail_osumo_mv.jpg",
-    "lead" :
-      "相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵の番外に弾き出しましょう。",
-    "booth" : "https://debug-monkeys.booth.pm/items/1704415",
-    "nosale" : "完売",
-    "detail" : "https://note.com/debug_monkeys/n/n7969a35d5d96",
+    "lead": "相撲をモチーフにした新感覚アブストラクト&アクションゲーム。頭と手先の器用さを武器に相手を土俵の番外に弾き出しましょう。",
+    "booth": "https://debug-monkeys.booth.pm/items/1704415",
+    "nosale": "完売",
+    "detail": "https://note.com/debug_monkeys/n/n7969a35d5d96",
     "gamedesign": "EAD",
     "player": "2人",
     "time": "～10分",
@@ -752,7 +865,7 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "「置く」",
           "「押す」",
@@ -801,15 +914,14 @@
       }
     ]
   },
-  "wacryll" : {
-    "title" : "Wacryll",
-    "thumbnail" : "img_index_wacryll.jpg",
+  "wacryll": {
+    "title": "Wacryll",
+    "thumbnail": "img_index_wacryll.jpg",
     "detailMv": "img_detail_wacryll_mv.jpg",
-    "lead" :
-      "相手のコマやゲームボードを使って飛び越えて、相手より先に反対側を目指そう。全てアクリル素材で出来たアブストラクトゲーム。",
-    "booth" : "https://debug-monkeys.booth.pm/items/1119594",
-    "detail" : "https://note.com/debug_monkeys/n/n6010e8c4738e",
-    "nosale" : "完売",
+    "lead": "相手のコマやゲームボードを使って飛び越えて、相手より先に反対側を目指そう。全てアクリル素材で出来たアブストラクトゲーム。",
+    "booth": "https://debug-monkeys.booth.pm/items/1119594",
+    "detail": "https://note.com/debug_monkeys/n/n6010e8c4738e",
+    "nosale": "完売",
     "gamedesign": "Sunny",
     "player": "2人",
     "time": "15～30分",
@@ -845,7 +957,7 @@
         ]
       },
       {
-        "textOnly": true, 
+        "textOnly": true,
         "text": [
           "この2つのアクションを駆使しながら、対岸へコマを進めたプレイヤーが勝利します。"
         ]

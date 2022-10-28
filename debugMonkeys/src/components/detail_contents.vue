@@ -41,7 +41,12 @@
                     v-on:load="load"
                   />
                 </div>
-                <h3 class="contents__articleArea-title" v-if="article.title">
+                <div
+                  v-if="article.faq" 
+                  id="faq">
+                </div>
+                <h3 class="contents__articleArea-title"
+                  v-if="article.title" >
                   {{ article.title }}
                 </h3>
                 <h4
@@ -407,9 +412,12 @@ p {
   }
   &-txtBold {
     line-height: 1.4;
-    margin-top: min(5vw, 30px);
+    margin-top: min(10vw, 40px);
     font-size: 15px;
     font-weight: bold;
+    @include tab() {
+      margin-top: min(6vw, 50px);
+    }
     + .contents__articleArea-txt {
       margin-top: min(1vw, 10px);
     }
