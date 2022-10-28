@@ -247,6 +247,9 @@ a {
 p {
   margin: 0;
 }
+#faq + h3 {
+  padding-top: 100px;
+}
 .only-pc {
   display: none;
   @include tab() {
