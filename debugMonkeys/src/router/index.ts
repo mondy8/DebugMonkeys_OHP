@@ -30,14 +30,18 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior: (to, from, savedPosition) => {
-    if (savedPosition) {
-        return savedPosition;
-    }
-    if (to.hash) {
-        return {selector: to.hash}
-    }
-    return {x: 0, y: 0};
-},
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (savedPosition) {
+            resolve(savedPosition);
+        }
+        if (to.hash) {
+          resolve( {selector: to.hash});
+        }
+        resolve({x: 0, y: 0});
+      }, 500);
+    });
+  },
 });
 
 Vue.use(VueAnalytics, {
