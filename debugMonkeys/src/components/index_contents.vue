@@ -34,9 +34,9 @@
               <a
                 :href="game.nosaleLink"
                 target="_blank"
-                v-on:click="$ga.event('Bana-na', 'click', game.title)"
+                v-on:click="$ga.event('elaa_spring', 'click', game.title)"
               >
-                予約フォームへ
+                予約フォーム
               </a>
             </li>
             <li v-else class="contents__detail-btn--buy">
@@ -47,7 +47,7 @@
                   $ga.event('TOPページ：購入ボタン', 'click', game.title)
                 "
               >
-                販売ページへ
+                販売ページ
               </a>
             </li>
             <li class="contents__detail-btn--info">

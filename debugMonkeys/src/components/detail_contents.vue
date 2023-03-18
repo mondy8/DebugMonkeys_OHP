@@ -41,6 +41,7 @@
                     v-on:load="load"
                   />
                 </div>
+                <hr v-if="article.hr" />
                 <div
                   v-if="article.faq" 
                   id="faq">
@@ -247,8 +248,9 @@ a {
 p {
   margin: 0;
 }
-#faq + h3 {
-  padding-top: 100px;
+hr {
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 .only-pc {
   display: none;
