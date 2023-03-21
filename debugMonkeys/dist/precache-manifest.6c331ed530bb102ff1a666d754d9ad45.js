@@ -1,7 +1,7 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0780bb91c890fea08965",
-    "url": "/css/app.db300ddb.css"
+    "revision": "0bad1f921f4572f7211c",
+    "url": "/css/app.196aa675.css"
   },
   {
     "revision": "4141acd407ec7ec83875",
@@ -62,6 +62,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "42bb07d49edb3ee31fbf3eb483312488",
     "url": "/img/detail/img_detail_elaa09.png"
+  },
+  {
+    "revision": "cc057fc431d48e7c3ceab32daf196405",
+    "url": "/img/detail/img_detail_elaa10.png"
+  },
+  {
+    "revision": "0ce106f64f0f8834d216ef53d12eadd6",
+    "url": "/img/detail/img_detail_elaa11.png"
+  },
+  {
+    "revision": "8813a168541b3db0828975e2948ae2bc",
+    "url": "/img/detail/img_detail_elaa12.png"
   },
   {
     "revision": "12d2811fab79e1eae52466902a842fb2",
@@ -268,7 +280,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/img_index_banana.jpg"
   },
   {
-    "revision": "e7ff569ac13c259a7ed893d6a39cab0b",
+    "revision": "1446fa811d81b345a3f93ffdaaa1d029",
     "url": "/img/top/img_index_elaa.png"
   },
   {
@@ -320,12 +332,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/mv03.jpg"
   },
   {
-    "revision": "619c8891ad56d2a473a850b1aad0b7c6",
+    "revision": "5cdcaec7b1629bd5de932c4582f14a5a",
     "url": "/index.html"
   },
   {
-    "revision": "0780bb91c890fea08965",
-    "url": "/js/app.30219fcb.js"
+    "revision": "0bad1f921f4572f7211c",
+    "url": "/js/app.27a1288c.js"
   },
   {
     "revision": "4141acd407ec7ec83875",
