@@ -392,7 +392,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pdf/instruction_banana.pdf"
   },
   {
-    "revision": "920e7a9c66913d598d68c0bab3c30007",
+    "revision": "ed3c6cccc73d35b36c22e823b38ec0d5",
     "url": "/pdf/instruction_elaa.pdf"
   },
   {
