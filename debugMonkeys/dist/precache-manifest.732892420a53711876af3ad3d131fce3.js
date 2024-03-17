@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "21f37e046226a0583da8",
+    "revision": "7eb64ab5102da424fee5",
     "url": "/css/app.196aa675.css"
   },
   {
@@ -138,6 +138,30 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "cc55e905495e317a43bab63fe4e69701",
     "url": "/img/detail/img_detail_osumo_mv.jpg"
+  },
+  {
+    "revision": "21780fa554663f13a2e58bff33804970",
+    "url": "/img/detail/img_detail_papito_01.png"
+  },
+  {
+    "revision": "0a3802595e147d53d08956ee59f9d64e",
+    "url": "/img/detail/img_detail_papito_02.png"
+  },
+  {
+    "revision": "1c8ad5ccd0ba94241b680a8e323fa9c5",
+    "url": "/img/detail/img_detail_papito_03.png"
+  },
+  {
+    "revision": "5a3becce6a3dea546cf47113364f31ed",
+    "url": "/img/detail/img_detail_papito_04.png"
+  },
+  {
+    "revision": "5ec8be0d4b8029360e6d7f7756a576e1",
+    "url": "/img/detail/img_detail_papito_05.png"
+  },
+  {
+    "revision": "fc4bd8401b8f3213f0f3a0a72e5cceaa",
+    "url": "/img/detail/img_detail_papito_mv.png"
   },
   {
     "revision": "7e854c2c9077ea3ed87b2483f28a0ec4",
@@ -296,6 +320,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/img_index_osumo.jpg"
   },
   {
+    "revision": "45d090d7d1668a73df63fc957cb4d0bb",
+    "url": "/img/top/img_index_papito.png"
+  },
+  {
     "revision": "2ebc7c7d2f3908e7a106014a985fa4f9",
     "url": "/img/top/img_index_qubism.jpg"
   },
@@ -332,12 +360,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/mv03.jpg"
   },
   {
-    "revision": "d96538b6effe4a8c543dee1ac3cfd0bf",
+    "revision": "e33fad58127e118190ce7d8284b39377",
     "url": "/index.html"
   },
   {
-    "revision": "21f37e046226a0583da8",
-    "url": "/js/app.9d550a12.js"
+    "revision": "7eb64ab5102da424fee5",
+    "url": "/js/app.760366ab.js"
   },
   {
     "revision": "18d919441b68734e448b",
@@ -370,6 +398,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fa1fffc007720dde26ce67d79f5341ee",
     "url": "/ogp_osumo.jpg"
+  },
+  {
+    "revision": "21780fa554663f13a2e58bff33804970",
+    "url": "/ogp_papito.png"
   },
   {
     "revision": "2ebc7c7d2f3908e7a106014a985fa4f9",
