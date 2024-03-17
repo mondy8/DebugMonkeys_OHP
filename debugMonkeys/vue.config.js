@@ -14,6 +14,7 @@ module.exports = {
             // 生成したいページ
             routes: [
               "/",
+              "/detail/papito",
               "/detail/elaa",
               "/detail/intocube",
               "/detail/nabedaikan",
@@ -27,6 +28,8 @@ module.exports = {
             postProcess(renderedRoute) {
               const titles = {
                 "/": "デバッグモンキーズ公式サイト｜ボードゲーム販売中！",
+                "/detail/papito":
+                  "PAPITO パピトー｜デバッグモンキーズ公式サイト",
                 "/detail/elaa":
                   "ELÄÄ ROTU エラロト｜デバッグモンキーズ公式サイト",
                 "/detail/intocube":
