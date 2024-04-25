@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "602e9262f20fe3e80fec",
+    "revision": "97163375106662eab464",
     "url": "/css/app.3ae23682.css"
   },
   {
@@ -158,6 +158,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5ec8be0d4b8029360e6d7f7756a576e1",
     "url": "/img/detail/img_detail_papito_05.png"
+  },
+  {
+    "revision": "e2d2fbb52b00cadee95bd3111788b6ba",
+    "url": "/img/detail/img_detail_papito_mv.jpg"
   },
   {
     "revision": "fc4bd8401b8f3213f0f3a0a72e5cceaa",
@@ -360,12 +364,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/top/mv03.jpg"
   },
   {
-    "revision": "58942d364e975d8f5205d8a172174eb5",
+    "revision": "66289fe561fcb51609eac728a4b58ed0",
     "url": "/index.html"
   },
   {
-    "revision": "602e9262f20fe3e80fec",
-    "url": "/js/app.88c135a0.js"
+    "revision": "97163375106662eab464",
+    "url": "/js/app.8477f264.js"
   },
   {
     "revision": "18d919441b68734e448b",
