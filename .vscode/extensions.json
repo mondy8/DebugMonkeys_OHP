@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "yusukehirao.vscode-markuplint",
+    "christian-kohler.path-intellisense",
+  ],
+  "unwantedRecommendations": []
+}

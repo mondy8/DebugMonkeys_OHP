@@ -1,0 +1,17 @@
+{
+  "path-intellisense.mappings": {
+    "@/": "${workspaceFolder}/src/",
+  },
+  "eslint.validate": [
+    "javascriptreact",
+    "typescriptreact",
+  ],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+}
