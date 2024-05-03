@@ -22,7 +22,7 @@ export default function Home() {
               />
             </Link>
             <h2 className="text-2xl font-bold">PAPITO パピトー</h2>
-            <p className="text-gray-900">
+            <p className="text-gray-800">
               ぬいぐるみのサーカス「パピトー」のマネージャーになって、みんなでショーを成功させよう！ジジ抜きをベースにした推理×協力ゲーム！
             </p>
             <div className="grid grid-cols-2 gap-5">

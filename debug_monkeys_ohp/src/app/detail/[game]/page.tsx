@@ -7,7 +7,7 @@ export default function GameDetail() {
   const params = useParams();
   console.log(params.id);
   return (
-    <main className="text-gray-900">
+    <main className="text-gray-800">
       <div className="h-40 overflow-hidden md:h-80">
         <Image
           src="/img_detail_papito_mv.jpg"
