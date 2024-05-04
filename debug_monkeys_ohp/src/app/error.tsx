@@ -11,9 +11,13 @@ export default function Error({ error, reset }: Props) {
     console.error(error);
   }, [error]);
   return (
-    <div className="flex h-screen items-center justify-center">
-      <h1 className="text-4xl font-bold">ページにエラーが発生しました</h1>
-      <button onClick={reset}>Reset</button>
+    <div className="flex h-screen flex-col items-center justify-center p-10">
+      <h1 className="text-center text-4xl font-bold">
+        ページにエラーが<span className="inline-block">発生しました</span>
+      </h1>
+      <button onClick={reset} className="mt-10" type="button">
+        Reset
+      </button>
     </div>
   );
 }
