@@ -5,14 +5,15 @@ import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-// TODO: dataの型を定義
+// TODO: 型定義をmicroCMSのAPIレスポンスに合わせて定義
 // TODO: popover外をクリックした時に閉じる処理を追加
+// TODO: suspenceの設定
 
-export default function HeaderClient(data) {
+export default function HeaderClient({ data }) {
   try {
     return (
       <header className="border-gray relative border-b px-10 py-4">
-        <div className="align-middl e flex flex-row justify-between">
+        <div className="flex flex-row items-center justify-between">
           <h1 className="transition-transform hover:-translate-y-1">
             <Link
               href="/"
@@ -49,7 +50,7 @@ export default function HeaderClient(data) {
                   <Popover.Panel className="absolute right-0 z-10 mt-3 w-screen max-w-sm px-4 md:right-10 md:px-0 lg:max-w-2xl">
                     <nav className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
                       <ul className="relative grid gap-2 bg-white p-7 lg:grid-cols-2">
-                        {data.data.contents.map((game) => {
+                        {data.contents.map((game) => {
                           return (
                             <li
                               key={game.id}
