@@ -30,7 +30,7 @@ export default async function Home() {
                   className="absolute left-2/4 top-2/4 w-full -translate-x-2/4 -translate-y-2/4 transition duration-200 ease-in-out hover:scale-110 hover:bg-gray-100"
                 />
               </Link>
-              <h2 className="text-2xl font-bold">{game.title}</h2>
+              <h2 className="text-2xl font-bold text-gray-800">{game.title}</h2>
               <p className="text-gray-800">{game.description}</p>
               <div className="grid h-11 grid-cols-2 gap-5">
                 <StatusButton gameData={game} />
