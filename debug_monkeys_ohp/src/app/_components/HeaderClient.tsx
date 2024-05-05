@@ -4,12 +4,19 @@ import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { details } from "@/types/cms-types";
 
-// TODO: 型定義をmicroCMSのAPIレスポンスに合わせて定義
 // TODO: popover外をクリックした時に閉じる処理を追加
 // TODO: suspenceの設定
+// TODO: 上側に固定表示
 
-export default function HeaderClient({ data }) {
+type Props = {
+  data: {
+    contents: details[];
+  };
+};
+
+export default function HeaderClient({ data }: Props) {
   try {
     return (
       <header className="border-gray relative border-b px-10 py-4">

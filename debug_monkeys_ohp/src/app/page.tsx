@@ -3,23 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/libs/client";
 import StatusButton from "./_components/StatusButton";
+import { details } from "@/types/cms-types";
 
-// TODO: 型定義をmicroCMSのAPIレスポンスに合わせて定義
 // TODO: suspenceの設定
-type game = {
-  id: string;
-  thumb: {
-    url: string;
-    width: number;
-    height: number;
-  };
-  title: string;
-  description: string;
-  noSale: boolean;
-  saleLink?: string;
-  reservationLink?: string;
-  status: "完売" | "販売中" | "予約受付中" | "近日登場";
-};
 
 export default async function Home() {
   try {
@@ -29,7 +15,7 @@ export default async function Home() {
 
     return (
       <main className="mt-10 grid grid-cols-1 gap-x-10 gap-y-10 px-5 md:mt-20 md:grid-cols-2 md:gap-y-20 md:px-10 xl:grid-cols-3 xl:gap-x-16 xl:px-20">
-        {data.contents.map((game: game) => {
+        {data.contents.map((game: details) => {
           return (
             <div key={game.id} className="grid gap-y-3">
               <Link

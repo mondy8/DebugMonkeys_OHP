@@ -3,19 +3,19 @@ import StatusButton from "@/app/_components/StatusButton";
 import parse from "html-react-parser";
 import { client } from "@/libs/client";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { details } from "@/types/cms-types";
 
-// TODO: gameの型定義をmicroCMSのAPIレスポンスに合わせて定義
 // TODO: suspenceの設定
 // TODO: stickyの設定
+// TODO: #faqがついていた時「よくある質問」にスクロールする
 
-export default async function GameDetail({
-  params,
-}: {
+type Props = {
   params: { game: string };
-}) {
+};
+
+export default async function GameDetail({ params }: Props) {
   try {
-    const data = await client.get({
+    const data: details = await client.get({
       endpoint: `details/${params.game}`,
     });
 
@@ -27,15 +27,13 @@ export default async function GameDetail({
               src={data.headerImg.url}
               width={data.headerImg.width}
               height={data.headerImg.height}
-              alt={data.headerImg.alt ? data.headerImg.alt : ""}
+              alt="ヘッダー画像"
               className="w-full -translate-y-1/4 object-cover"
             />
           </div>
         )}
         <div className="mx-auto grid max-w-screen-xl p-5 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
           <article className="prose prose-img:rounded-md w-full">
-            <h2 className="text-3xl font-bold md:text-5xl">{data.title}</h2>
-            <p className="mt-5 text-xl font-bold md:mt-10">{data.lead}</p>
             {parse(data.aritcle)}
           </article>
           <aside className="sticky top-5 mt-10 text-gray-800 md:mt-0">

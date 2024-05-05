@@ -1,8 +1,11 @@
 import Button from "./Button";
+import { details } from "@/types/cms-types";
 
-// TODO: 型定義をmicroCMSのAPIレスポンスに合わせて定義
+type Props = {
+  gameData: details;
+};
 
-export default function StatusButton({ gameData }) {
+export default function StatusButton({ gameData }: Props) {
   if (!gameData.status) return <Button noLink={true}>近日登場</Button>;
 
   return gameData.status[0] === "完売" ? (
