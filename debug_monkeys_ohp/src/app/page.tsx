@@ -1,44 +1,76 @@
 import Button from "./_components/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { client } from "@/libs/client";
 
-export default function Home() {
-  const game = ["papito", "papito2", "papito3"];
-  return (
-    <main className="mt-10 grid grid-cols-1 gap-10 px-10 md:grid-cols-2 lg:grid-cols-3">
-      {game.map((game) => {
-        return (
-          <div key={game} className="grid gap-y-5">
-            <Link
-              href={`/detail/papito`}
-              className="block overflow-hidden rounded-md focus:outline-none focus-visible:ring"
-            >
-              <Image
-                src="/img_index_papito.png"
-                width={1571}
-                height={1079}
-                alt="パピトー"
-                className="transition duration-200 ease-in-out hover:scale-110"
-              />
-            </Link>
-            <h2 className="text-2xl font-bold">PAPITO パピトー</h2>
-            <p className="text-gray-800">
-              ぬいぐるみのサーカス「パピトー」のマネージャーになって、みんなでショーを成功させよう！ジジ抜きをベースにした推理×協力ゲーム！
-            </p>
-            <div className="grid grid-cols-2 gap-5">
-              <Button
-                link="https://debug-monkeys.booth.pm/items/4744698"
-                blank={true}
+type game = {
+  id: string;
+  thumb: {
+    url: string;
+    width: number;
+    height: number;
+  };
+  title: string;
+  description: string;
+  noSale: boolean;
+  saleLink?: string;
+  reservationLink?: string;
+};
+
+export default async function Home() {
+  try {
+    const data = await client.get({
+      endpoint: `details/`,
+    });
+    console.log(data);
+
+    return (
+      <main className="mt-10 grid grid-cols-1 gap-10 px-5 md:grid-cols-2 md:px-10 lg:grid-cols-3">
+        {data.contents.map((game: game) => {
+          return (
+            <div key={game.id} className="grid gap-y-3">
+              <Link
+                href={`/detail/${game.id}`}
+                className="relative block h-[58vw] overflow-hidden rounded-md focus:outline-none focus-visible:ring md:h-[28vw] lg:h-[18vw]"
               >
-                販売ページ
-              </Button>
-              <Button link="/detail/papito" color="gray">
-                詳細を見る
-              </Button>
+                <Image
+                  src={game.thumb.url}
+                  width={game.thumb.width}
+                  height={game.thumb.height}
+                  alt={`「${game.title}」の製品画像`}
+                  className="absolute left-2/4 top-2/4 w-full -translate-x-2/4 -translate-y-2/4 transition duration-200 ease-in-out hover:scale-110 hover:bg-gray-100"
+                />
+              </Link>
+              <h2 className="text-2xl font-bold">{game.title}</h2>
+              <p className="text-gray-800">{game.description}</p>
+              <div className="grid h-11 grid-cols-2 gap-5">
+                {game.noSale ? (
+                  <Button noLink={true}>完売</Button>
+                ) : game.saleLink ? (
+                  <Button link={game.saleLink} blank={true}>
+                    販売ページ
+                  </Button>
+                ) : game.reservationLink ? (
+                  <Button link={game.reservationLink} blank={true}>
+                    予約ページ
+                  </Button>
+                ) : (
+                  <Button noLink={true}>近日登場</Button>
+                )}
+                <Button link={`/detail/${game.id}`} color="gray">
+                  詳細を見る
+                </Button>
+              </div>
             </div>
-          </div>
-        );
-      })}
-    </main>
-  );
+          );
+        })}
+      </main>
+    );
+  } catch (error) {
+    return (
+      <div className="flex h-screen items-center justify-center">
+        <h1 className="text-4xl font-bold">エラーが発生しました。</h1>
+      </div>
+    );
+  }
 }

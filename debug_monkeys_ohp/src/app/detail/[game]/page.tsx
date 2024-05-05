@@ -16,9 +16,9 @@ export default async function GameDetail({
     console.log(data);
 
     return (
-      <main className="text-gray-800">
-        <div className="h-40 overflow-hidden md:h-72">
-          {data.headerImg && (
+      <main>
+        {data.headerImg && (
+          <div className="h-40 overflow-hidden md:h-72">
             <Image
               src={data.headerImg.url}
               width={data.headerImg.width}
@@ -26,17 +26,15 @@ export default async function GameDetail({
               alt={data.headerImg.alt ? data.headerImg.alt : ""}
               className="w-full -translate-y-1/4 object-cover"
             />
-          )}
-        </div>
+          </div>
+        )}
         <div className="mx-auto grid max-w-screen-xl p-5 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
           <article className="prose prose-img:rounded-md">
-            <h2 className="text-3xl font-bold md:text-5xl">
-              {data.game_title}
-            </h2>
+            <h2 className="text-3xl font-bold md:text-5xl">{data.title}</h2>
             <p className="mt-5 text-xl font-bold md:mt-10">{data.lead}</p>
             {parse(data.aritcle)}
           </article>
-          <aside className="sticky top-5">
+          <aside className="sticky top-5 text-gray-800">
             <Button
               link="https://debug-monkeys.booth.pm/items/4744698"
               blank={true}
