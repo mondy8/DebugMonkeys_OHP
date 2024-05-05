@@ -1,11 +1,12 @@
 // NOTE: headlessUIを使うためにクライアントコンポーネントで設定
-"use client"
+"use client";
 import { Popover, Transition } from "@headlessui/react";
 import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 // TODO: dataの型を定義
+// TODO: popover外をクリックした時に閉じる処理を追加
 
 export default function HeaderClient(data) {
   try {
@@ -50,15 +51,21 @@ export default function HeaderClient(data) {
                       <ul className="relative grid gap-2 bg-white p-7 lg:grid-cols-2">
                         {data.data.contents.map((game) => {
                           return (
-                            <li key={game.id}>
-                              <Link
+                            <li
+                              key={game.id}
+                              onClick={() => {
+                                close();
+                              }}
+                            >
+                              <Popover.Button
+                                as={Link}
                                 href={`/detail/${game.id}/`}
                                 className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
                               >
                                 <p className="text-sm font-medium text-gray-900">
                                   {game.title}
                                 </p>
-                              </Link>
+                              </Popover.Button>
                             </li>
                           );
                         })}
