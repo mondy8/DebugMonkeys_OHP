@@ -8,7 +8,6 @@ import { details } from "@/types/cms-types";
 
 // TODO: popover外をクリックした時に閉じる処理を追加
 // TODO: suspenceの設定
-// TODO: 上側に固定表示
 
 type Props = {
   data: {
@@ -19,8 +18,8 @@ type Props = {
 export default function HeaderClient({ data }: Props) {
   try {
     return (
-      <header className="border-gray relative border-b px-10 py-4">
-        <div className="flex flex-row items-center justify-between">
+      <header className="pt-[70px]">
+        <div className="border-gray fixed top-0 z-10 flex h-[70px] w-full flex-row items-center justify-between border-b bg-white px-10">
           <h1 className="transition-transform hover:-translate-y-1">
             <Link
               href="/"
