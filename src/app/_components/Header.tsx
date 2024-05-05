@@ -1,12 +1,16 @@
 // NOTE: SCでデータを取得しCCに渡す
-import { client } from "@/libs/client";
+import { Suspense } from "react";
 import HeaderClient from "./HeaderClient";
+import Spinner from "./Spinner";
+import { client } from "@/libs/client";
 
 export default async function Header() {
   const data = await client.get({
     endpoint: `details/`,
   });
   return (
-    <HeaderClient data={data} />
+    <Suspense fallback={<Spinner />}>
+      <HeaderClient data={data} />
+    </Suspense>
   );
 }

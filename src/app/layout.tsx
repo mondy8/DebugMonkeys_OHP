@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/Header";
-import { Suspense } from "react";
-import Spinner from "./_components/Spinner";
 import Footer from "./_components/Footer";
 
 // TODO: フォントの読み込み
@@ -23,11 +21,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <Suspense fallback={<Spinner />}>
-          <Header />
-          {children}
-          <Footer />
-        </Suspense>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );
