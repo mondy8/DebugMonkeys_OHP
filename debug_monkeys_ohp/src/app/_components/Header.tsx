@@ -1,85 +1,12 @@
-"use client";
+// NOTE: SCでデータを取得しCCに渡す
+import { client } from "@/libs/client";
+import HeaderClient from "./HeaderClient";
 
-import { Popover, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
-export default function Header() {
-  const game = [
-    "papito",
-    "elaa",
-    "zombie",
-    "banana",
-    "qubism",
-    "intocube",
-    "nabedaikan",
-    "street",
-    "osumo",
-    "wacryll",
-  ];
-
+export default async function Header() {
+  const data = await client.get({
+    endpoint: `details/`,
+  });
   return (
-    <header className="border-gray relative border-b px-10 py-4">
-      <div className="align-middl e flex flex-row justify-between">
-        <h1 className="transition-transform hover:-translate-y-1">
-          <Link
-            href="/"
-            className="block rounded-md p-1 focus:outline-none focus-visible:ring"
-          >
-            <Image
-              src="/common/logo.svg"
-              width={170}
-              height={50}
-              alt="デバッグモンキーズ公式サイト"
-            />
-          </Link>
-        </h1>
-        <Popover>
-          {({ open }) => (
-            <>
-              <Popover.Button
-                className={`
-                ${open ? "text-gray-900" : "text-gray-950"}
-                group inline-flex items-center rounded-md bg-white px-3 py-2 text-base font-medium transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring`}
-              >
-                <span>MENU</span>
-                <span className="sr-only">メニュー開閉</span>
-              </Popover.Button>
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-1"
-              >
-                <Popover.Panel className="absolute right-0 z-10 mt-3 w-screen max-w-sm px-4 md:right-10 md:px-0 lg:max-w-2xl">
-                  <nav className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
-                    <ul className="relative grid gap-2 bg-white p-7 lg:grid-cols-2">
-                      {game.map((game) => {
-                        return (
-                          <li key={game}>
-                            <Link
-                              href={`/detail/${game}/`}
-                              className="flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
-                            >
-                              <p className="text-sm font-medium text-gray-900">
-                                {game}
-                              </p>
-                            </Link>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </nav>
-                </Popover.Panel>
-              </Transition>
-            </>
-          )}
-        </Popover>
-      </div>
-    </header>
+    <HeaderClient data={data} />
   );
 }
