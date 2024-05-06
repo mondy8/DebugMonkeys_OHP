@@ -7,7 +7,6 @@ import Spinner from "@/app/_components/Spinner";
 import { client } from "@/libs/client";
 import { details } from "@/types/cms-types";
 
-// TODO: stickyの設定
 // TODO: #faqがついていた時「よくある質問」にスクロールする
 
 type Props = {
@@ -38,70 +37,72 @@ export default async function GameDetail({ params }: Props) {
             <article className="prose w-full prose-h2:text-3xl prose-img:rounded-md lg:prose-h2:text-4xl">
               {parse(data.aritcle)}
             </article>
-            <aside className="sticky top-5 mt-10 text-gray-800 md:mt-0">
-              <StatusButton gameData={data} />
-              <dl>
-                {data.designer && (
-                  <>
-                    <dt className="mt-6 font-bold">ゲームデザイン</dt>
-                    <dd>{data.designer}</dd>
-                  </>
+            <aside className=" mt-10 text-gray-800 md:mt-0">
+              <div className="sticky top-24">
+                <StatusButton gameData={data} />
+                <dl>
+                  {data.designer && (
+                    <>
+                      <dt className="mt-6 font-bold">ゲームデザイン</dt>
+                      <dd>{data.designer}</dd>
+                    </>
+                  )}
+                  {data.artwork && (
+                    <>
+                      <dt className="mt-6 font-bold">アートワーク</dt>
+                      <dd>{data.artwork}</dd>
+                    </>
+                  )}
+                  {data.players && (
+                    <>
+                      <dt className="mt-6 font-bold">プレイ人数</dt>
+                      <dd>{data.players}</dd>
+                    </>
+                  )}
+                  {data.time && (
+                    <>
+                      <dt className="mt-6 font-bold">プレイ時間</dt>
+                      <dd>{data.time}</dd>
+                    </>
+                  )}
+                  {data.age && (
+                    <>
+                      <dt className="mt-6 font-bold">対象年齢</dt>
+                      <dd>{data.age}</dd>
+                    </>
+                  )}
+                  {data.size && (
+                    <>
+                      <dt className="mt-6 font-bold">サイズ（mm）</dt>
+                      <dd>{data.size}</dd>
+                    </>
+                  )}
+                  {data.createdDate && (
+                    <>
+                      <dt className="mt-6 font-bold">制作年</dt>
+                      <dd>{data.createdDate}</dd>
+                    </>
+                  )}
+                </dl>
+                {data.hasInstruction && (
+                  <div className="mt-6">
+                    <a
+                      href={`/pdf/instruction_${data.id}.pdf`}
+                      className="inline-block font-bold underline hover:no-underline"
+                      target="_blank"
+                    >
+                      説明書を読む
+                      <Image
+                        src="/common/icon_external.png"
+                        width={20}
+                        height={20}
+                        alt="別窓でPDFを開くリンク"
+                        className="mb-1 ml-1 inline-block"
+                      />
+                    </a>
+                  </div>
                 )}
-                {data.artwork && (
-                  <>
-                    <dt className="mt-6 font-bold">アートワーク</dt>
-                    <dd>{data.artwork}</dd>
-                  </>
-                )}
-                {data.players && (
-                  <>
-                    <dt className="mt-6 font-bold">プレイ人数</dt>
-                    <dd>{data.players}</dd>
-                  </>
-                )}
-                {data.time && (
-                  <>
-                    <dt className="mt-6 font-bold">プレイ時間</dt>
-                    <dd>{data.time}</dd>
-                  </>
-                )}
-                {data.age && (
-                  <>
-                    <dt className="mt-6 font-bold">対象年齢</dt>
-                    <dd>{data.age}</dd>
-                  </>
-                )}
-                {data.size && (
-                  <>
-                    <dt className="mt-6 font-bold">サイズ（mm）</dt>
-                    <dd>{data.size}</dd>
-                  </>
-                )}
-                {data.createdDate && (
-                  <>
-                    <dt className="mt-6 font-bold">制作年</dt>
-                    <dd>{data.createdDate}</dd>
-                  </>
-                )}
-              </dl>
-              {data.hasInstruction && (
-                <div className="mt-6">
-                  <a
-                    href={`/pdf/instruction_${data.id}.pdf`}
-                    className="inline-block font-bold underline hover:no-underline"
-                    target="_blank"
-                  >
-                    説明書を読む
-                    <Image
-                      src="/common/icon_external.png"
-                      width={20}
-                      height={20}
-                      alt="別窓でPDFを開くリンク"
-                      className="mb-1 ml-1 inline-block"
-                    />
-                  </a>
-                </div>
-              )}
+              </div>
             </aside>
           </div>
         </Suspense>
