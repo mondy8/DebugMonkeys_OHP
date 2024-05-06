@@ -7,7 +7,6 @@ import Link from "next/link";
 import { details } from "@/types/cms-types";
 
 // TODO: popover外をクリックした時に閉じる処理を追加
-// TODO: suspenceの設定
 
 type Props = {
   data: {
@@ -19,11 +18,11 @@ export default function HeaderClient({ data }: Props) {
   try {
     return (
       <header className="pt-[70px]">
-        <div className="border-gray fixed top-0 z-10 flex h-[70px] w-full flex-row items-center justify-between border-b bg-white px-10">
-          <h1 className="transition-transform hover:-translate-y-1">
+        <div className="border-gray fixed top-0 z-10 flex h-[70px] w-full flex-row items-center justify-between border-b bg-white px-5 lg:px-10">
+          <h1>
             <Link
               href="/"
-              className="block rounded-md p-1 focus:outline-none focus-visible:ring"
+              className="block rounded-md p-1 transition-transform hover:-translate-y-1 focus:outline-none focus-visible:ring"
             >
               <Image
                 src="/common/logo.svg"

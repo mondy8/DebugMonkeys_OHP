@@ -34,8 +34,8 @@ export default async function GameDetail({ params }: Props) {
               />
             </div>
           )}
-          <div className="mx-auto grid max-w-screen-xl p-5 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
-            <article className="prose w-full prose-img:rounded-md">
+          <div className="mx-auto grid max-w-screen-xl p-5 pt-8 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
+            <article className="prose w-full prose-h2:text-3xl prose-img:rounded-md lg:prose-h2:text-4xl">
               {parse(data.aritcle)}
             </article>
             <aside className="sticky top-5 mt-10 text-gray-800 md:mt-0">
@@ -88,7 +88,7 @@ export default async function GameDetail({ params }: Props) {
                 <div className="mt-6">
                   <a
                     href={`/pdf/instruction_${data.id}.pdf`}
-                    className="flex items-center font-bold underline"
+                    className="inline-block font-bold underline hover:no-underline"
                     target="_blank"
                   >
                     説明書を読む
@@ -97,7 +97,7 @@ export default async function GameDetail({ params }: Props) {
                       width={20}
                       height={20}
                       alt="別窓でPDFを開くリンク"
-                      className="ml-1 inline-block"
+                      className="mb-1 ml-1 inline-block"
                     />
                   </a>
                 </div>
