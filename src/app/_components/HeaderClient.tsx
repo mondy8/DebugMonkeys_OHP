@@ -6,8 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { details } from "@/types/cms-types";
 
-// TODO: popover外をクリックした時に閉じる処理を追加
-
 type Props = {
   data: {
     contents: details[];
