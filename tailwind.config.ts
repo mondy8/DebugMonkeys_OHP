@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+const plugin = require('tailwindcss/plugin')
 
 const config: Config = {
   content: [
@@ -33,6 +34,14 @@ const config: Config = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    // NOTE: hoverを非活性な要素やタッチ操作に適用させない
+    // 参照: https://zenn.dev/kagan/articles/tailwind-css-custom-hover
+    plugin(function ({ addVariant }: { addVariant: any }) {
+      addVariant(
+        "hover",
+        "@media(hover:hover){ &:where(:any-link, :enabled, summary):hover }"
+      );
+    }),
   ],
 };
 export default config;
