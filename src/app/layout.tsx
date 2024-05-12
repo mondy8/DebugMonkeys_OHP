@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={`${font.className} font-sans antialiased`}>
-        {/* Popover（ヘッダーナビ）を開いている状態でPopoverコンテンツ外をクリックした時にPopoverが閉じない問題の対策用のdiv
+        {/* Popover（ヘッダーナビ）を開いている状態でPopoverコンテンツ外をクリックした時にPopoverが閉じないバグ対策用のdiv
          詳細: https://github.com/tailwindlabs/headlessui/issues/2752#issuecomment-1724096430 */}
         <div>
           <Header />

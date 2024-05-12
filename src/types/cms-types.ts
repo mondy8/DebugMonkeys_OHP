@@ -81,11 +81,25 @@ T,
    */
   hasInstruction?: boolean
   /**
-   * ゲーム詳細記事
+   * ゲーム詳細記事（カスタムフィールド）
    */
-  aritcle: any
+  article: (details_richEditor | details_html)[]
 }>
 
+interface details_richEditor {
+  fieldId: 'richEditor'
+  /**
+   * リッチエディタ
+   */
+  richEditor?: any
+}
+interface details_html {
+  fieldId: 'html'
+  /**
+   * HTML
+   */
+  html?: string
+}
 
 export interface EndPoints {
   get: {

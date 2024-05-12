@@ -7,8 +7,6 @@ import Spinner from "@/app/_components/Spinner";
 import { client } from "@/libs/client";
 import { details } from "@/types/cms-types";
 
-// TODO: #faqがついていた時「よくある質問」にスクロールする
-
 type Props = {
   params: { game: string };
 };
@@ -18,7 +16,10 @@ export default async function GameDetail({ params }: Props) {
     const data: details = await client.get({
       endpoint: `details/${params.game}`,
     });
-
+    const articleJoined = data.article.reduce(
+      (acc, cur) => acc + ((cur as any)[cur.fieldId] || ""), // TODO: anyを使わない型の指定方法を検討
+      "",
+    );
     return (
       <main>
         <Suspense fallback={<Spinner />}>
@@ -35,7 +36,7 @@ export default async function GameDetail({ params }: Props) {
           )}
           <div className="mx-auto grid max-w-screen-xl p-5 pt-8 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
             <article className="prose w-full prose-h2:text-3xl prose-img:rounded-md lg:prose-h2:text-4xl">
-              {parse(data.aritcle)}
+              {parse(articleJoined)}
             </article>
             <aside className=" mt-10 text-gray-800 md:mt-0">
               <div className="sticky top-24">
