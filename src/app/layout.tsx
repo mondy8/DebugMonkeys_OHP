@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "デバッグモンキーズ公式サイト｜ボードゲーム販売中！",
   description:
     "デバッグモンキーズは東京と福岡で活動しているボードゲーム制作団体です。代表作：エラロト / Qubism / ゾンビパニックとライフルおじさん / 鍋代官など",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
