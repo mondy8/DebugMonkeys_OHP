@@ -35,7 +35,7 @@ export default async function GameDetail({ params }: Props) {
             </div>
           )}
           <div className="mx-auto grid max-w-screen-xl p-5 pt-8 md:grid-cols-[70%_1fr] md:gap-x-20 md:p-10 lg:p-14">
-            <article className="prose w-full prose-h2:text-3xl prose-img:rounded-md lg:prose-h2:text-4xl">
+            <article className="prose w-full max-w-full prose-h2:text-3xl prose-img:rounded-md lg:prose-h2:text-4xl">
               {parse(articleJoined)}
             </article>
             <aside className=" mt-10 text-gray-800 md:mt-0">
