@@ -31,7 +31,7 @@ export default async function Footer() {
         </Link>
       </div>
       <p className="mt-6 text-center text-xs text-white">
-        © 2024 DebugMonkeys
+        © 2025 DebugMonkeys
       </p>
     </footer>
   );
