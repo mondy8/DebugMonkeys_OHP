@@ -28,10 +28,13 @@ export default async function GameDetail({ params }: Props) {
   const { game } = await params;
   const data: details | null = await getGameData(game);
   if (data === null) return notFound();
-  const articleJoined = data.article.reduce(
-    (acc, cur) => acc + ((cur as any)[cur.fieldId] || ""), // TODO: anyを使わない型の指定方法を検討
-    "",
-  );
+  type ArticleBlock = { fieldId: string } & Record<string, unknown>;
+
+  const articleJoined: string = data.article.reduce<string>((acc, cur) => {
+    const block = cur as ArticleBlock;
+    const value = block[block.fieldId];
+    return acc + (typeof value === "string" ? value : "");
+  }, "");
   return (
     <main>
       <Suspense fallback={<Spinner />}>
