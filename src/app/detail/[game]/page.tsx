@@ -8,11 +8,12 @@ import { getGameData } from "@/app/_functions/getGamedata";
 import { details } from "@/types/cms-types";
 
 type Props = {
-  params: { game: string };
+  params: Promise<{ game: string }> | { game: string };
 };
 
 export async function generateMetadata({ params }: Props) {
-  const data: details | null = await getGameData(params.game);
+  const { game } = await params;
+  const data: details | null = await getGameData(game);
   if (data === null) return notFound();
   return {
     title: `${data.title} | デバッグモンキーズ公式サイト`,
@@ -24,7 +25,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function GameDetail({ params }: Props) {
-  const data: details | null = await getGameData(params.game);
+  const { game } = await params;
+  const data: details | null = await getGameData(game);
   if (data === null) return notFound();
   const articleJoined = data.article.reduce(
     (acc, cur) => acc + ((cur as any)[cur.fieldId] || ""), // TODO: anyを使わない型の指定方法を検討
