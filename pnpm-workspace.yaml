@@ -17,16 +17,3 @@ allowBuilds:
 
 # pnpm add 時にバージョンをキャレットではなく固定で記録する。
 saveExact: true
-
-# pnpm audit 由来の推移的依存の強制引き上げ。
-# package.json の pnpm.overrides は v11 以降読まれないためこちらに置く。
-overrides:
-  "braces@<3.0.3": '>=3.0.3'
-  "micromatch@<4.0.8": '>=4.0.8'
-  "@babel/runtime@<7.26.10": '>=7.26.10'
-  "cross-spawn@>=7.0.0 <7.0.5": '>=7.0.5'
-  "brace-expansion@>=1.0.0 <=1.1.11": '>=1.1.12'
-  "brace-expansion@>=2.0.0 <=2.0.1": '>=2.0.2'
-  "nanoid@<3.3.8": '>=3.3.8'
-  "js-yaml@>=4.0.0 <4.1.1": '>=4.1.1'
-  "glob@>=10.2.0 <10.5.0": '>=10.5.0'

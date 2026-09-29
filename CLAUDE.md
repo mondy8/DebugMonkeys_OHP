@@ -20,7 +20,7 @@ Next.js App Router + TypeScript + TailwindCSS で構成し、ゲーム情報は 
 pnpm dev                  # 開発サーバー
 pnpm build                # 本番ビルド
 pnpm start                # ビルド成果物の起動
-pnpm lint                 # next lint (eslint-config-next / core-web-vitals)
+pnpm lint                 # eslint . (Flat Config / eslint.config.mjs)
 pnpm run "generate:cms types"  # src/schema のJSONから src/types/cms-types.ts を生成
 ```
 
@@ -28,15 +28,24 @@ pnpm run "generate:cms types"  # src/schema のJSONから src/types/cms-types.ts
 
 ### pnpm の設定は `pnpm-workspace.yaml` に置く
 
-pnpm v11 以降、**`package.json` の `pnpm` フィールドは読まれない**（install 時に WARN が出るだけで黙って無視される）。`.npmrc` も認証情報専用になった。`overrides` を含むすべての設定は `pnpm-workspace.yaml` に書く。
+pnpm v11 以降、**`package.json` の `pnpm` フィールドは読まれない**（install 時に WARN が出るだけで黙って無視される）。`.npmrc` も認証情報専用になった。設定はすべて `pnpm-workspace.yaml` に書く。
 
-主な設定と意図:
-
-- `minimumReleaseAge: 1440` — 公開から24時間未満のバージョンを取り込まない。パッケージ乗っ取り対策。単位は**分**（npm の `min-release-age` は日なので混同しないこと）
+- `minimumReleaseAge: 1440` — 公開から24時間未満のバージョンを取り込まない。パッケージ乗っ取り対策。単位は**分**（npm の `min-release-age` は日なので混同しないこと）。リリース直後のバージョンを指定すると install が失敗するので、その場合は24時間経過した版を選ぶ
 - `allowBuilds` — 依存のライフサイクルスクリプトは既定で全遮断（`strictDepBuilds` が既定 true）。可否を明示したパッケージのみ列挙する。未承認のものがあると install が `ERR_PNPM_IGNORED_BUILDS` で落ちる
-- `overrides` — `pnpm audit` 由来の推移的依存の引き上げ
+- `saveExact: true`
 
-`next` は overrides で吊り上げるのではなく `package.json` 側で直接バージョンを上げること。過去に overrides の `next@>=13.3.0 <14.2.34` が連鎖して Next 16 が入り、`next lint` が廃止されてビルド以外が壊れた事故がある。
+### overrides は使わない
+
+`pnpm audit` の指摘は **`package.json` の該当パッケージ自体を上げて解消する**。`overrides` は使わない方針。
+
+過去に overrides 運用で2つの事故がある。いずれも「上限なしの `>=X` 指定が別メジャーまで引き上げた」ことが原因。
+
+- `next@>=13.3.0 <14.2.34` → `>=14.2.34` が Next 16 を引き込み、`next lint` 廃止でlintが壊れた
+- `brace-expansion@>=1.0.0 <=1.1.11` → `>=1.1.12` が v5 を引き込み、v1 API を前提とする `minimatch@3` が `expand is not a function` で落ちた
+
+### Lint
+
+Next 16 で `next lint` が廃止されたため ESLint CLI を直接使う。設定は `eslint.config.mjs`（Flat Config）。`eslint-config-next` 16 は Flat Config をそのまま export するため `FlatCompat` は不要。
 
 `.env.local` に `MICROCMS_API_KEY` / `MICROCMS_SERVICE_DOMAIN` が必要。未設定だと `src/libs/client.ts` が起動時に throw する。
 
