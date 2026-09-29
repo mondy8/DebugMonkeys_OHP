@@ -8,7 +8,6 @@ https://debug-monkeys.com/
 - [TypeScript](https://www.typescriptlang.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [microCMS](https://microcms.io/)
-- [AWS Amplify](https://aws.amazon.com/jp/amplify/)
 
 ## ディレクトリ構成
 
