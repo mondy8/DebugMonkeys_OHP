@@ -9,7 +9,12 @@ Next.js App Router + TypeScript + TailwindCSS で構成し、ゲーム情報は 
 
 ## コマンド
 
-パッケージマネージャは **pnpm**。Node は `.tool-versions` で 20.9.0 固定。
+パッケージマネージャは **pnpm 12.8.1**。Node は 24.21.0（Active LTS）。
+
+バージョンは3箇所で宣言している。上げるときは必ず揃えること。
+- `.tool-versions` — ローカル（asdf）
+- `.nvmrc` — ホスティング側のビルド環境向け
+- `package.json` の `engines.node`
 
 ```sh
 pnpm dev                  # 開発サーバー
@@ -20,6 +25,18 @@ pnpm run "generate:cms types"  # src/schema のJSONから src/types/cms-types.ts
 ```
 
 テストフレームワークは未導入（テストコードなし）。
+
+### pnpm の設定は `pnpm-workspace.yaml` に置く
+
+pnpm v11 以降、**`package.json` の `pnpm` フィールドは読まれない**（install 時に WARN が出るだけで黙って無視される）。`.npmrc` も認証情報専用になった。`overrides` を含むすべての設定は `pnpm-workspace.yaml` に書く。
+
+主な設定と意図:
+
+- `minimumReleaseAge: 1440` — 公開から24時間未満のバージョンを取り込まない。パッケージ乗っ取り対策。単位は**分**（npm の `min-release-age` は日なので混同しないこと）
+- `allowBuilds` — 依存のライフサイクルスクリプトは既定で全遮断（`strictDepBuilds` が既定 true）。可否を明示したパッケージのみ列挙する。未承認のものがあると install が `ERR_PNPM_IGNORED_BUILDS` で落ちる
+- `overrides` — `pnpm audit` 由来の推移的依存の引き上げ
+
+`next` は overrides で吊り上げるのではなく `package.json` 側で直接バージョンを上げること。過去に overrides の `next@>=13.3.0 <14.2.34` が連鎖して Next 16 が入り、`next lint` が廃止されてビルド以外が壊れた事故がある。
 
 `.env.local` に `MICROCMS_API_KEY` / `MICROCMS_SERVICE_DOMAIN` が必要。未設定だと `src/libs/client.ts` が起動時に throw する。
 
@@ -63,6 +80,25 @@ microCMS のリッチエディタ／HTML入稿（繰り返しフィールド）�
 
 markuplint（`markuplint:recommended-react`）を導入。a11y を意識した実装になっており、`focus-visible:ring` やスクリーンリーダー用テキスト（`sr-only`）の付与を既存コードに合わせる。
 
+## ローカル環境
+
+Node は **asdf**（Homebrew 導入 / `~/.asdf`）で管理している。nodenv や nvm ではない。`node` の実体は `~/.asdf/shims/node`。
+
+```sh
+asdf install nodejs <version>
+asdf set nodejs <version>        # プロジェクトの .tool-versions を更新
+asdf set -u nodejs <version>     # ホームの ~/.tool-versions を更新
+asdf reshim                      # shim が古いパスを指すとき
+```
+
+asdf は v0.16 で Go 再実装になり、`asdf.sh` の source 方式が廃止された。`~/.zshrc` では shims を PATH に通す。旧コマンド `asdf global` / `asdf local` は `asdf set -u` / `asdf set` に変わっている。
+
+pnpm も asdf 管理（corepack は使わない。Node 25 以降バンドルされないため）。プラグインが古いと新しい asdf で `BIN_PATH: unbound variable` を出して install に失敗するので、その場合は `asdf plugin update <name>`。
+
 ## デプロイ
 
-master ブランチへの push でビルドが走る。microCMS の API 情報はホスティング側の環境変数で保持する。
+ホスティングは **Netlify**。master ブランチへの push でビルドが走る。microCMS の API 情報は Netlify 側の環境変数で保持する。
+
+README の「使用技術」に AWS Amplify と記載があるが **実際には使っていない**（README の記述が古い）。
+
+Netlify のビルド Node バージョンはリポジトリの `.nvmrc` が参照される。

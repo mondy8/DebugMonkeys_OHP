@@ -1,0 +1,32 @@
+# pnpm の設定ファイル。
+# pnpm v11 以降 .npmrc は認証情報専用になり、通常の設定はこちらに記述する。
+# 参照: https://pnpm.io/settings
+
+# 公開直後のバージョンを取り込まない（単位: 分 / 1440 = 24時間）。
+# 乗っ取られたパッケージが公開直後に取り込まれる事故を防ぐ。
+# pnpm v11 以降はこれがデフォルトだが、意図を明示するため記述する。
+minimumReleaseAge: 1440
+
+# 依存パッケージの install 系ライフサイクルスクリプトは既定で全て遮断される
+# （strictDepBuilds がデフォルト true のため、未承認のものがあると install が失敗する）。
+# 実行可否を明示したパッケージだけをここに列挙する。
+#   false = 実行しない / true = 実行を許可する
+# unrs-resolver: eslint-config-next 由来の dev 依存。prebuilt バイナリで動くため不要。
+allowBuilds:
+  unrs-resolver: false
+
+# pnpm add 時にバージョンをキャレットではなく固定で記録する。
+saveExact: true
+
+# pnpm audit 由来の推移的依存の強制引き上げ。
+# package.json の pnpm.overrides は v11 以降読まれないためこちらに置く。
+overrides:
+  "braces@<3.0.3": '>=3.0.3'
+  "micromatch@<4.0.8": '>=4.0.8'
+  "@babel/runtime@<7.26.10": '>=7.26.10'
+  "cross-spawn@>=7.0.0 <7.0.5": '>=7.0.5'
+  "brace-expansion@>=1.0.0 <=1.1.11": '>=1.1.12'
+  "brace-expansion@>=2.0.0 <=2.0.1": '>=2.0.2'
+  "nanoid@<3.3.8": '>=3.3.8'
+  "js-yaml@>=4.0.0 <4.1.1": '>=4.1.1'
+  "glob@>=10.2.0 <10.5.0": '>=10.5.0'
