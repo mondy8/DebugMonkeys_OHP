@@ -13,26 +13,28 @@
     "generate:cms types": "microcms-typescript src/schema src/types/cms-types.ts"
   },
   "dependencies": {
-    "next": "16.3.6",
-    "react": "^18",
-    "react-dom": "^18"
+    "next": "16.4.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@headlessui/react": "^1.7.19",
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@markuplint/jsx-parser": "^5.6.1",
+    "@markuplint/react-spec": "^5.6.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^20.19.43",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "eslint": "9.39.5",
-    "eslint-config-next": "16.3.6",
-    "html-react-parser": "^5.1.10",
-    "markuplint": "^4.6.1",
-    "microcms-js-sdk": "^3.1.1",
-    "microcms-typescript": "^1.0.14",
-    "postcss": "^8",
-    "prettier": "^3.2.5",
+    "eslint-config-next": "16.4.6",
+    "html-react-parser": "^5.2.17",
+    "markuplint": "5.6.1",
+    "microcms-js-sdk": "^3.6.0",
+    "microcms-typescript": "^1.1.2",
+    "postcss": "^8.5.33",
+    "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.5.14",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
   }
 }
